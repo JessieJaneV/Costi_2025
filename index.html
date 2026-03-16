@@ -386,15 +386,15 @@ data:values
 
 function exportCSV(){
 
-let csv="Targa,Categoria,Canone,Assicurazione,Totale\n"
+let csv="Targa;Categoria;Canone;Assicurazione;Totale\n"
 
 filtered.forEach(v=>{
 
-csv+=`${v.plate},${v.category},${v.canone},${v.assicurazione},${v.totale}\n`
+csv+=`${v.plate};${v.category};${v.canone};${v.assicurazione};${v.totale}\n`
 
 })
 
-let blob=new Blob([csv])
+let blob=new Blob(["\ufeff"+csv],{type:"text/csv;charset=utf-8;"})
 
 let url=URL.createObjectURL(blob)
 
@@ -406,7 +406,6 @@ a.download="export_flotta.csv"
 a.click()
 
 }
-
 </script>
 
 </body>
