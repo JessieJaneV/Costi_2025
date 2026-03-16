@@ -43,13 +43,16 @@ gap:20px;
 
 .kpi{
 flex:1;
-font-size:20px;
+}
+
+.kpi-title{
+font-size:16px;
 }
 
 .kpi-value{
 font-size:28px;
 font-weight:bold;
-margin-top:10px;
+margin-top:8px;
 }
 
 select{
@@ -102,13 +105,18 @@ border:1px solid #ccc;
 <div class="kpi-container">
 
 <div class="card kpi">
-Canone Imponibile Totale
+<div class="kpi-title">Canone Imponibile</div>
 <div class="kpi-value" id="kpiCanone">€0</div>
 </div>
 
 <div class="card kpi">
-Assicurazione Totale
+<div class="kpi-title">Assicurazione</div>
 <div class="kpi-value" id="kpiAssicurazione">€0</div>
+</div>
+
+<div class="card kpi">
+<div class="kpi-title">Costo Totale</div>
+<div class="kpi-value" id="kpiTotale">€0</div>
 </div>
 
 </div>
@@ -205,7 +213,7 @@ let categoryCosts = {}
 data.forEach(row => {
 
 let canone = parseFloat(row[" Canone imponibile "]) || 0
-let assicurazione = parseFloat(row[" Assicurazione "]) || 0
+let assicurazione = parseFloat(row[" Canone assicurazione "]) || 0
 
 totalCanone += canone
 totalAssicurazione += assicurazione
@@ -219,11 +227,16 @@ categoryCosts[cat] += canone + assicurazione
 
 })
 
+let totale = totalCanone + totalAssicurazione
+
 document.getElementById("kpiCanone").innerText =
 "€ " + totalCanone.toLocaleString()
 
 document.getElementById("kpiAssicurazione").innerText =
 "€ " + totalAssicurazione.toLocaleString()
+
+document.getElementById("kpiTotale").innerText =
+"€ " + totale.toLocaleString()
 
 updateChart(categoryCosts)
 
@@ -241,17 +254,11 @@ chart = new Chart(document.getElementById("costChart"),{
 type:"bar",
 
 data:{
-
 labels:labels,
-
 datasets:[{
-
-label:"Costi per categoria",
-
+label:"Costo totale per categoria",
 data:values
-
 }]
-
 }
 
 })
@@ -261,5 +268,4 @@ data:values
 </script>
 
 </body>
-
 </html>
