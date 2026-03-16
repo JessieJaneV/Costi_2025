@@ -34,6 +34,7 @@ margin-bottom:20px;
 display:flex;
 gap:20px;
 align-items:center;
+flex-wrap:wrap;
 }
 
 .kpi-container{
@@ -46,20 +47,18 @@ flex:1;
 }
 
 .kpi-title{
-font-size:15px;
+font-size:14px;
 }
 
 .kpi-value{
 font-size:28px;
 font-weight:bold;
-margin-top:5px;
 }
 
 select,button{
 padding:8px;
 border-radius:6px;
 border:1px solid #ccc;
-cursor:pointer;
 }
 
 table{
@@ -70,11 +69,6 @@ border-collapse:collapse;
 th,td{
 padding:8px;
 border-bottom:1px solid #ddd;
-text-align:left;
-}
-
-th{
-background:#fafafa;
 }
 
 </style>
@@ -112,7 +106,14 @@ background:#fafafa;
 <option value="all">Tutte</option>
 </select>
 
+<label>Sede</label>
+
+<select id="locationFilter">
+<option value="all">Tutte</option>
+</select>
+
 <button onclick="applyFilters()">Aggiorna</button>
+
 <button onclick="exportCSV()">Esporta CSV</button>
 
 </div>
@@ -147,8 +148,6 @@ background:#fafafa;
 
 <div class="card">
 
-<h3>Veicoli</h3>
-
 <table id="vehicleTable">
 
 <thead>
@@ -158,7 +157,7 @@ background:#fafafa;
 <th>Sede</th>
 <th>Canone</th>
 <th>Assicurazione</th>
-<th>Costo Totale</th>
+<th>Totale</th>
 </tr>
 </thead>
 
@@ -172,66 +171,82 @@ background:#fafafa;
 
 <script>
 
-let rawFleet = []
-let locationMap = {}
-let filteredVehicles = []
+let rawFleet=[]
+let locationMap={}
+let filteredVehicles=[]
 let chart
 
-/* CARICA JSON SEDI */
+/* CARICAMENTO FILE */
 
-fetch("prenotazioni.json")
-.then(res => res.json())
-.then(data => {
+Promise.all([
 
-data.forEach(r => {
+fetch("prenotazioni.json").then(r=>r.json()),
 
-let plate = String(r["Auto"]).trim().toUpperCase()
-let location = r["Sucursal Entrega"]
-
-if(plate && location){
-locationMap[plate] = location
-}
-
-})
-
-})
-
-/* CARICA CSV FLOTTA */
+new Promise(resolve=>{
 
 Papa.parse("FLOTTA_3.csv",{
-
 download:true,
 header:true,
 delimiter:";",
+complete:(results)=>resolve(results.data)
+})
 
-complete:function(results){
+})
 
-rawFleet = results.data
+]).then(([jsonData,fleetData])=>{
 
-populateCategoryFilter()
+/* MAPPA TARGA → SEDE */
+
+jsonData.forEach(r=>{
+
+let plate=String(r["Auto"]).trim().toUpperCase()
+let location=r["Sucursal Entrega"]
+
+if(plate && location){
+locationMap[plate]=location
+}
+
+})
+
+rawFleet=fleetData
+
+populateFilters()
+
 applyFilters()
+
+})
+
+function populateFilters(){
+
+let categories=[...new Set(rawFleet.map(x=>x.category))]
+
+let catSelect=document.getElementById("categoryFilter")
+
+categories.forEach(c=>{
+
+if(c){
+
+let opt=document.createElement("option")
+opt.value=c
+opt.text=c
+catSelect.appendChild(opt)
 
 }
 
 })
 
-function populateCategoryFilter(){
+/* FILTRO SEDI */
 
-let categories = [...new Set(rawFleet.map(x => x.category))]
+let locations=[...new Set(Object.values(locationMap))]
 
-let select = document.getElementById("categoryFilter")
+let locSelect=document.getElementById("locationFilter")
 
-categories.forEach(cat=>{
+locations.forEach(l=>{
 
-if(cat){
-
-let opt = document.createElement("option")
-opt.value = cat
-opt.text = cat
-
-select.appendChild(opt)
-
-}
+let opt=document.createElement("option")
+opt.value=l
+opt.text=l
+locSelect.appendChild(opt)
 
 })
 
@@ -239,32 +254,35 @@ select.appendChild(opt)
 
 function applyFilters(){
 
-let month = parseInt(document.getElementById("monthFilter").value)
-let category = document.getElementById("categoryFilter").value
+let month=parseInt(document.getElementById("monthFilter").value)
+let category=document.getElementById("categoryFilter").value
+let locationFilter=document.getElementById("locationFilter").value
 
-let startDate = new Date(2025, month-1, 1)
-let endDate = new Date(2025, month, 0)
+let startDate=new Date(2025,month-1,1)
+let endDate=new Date(2025,month,0)
 
-filteredVehicles = []
+filteredVehicles=[]
 
-rawFleet.forEach(row => {
+rawFleet.forEach(row=>{
 
-let dateIn = row["Date In"] ? new Date(row["Date In"]) : null
-let dateOut = row["Date Out"] ? new Date(row["Date Out"]) : null
+let dateIn=row["Date In"]?new Date(row["Date In"]):null
+let dateOut=row["Date Out"]?new Date(row["Date Out"]):null
 
 if(!dateIn) return
 
-if(category !== "all" && row.category !== category) return
+if(dateIn>endDate) return
+if(dateOut && dateOut<startDate) return
 
-if(dateIn > endDate) return
-if(dateOut && dateOut < startDate) return
+if(category!=="all" && row.category!==category) return
 
-let plate = row["license_plate"].trim().toUpperCase()
+let plate=row["license_plate"].trim().toUpperCase()
 
-let canone = parseFloat(row[" Canone imponibile "]) || 0
-let assicurazione = parseFloat(row[" Canone assicurazione "]) || 0
+let location=locationMap[plate] || "Sconosciuta"
 
-let location = locationMap[plate] || "Sconosciuta"
+if(locationFilter!=="all" && location!==locationFilter) return
+
+let canone=parseFloat(row[" Canone imponibile "])||0
+let assicurazione=parseFloat(row[" Canone assicurazione "])||0
 
 filteredVehicles.push({
 
@@ -279,25 +297,23 @@ totale:canone+assicurazione
 
 })
 
-calculateKPIs()
+updateKPIs()
 renderTable()
 renderChart()
 
 }
 
-function calculateKPIs(){
+function updateKPIs(){
 
 let canone=0
 let assicurazione=0
 
 filteredVehicles.forEach(v=>{
-
 canone+=v.canone
 assicurazione+=v.assicurazione
-
 })
 
-let totale = canone + assicurazione
+let totale=canone+assicurazione
 
 document.getElementById("kpiCanone").innerText="€ "+canone.toLocaleString()
 document.getElementById("kpiAssicurazione").innerText="€ "+assicurazione.toLocaleString()
@@ -313,7 +329,7 @@ tbody.innerHTML=""
 
 filteredVehicles.forEach(v=>{
 
-let row=`
+tbody.innerHTML+=`
 <tr>
 <td>${v.plate}</td>
 <td>${v.category}</td>
@@ -323,8 +339,6 @@ let row=`
 <td>€ ${v.totale.toLocaleString()}</td>
 </tr>
 `
-
-tbody.innerHTML+=row
 
 })
 
@@ -370,17 +384,15 @@ function exportCSV(){
 let csv="Targa,Categoria,Sede,Canone,Assicurazione,Totale\n"
 
 filteredVehicles.forEach(v=>{
-
 csv+=`${v.plate},${v.category},${v.location},${v.canone},${v.assicurazione},${v.totale}\n`
-
 })
 
 let blob=new Blob([csv],{type:"text/csv"})
-let url=window.URL.createObjectURL(blob)
+let url=URL.createObjectURL(blob)
 
 let a=document.createElement("a")
 a.href=url
-a.download="flotta_export.csv"
+a.download="export_flotta.csv"
 a.click()
 
 }
