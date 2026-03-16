@@ -181,6 +181,19 @@ let fleet=[]
 let filtered=[]
 let chart
 
+/* PARSE MONEY SICURO */
+
+function parseMoney(value){
+
+return parseFloat(
+String(value||"")
+.replace("€","")
+.replace(",",".")
+.trim()
+) || 0
+
+}
+
 /* CARICA CSV */
 
 Papa.parse("FLOTTA_3.csv",{
@@ -231,7 +244,7 @@ catSelect.appendChild(opt)
 
 }
 
-/* RESET FILTRI */
+/* RESET */
 
 function resetFilters(){
 
@@ -242,7 +255,7 @@ applyFilters()
 
 }
 
-/* FILTRI PRINCIPALI */
+/* FILTRI */
 
 function applyFilters(){
 
@@ -274,9 +287,8 @@ if(dateOut && dateOut<start) return
 
 if(category!=="all" && r.category!==category) return
 
-let canone=parseFloat(String(r[" Canone imponibile "]||"").replace(",","."))||0
-
-let assicurazione=parseFloat(String(r[" Canone assicurazione "]||"").replace(",","."))||0
+let canone=parseMoney(r[" Canone imponibile "])
+let assicurazione=parseMoney(r[" Canone assicurazione "])
 
 filtered.push({
 
@@ -317,7 +329,62 @@ let t=c+a
 document.getElementById("kpiCanone").innerText="€ "+c.toLocaleString()
 document.getElementById("kpiAssicurazione").innerText="€ "+a.toLocaleString()
 document.getElementById("kpiTotale").innerText="€ "+t.toLocaleString()
-document.getElementById("kpiVeicoli").innerText=filtered.length
+
+let month=document.getElementById("monthFilter").value
+let category=document.getElementById("categoryFilter").value
+
+/* MEDIA ANNUALE */
+
+if(month==="all" && category==="all"){
+
+let monthlyCounts=[]
+
+for(let m=1;m<=12;m++){
+
+let start=new Date(2025,m-1,1)
+let end=new Date(2025,m,0)
+
+let set=new Set()
+
+fleet.forEach(r=>{
+
+let plate=String(r["license_plate"]||"").trim().toUpperCase()
+
+if(!plate) return
+
+let dateIn=r["Date In"]?new Date(r["Date In"]):null
+let dateOut=r["Date Out"]?new Date(r["Date Out"]):null
+
+if(!dateIn) return
+
+if(dateIn>end) return
+if(dateOut && dateOut<start) return
+
+set.add(plate)
+
+})
+
+monthlyCounts.push(set.size)
+
+}
+
+let sum=monthlyCounts.reduce((a,b)=>a+b,0)
+
+document.getElementById("kpiVeicoli").innerText=Math.round(sum/12)
+
+}
+
+else{
+
+let set=new Set()
+
+filtered.forEach(v=>{
+set.add(v.plate)
+})
+
+document.getElementById("kpiVeicoli").innerText=set.size
+
+}
 
 }
 
@@ -354,6 +421,8 @@ function renderChart(){
 let map={}
 
 filtered.forEach(v=>{
+
+if(!v.category) return
 
 if(!map[v.category]) map[v.category]=0
 
@@ -404,8 +473,8 @@ let dateOut=r["Date Out"]?new Date(r["Date Out"]):null
 
 if(!dateIn) return
 
-let canone=parseFloat(String(r[" Canone imponibile "]||"").replace(",","."))||0
-let assicurazione=parseFloat(String(r[" Canone assicurazione "]||"").replace(",","."))||0
+let canone=parseMoney(r[" Canone imponibile "])
+let assicurazione=parseMoney(r[" Canone assicurazione "])
 
 for(let m=1;m<=12;m++){
 
@@ -433,6 +502,7 @@ a.download="export_flotta_mensile.csv"
 a.click()
 
 }
+
 </script>
 
 </body>
