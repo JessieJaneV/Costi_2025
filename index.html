@@ -174,15 +174,28 @@ let costCategoryChart
 let vehiclesCategoryChart
 let trendChart
 
+/* ---------- CSV LOADER ---------- */
+
 Papa.parse("FLOTTA_3.csv",{
 
 download:true,
 header:true,
 delimiter:";",
+skipEmptyLines:true,
 
 complete:function(results){
 
-rawData=results.data
+rawData = results.data.map(row => {
+
+let clean={}
+
+Object.keys(row).forEach(key=>{
+clean[key.trim().toLowerCase()] = row[key]
+})
+
+return clean
+
+})
 
 populateCategoryFilter()
 
@@ -191,6 +204,37 @@ applyFilters()
 }
 
 })
+
+/* ---------- MONEY PARSER ---------- */
+
+function parseMoney(v){
+
+if(!v) return 0
+
+let value=String(v)
+.replace("€","")
+.replace(",",".")
+.replace(/\s/g,"")
+.trim()
+
+let num=parseFloat(value)
+
+if(isNaN(num)) return 0
+
+return num
+
+}
+
+/* ---------- FILTRI ---------- */
+
+function resetFilters(){
+
+document.getElementById("monthFilter").value="all"
+document.getElementById("categoryFilter").value="all"
+
+applyFilters()
+
+}
 
 function populateCategoryFilter(){
 
@@ -214,42 +258,15 @@ select.appendChild(opt)
 
 }
 
-function parseMoney(v){
-
-if(!v) return 0
-
-let value=String(v)
-.replace("€","")
-.replace(",",".")
-.replace(/\s/g,"")
-.trim()
-
-let num=parseFloat(value)
-
-if(isNaN(num)) return 0
-
-return num
-
-}
-
-function resetFilters(){
-
-document.getElementById("monthFilter").value="all"
-document.getElementById("categoryFilter").value="all"
-
-applyFilters()
-
-}
-
 function applyFilters(){
 
 let month=document.getElementById("monthFilter").value
 let category=document.getElementById("categoryFilter").value
 
-filteredData=rawData.filter(row=>{
+filteredData = rawData.filter(row=>{
 
-let dateIn=row["Date In"] ? new Date(row["Date In"]) : null
-let dateOut=row["Date Out"] ? new Date(row["Date Out"]) : null
+let dateIn = row["date in"] ? new Date(row["date in"]) : null
+let dateOut = row["date out"] ? new Date(row["date out"]) : null
 
 if(!dateIn) return false
 
@@ -258,11 +275,11 @@ return false
 
 if(month==="all") return true
 
-let startDate=new Date(2025,month-1,1)
-let endDate=new Date(2025,month,0)
+let start=new Date(2025,month-1,1)
+let end=new Date(2025,month,0)
 
-if(dateIn>endDate) return false
-if(dateOut && dateOut<startDate) return false
+if(dateIn>end) return false
+if(dateOut && dateOut<start) return false
 
 return true
 
@@ -271,6 +288,8 @@ return true
 calculateDashboard(filteredData,month,category)
 
 }
+
+/* ---------- CALCOLO KPI ---------- */
 
 function calculateDashboard(data,month,category){
 
@@ -281,13 +300,15 @@ let categoryCosts={}
 let categoryVehicles={}
 let monthlyCosts=Array(12).fill(0)
 
+/* COSTI */
+
 data.forEach(row=>{
 
-let canoneBase=parseMoney(row[" Canone imponibile "])
-let assicurazioneBase=parseMoney(row[" Canone assicurazione "])
+let canoneBase=parseMoney(row["canone imponibile"])
+let assicurazioneBase=parseMoney(row["canone assicurazione"])
 
-let dateIn=row["Date In"] ? new Date(row["Date In"]) : null
-let dateOut=row["Date Out"] ? new Date(row["Date Out"]) : null
+let dateIn=row["date in"] ? new Date(row["date in"]) : null
+let dateOut=row["date out"] ? new Date(row["date out"]) : null
 
 if(!dateIn) return
 
@@ -295,20 +316,21 @@ if(month!=="all"){
 
 let m=parseInt(month)
 
-let startDate=new Date(2025,m-1,1)
-let endDate=new Date(2025,m,0)
+let start=new Date(2025,m-1,1)
+let end=new Date(2025,m,0)
 
-let daysMonth=endDate.getDate()
+let daysMonth=end.getDate()
 
-let start=new Date(Math.max(dateIn,startDate))
-let end=dateOut?new Date(Math.min(dateOut,endDate)):endDate
+let startActive=new Date(Math.max(dateIn,start))
+let endActive=dateOut?new Date(Math.min(dateOut,end)):end
 
-let daysActive=Math.floor((end-start)/(1000*60*60*24))+1
+let daysActive=Math.floor((endActive-startActive)/(1000*60*60*24))+1
 
 let prorata=daysActive/daysMonth
 
 let canone=canoneBase*prorata
 let assicurazione=assicurazioneBase*prorata
+
 let total=canone+assicurazione
 
 totalCanone+=canone
@@ -328,23 +350,24 @@ else{
 
 for(let m=1;m<=12;m++){
 
-let startDate=new Date(2025,m-1,1)
-let endDate=new Date(2025,m,0)
+let start=new Date(2025,m-1,1)
+let end=new Date(2025,m,0)
 
-if(dateIn>endDate) continue
-if(dateOut && dateOut<startDate) continue
+if(dateIn>end) continue
+if(dateOut && dateOut<start) continue
 
-let daysMonth=endDate.getDate()
+let daysMonth=end.getDate()
 
-let start=new Date(Math.max(dateIn,startDate))
-let end=dateOut?new Date(Math.min(dateOut,endDate)):endDate
+let startActive=new Date(Math.max(dateIn,start))
+let endActive=dateOut?new Date(Math.min(dateOut,end)):end
 
-let daysActive=Math.floor((end-start)/(1000*60*60*24))+1
+let daysActive=Math.floor((endActive-startActive)/(1000*60*60*24))+1
 
 let prorata=daysActive/daysMonth
 
 let canone=canoneBase*prorata
 let assicurazione=assicurazioneBase*prorata
+
 let total=canone+assicurazione
 
 totalCanone+=canone
@@ -366,6 +389,8 @@ monthlyCosts[m-1]+=total
 
 })
 
+/* VEICOLI */
+
 let vehicles
 
 if(month==="all"){
@@ -383,11 +408,11 @@ rawData.forEach(row=>{
 
 if(category!=="all" && row.category!==category) return
 
-let plate=row["license_plate"]
+let plate=row["licence plate"]||row["license_plate"]
 if(!plate) return
 
-let dateIn=row["Date In"] ? new Date(row["Date In"]) : null
-let dateOut=row["Date Out"] ? new Date(row["Date Out"]) : null
+let dateIn=row["date in"] ? new Date(row["date in"]) : null
+let dateOut=row["date out"] ? new Date(row["date out"]) : null
 
 if(!dateIn) return
 if(dateIn>end) return
@@ -402,6 +427,7 @@ monthlyFleet.push(set.size)
 }
 
 let sum=monthlyFleet.reduce((a,b)=>a+b,0)
+
 vehicles=Math.round(sum/12)
 
 }
@@ -411,8 +437,10 @@ else{
 let set=new Set()
 
 data.forEach(row=>{
-let plate=row["license_plate"]
+
+let plate=row["licence plate"]||row["license_plate"]
 if(plate) set.add(plate)
+
 })
 
 vehicles=set.size
@@ -430,6 +458,8 @@ updateCharts(categoryCosts,categoryVehicles,monthlyCosts)
 
 }
 
+/* ---------- CHARTS ---------- */
+
 function updateCharts(categoryCosts,categoryVehicles,monthlyCosts){
 
 if(costCategoryChart) costCategoryChart.destroy()
@@ -439,7 +469,7 @@ type:"bar",
 data:{
 labels:Object.keys(categoryCosts),
 datasets:[{
-label:"Costo totale per categoria",
+label:"Costo per categoria",
 data:Object.values(categoryCosts)
 }]
 }
@@ -452,7 +482,7 @@ type:"bar",
 data:{
 labels:Object.keys(categoryVehicles),
 datasets:[{
-label:"Numero veicoli per categoria",
+label:"Veicoli per categoria",
 data:Object.values(categoryVehicles)
 }]
 }
@@ -473,6 +503,8 @@ data:monthlyCosts
 
 }
 
+/* ---------- EXPORT CSV ---------- */
+
 function exportCSV(){
 
 if(!filteredData.length){
@@ -487,11 +519,11 @@ let csv="Mese;Targa;Categoria;Canone;Assicurazione;Totale\n"
 
 filteredData.forEach(row=>{
 
-let plate=row["license_plate"]||""
+let plate=row["licence plate"]||row["license_plate"]||""
 let cat=row["category"]||""
 
-let canone=parseMoney(row[" Canone imponibile "])
-let assicurazione=parseMoney(row[" Canone assicurazione "])
+let canone=parseMoney(row["canone imponibile"])
+let assicurazione=parseMoney(row["canone assicurazione"])
 let total=canone+assicurazione
 
 csv+=`"${monthLabel}";"${plate}";"${cat}";${canone};${assicurazione};${total}\n`
