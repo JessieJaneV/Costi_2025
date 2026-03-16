@@ -34,6 +34,7 @@ margin-bottom:20px;
 display:flex;
 gap:15px;
 flex-wrap:wrap;
+align-items:center;
 }
 
 .kpi-container{
@@ -62,6 +63,19 @@ border-bottom:1px solid #ddd;
 
 select,button{
 padding:8px;
+border-radius:6px;
+border:1px solid #ccc;
+cursor:pointer;
+}
+
+button{
+background:#2b7cff;
+color:white;
+border:none;
+}
+
+button.reset{
+background:#888;
 }
 
 </style>
@@ -79,6 +93,9 @@ padding:8px;
 <label>Mese</label>
 
 <select id="monthFilter">
+
+<option value="all">Tutti i mesi</option>
+
 <option value="1">Gennaio</option>
 <option value="2">Febbraio</option>
 <option value="3">Marzo</option>
@@ -91,13 +108,18 @@ padding:8px;
 <option value="10">Ottobre</option>
 <option value="11">Novembre</option>
 <option value="12">Dicembre</option>
+
 </select>
 
+<label>Categoria</label>
+
 <select id="categoryFilter">
-<option value="all">Categoria</option>
+<option value="all">Tutte le categorie</option>
 </select>
 
 <button onclick="applyFilters()">Aggiorna</button>
+
+<button class="reset" onclick="resetFilters()">Reset filtri</button>
 
 <button onclick="exportCSV()">Esporta CSV</button>
 
@@ -179,13 +201,13 @@ applyFilters()
 
 })
 
-/* FILTRI */
+/* POPOLA CATEGORIE */
 
 function populateFilters(){
 
 let catSelect=document.getElementById("categoryFilter")
 
-catSelect.innerHTML='<option value="all">Categoria</option>'
+catSelect.innerHTML='<option value="all">Tutte le categorie</option>'
 
 let categories=new Set()
 
@@ -209,16 +231,23 @@ catSelect.appendChild(opt)
 
 }
 
+/* RESET FILTRI */
+
+function resetFilters(){
+
+document.getElementById("monthFilter").value="all"
+document.getElementById("categoryFilter").value="all"
+
+applyFilters()
+
+}
+
 /* FILTRI PRINCIPALI */
 
 function applyFilters(){
 
-let month=parseInt(document.getElementById("monthFilter").value)
-
+let month=document.getElementById("monthFilter").value
 let category=document.getElementById("categoryFilter").value
-
-let start=new Date(2025,month-1,1)
-let end=new Date(2025,month,0)
 
 filtered=[]
 
@@ -233,8 +262,15 @@ let dateOut=r["Date Out"]?new Date(r["Date Out"]):null
 
 if(!dateIn) return
 
+if(month!=="all"){
+
+let start=new Date(2025,month-1,1)
+let end=new Date(2025,month,0)
+
 if(dateIn>end) return
 if(dateOut && dateOut<start) return
+
+}
 
 if(category!=="all" && r.category!==category) return
 
@@ -279,11 +315,8 @@ a+=v.assicurazione
 let t=c+a
 
 document.getElementById("kpiCanone").innerText="€ "+c.toLocaleString()
-
 document.getElementById("kpiAssicurazione").innerText="€ "+a.toLocaleString()
-
 document.getElementById("kpiTotale").innerText="€ "+t.toLocaleString()
-
 document.getElementById("kpiVeicoli").innerText=filtered.length
 
 }
@@ -329,7 +362,6 @@ map[v.category]+=v.totale
 })
 
 let labels=Object.keys(map)
-
 let values=Object.values(map)
 
 if(chart) chart.destroy()
@@ -369,7 +401,6 @@ let url=URL.createObjectURL(blob)
 let a=document.createElement("a")
 
 a.href=url
-
 a.download="export_flotta.csv"
 
 a.click()
