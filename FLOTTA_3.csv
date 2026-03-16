@@ -1,0 +1,783 @@
+license_plate;provider;acquisizione;brand;model;category;Car;Location;branch_office;active;bucket;Active;Date In; Canone imponibile ; Canone ivato ; Canone assicurazione ;Date Out
+GN868CV;Vivarent;RENT;Opel;Corsa;Economy Automatic (group C1);EDAR;Roma Ciampino;3;No;Inattiva;No;2023-08-10; 498,00 € ; 607,56 € ; -   € ;dic-24
+GK322MH;Vivarent;RENT;Fiat;500;Mini (group A);MCMR;Cassino;1;No;Inattiva;No;2023-06-14; 288,52 € ; 351,99 € ; -   € ;dic-24
+GK345MH;Vivarent;RENT;Fiat;500;Mini (group A);MCMR;Roma Fiumicino;4;No;Inattiva;No;2023-06-21; 288,52 € ; 351,99 € ; -   € ;dic-24
+GJ178CL;Vivarent;RENT;Fiat;Panda;Small (group B);MDMR;Trapani Porto;10;No;Inattiva;No;2022-04-14; 353,02 € ; 430,68 € ; -   € ;dic-24
+GJ228CL;Vivarent;RENT;Fiat;Panda;Small (group B);MDMR;Trapani Porto;10;No;Inattiva;No;2022-04-14; 352,39 € ; 429,92 € ; -   € ;dic-24
+GJ873PY;Vivarent;RENT;Fiat;Panda;Small (group B);MDMR;Trapani Porto;10;No;Inattiva;No;2022-05-25; 347,63 € ; 424,11 € ; -   € ;dic-24
+GJ875PY;Vivarent;RENT;Fiat;Panda;Small (group B);MDMR;Trapani Porto;10;No;Inattiva;No;2022-05-25; 352,39 € ; 429,92 € ; -   € ;dic-24
+GJ698VL;Vivarent;RENT;Fiat;Panda;Small (group B);MDMR;Napoli Capodichino;7;No;Inattiva;No;2022-05-18; 342,86 € ; 418,29 € ; -   € ;dic-24
+GJ699VL;Vivarent;RENT;Fiat;Panda;Small (group B);MDMR;Cassino;1;No;Inattiva;No;2022-05-18; 342,86 € ; 418,29 € ; -   € ;gen-25
+GJ944FP;Vivarent;PROPRIETÀ;Fiat;500;Mini (group A);MCMR;Cassino;1;No;Inattiva;No;2022-05-01; 1,00 € ; -   € ; 122,56 € ;gen-25
+GJ946FP;Vivarent;PROPRIETÀ;Fiat;500;Mini (group A);MCMR;Cassino;1;No;Inattiva;No;2022-05-01; 1,00 € ; -   € ; 122,56 € ;gen-25
+GL280MM;Vivarent;PROPRIETÀ;Fiat;Panda;Small (group B);MDMR;Cassino;1;No;Inattiva;No;2022-04-01; 1,00 € ; -   € ; 120,17 € ;gen-25
+GL287MM;Vivarent;PROPRIETÀ;Fiat;Panda;Small (group B);MDMR;Cassino;1;No;Inattiva;No;2022-04-01; 1,00 € ; -   € ; 120,17 € ;gen-25
+GL302MM;Vivarent;PROPRIETÀ;Fiat;Panda;Small (group B);MDMR;Cassino;1;No;Inattiva;No;2022-04-01; 1,00 € ; -   € ; 120,17 € ;gen-25
+GN835JD;Vivarent;PROPRIETÀ;Renault;Clio;Economy (group C);EDMR;Cassino;1;No;Inattiva;No;2023-06-01; 1,00 € ; -   € ; 114,11 € ;gen-25
+GP010HP;Vivarent;PROPRIETÀ;Renault;Clio;Economy (group C);EDMR;Cassino;1;No;Inattiva;No;2023-06-01; 1,00 € ; -   € ; 114,11 € ;gen-25
+GP015HP;Vivarent;PROPRIETÀ;Renault;Clio;Economy (group C);EDMR;Cassino;1;No;Inattiva;No;2023-06-01; 1,00 € ; -   € ; 114,11 € ;gen-25
+GP017HP;Vivarent;PROPRIETÀ;Renault;Clio;Economy (group C);EDMR;Cassino;1;No;Inattiva;No;2023-06-01; 1,00 € ; -   € ; 114,11 € ;gen-25
+GK321MH;Vivarent;RENT;Fiat;500;Mini (group A);MCMR;Napoli Capodichino;7;No;Inattiva;No;2023-07-11; 288,52 € ; 351,99 € ; -   € ;gen-25
+GK346MH;Vivarent;RENT;Fiat;500;Mini (group A);MCMR;Cassino;1;No;Inattiva;No;2023-06-20; 288,52 € ; 351,99 € ; -   € ;gen-25
+GK349MH;Vivarent;RENT;Fiat;500;Mini (group A);MCMR;Roma Fiumicino;4;No;Inattiva;No;2023-06-15; 288,52 € ; 351,99 € ; -   € ;gen-25
+GJ874PY;Vivarent;RENT;Fiat;Panda;Small (group B);MDMR;Roma Ciampino;3;No;Inattiva;No;2022-05-26; 352,39 € ; 429,92 € ; -   € ;gen-25
+GK347MH;Vivarent;RENT;Fiat;500;Mini (group A);MCMR;Cassino;1;No;Inattiva;No;2023-06-14; 288,52 € ; 351,99 € ; -   € ;gen-25
+GL220GR;Vivarent;RENT;Peugeot;2008;Large (group D);SDMR;Roma Fiumicino;4;No;Inattiva;No;2022-11-07; 494,98 € ; 603,88 € ; -   € ;gen-25
+GL262GR;Vivarent;RENT;Peugeot;2008;Large (group D);SDMR;Cassino;1;No;Inattiva;No;2022-11-07; 494,98 € ; 603,88 € ; -   € ;gen-25
+GN646WM;Vivarent;RENT;Peugeot;3008;Suv Automatic (group J1);FFAR;Cassino;1;No;Inattiva;No;2023-06-05; 550,82 € ; 672,00 € ; -   € ;gen-25
+GK168MH;Vivarent;RENT;Fiat;500;Mini (group A);MCMR;Cassino;1;No;Inattiva;No;2023-06-21; 288,52 € ; 351,99 € ; -   € ;gen-25
+GK348MH;Vivarent;RENT;Fiat;500;Mini (group A);MCMR;Roma Ciampino;3;No;Inattiva;No;2023-06-14; 288,52 € ; 351,99 € ; -   € ;gen-25
+GP886KM;Vivarent;RENT;Peugeot;3008;Suv Automatic (group J1);FFAR;Cassino;1;No;Inattiva;No;2023-07-20; 550,87 € ; 672,06 € ; -   € ;gen-25
+GJ541AG;Vivarent;RENT;Peugeot;3008;Suv Automatic (group J1);FFAR;Roma Fiumicino;4;No;Inattiva;No;2022-07-05; 479,16 € ; 584,58 € ; -   € ;feb-25
+GK178NL;Vivarent;RENT;Jeep;Renegade;Large (group D);IGMR;Trapani Porto;10;No;Inattiva;No;2022-07-13; 409,00 € ; 498,98 € ; -   € ;feb-25
+GH163YM;Vivarent;RENT;Mercedes Benz;Sprinter Hydraulic Tailgate;Furgone Cassonato Sponda Idraulica (group K4);XKMR;Cassino;1;No;Inattiva;No;2024-12-31; 1.450,00 € ; 1.769,00 € ; -   € ;feb-25
+GL217GR;Vivarent;RENT;Peugeot;2008;Large (group D);SDMR;Roma Fiumicino;4;No;Inattiva;No;2022-11-07; 494,98 € ; 603,88 € ; -   € ;feb-25
+GW907YG;Vivarent;RENT;Mercedes Benz;Sprinter Hydraulic Tailgate;Furgone Cassonato Sponda Idraulica (group K4);XKMR;Cassino;1;No;Inattiva;No;2025-05-01; 1.450,00 € ; 1.769,00 € ; -   € ;feb-25
+GX709KK;Vivarent;RENT;Mercedes Benz;Sprinter Hydraulic Tailgate;Furgone Cassonato Sponda Idraulica (group K4);XKMR;Cassino;1;No;Inattiva;No;2025-01-01; 1.450,00 € ; 1.769,00 € ; -   € ;feb-25
+GK190MH;Vivarent;RENT;Fiat;500;Mini (group A);MCMR;Trapani Porto;10;No;Inattiva;No;2023-06-14; 288,52 € ; 351,99 € ; -   € ;feb-25
+GK250MH;Vivarent;RENT;Fiat;500;Mini (group A);MCMR;Trapani Porto;10;No;Inattiva;No;2023-06-20; 288,52 € ; 351,99 € ; -   € ;feb-25
+GN625MS;Vivarent;RENT;DS;DS7;Premium (group P);PFAR;Napoli Capodichino;7;No;Inattiva;No;2023-08-08; 923,61 € ; 1.126,80 € ; -   € ;feb-25
+GN246MT;Vivarent;PROPRIETÀ;Fiat;Tipo SW;Station Wagon Automatic (group S1);IWAR;Roma Fiumicino;4;No;Inattiva;No;2023-08-09; 0 ; 0 ; 0 ;feb-25
+GT144SG;Vivarent;RENT;Fiat;Ducato L3H2;Furgone L3H2 (group K3);FKMR;Cassino;1;No;Inattiva;No;2025-01-01; 850,00 € ; 1.037,00 € ; -   € ;mar-25
+GT171SG;Vivarent;RENT;Fiat;Ducato L3H2;Furgone L3H2 (group K3);FKMR;Cassino;1;No;Inattiva;No;2025-01-01; 850,00 € ; 1.037,00 € ; -   € ;mar-25
+GT173SG;Vivarent;RENT;Fiat;Ducato L3H2;Furgone L3H2 (group K3);FKMR;Cassino;1;No;Inattiva;No;2025-01-01; 850,00 € ; 1.037,00 € ; -   € ;mar-25
+GV032SS;Vivarent;RENT;Peugeot;Boxer L2H2;Furgone L2H2 (group K2);IKMR;Cassino;1;No;Inattiva;No;2024-11-01; 850,00 € ; 1.037,00 € ; -   € ;mar-25
+GV710SP;Vivarent;RENT;Peugeot;Boxer L2H2;Furgone L2H2 (group K2);IKMR;Cassino;1;No;Inattiva;No;2024-11-01; 850,00 € ; 1.037,00 € ; -   € ;mar-25
+GV775SP;Vivarent;RENT;Peugeot;Boxer L2H2;Furgone L2H2 (group K2);IKMR;Cassino;1;No;Inattiva;No;2024-11-01; 850,00 € ; 1.037,00 € ; -   € ;mar-25
+GJ525JK;Vivarent;RENT;Porsche;Macan or similar;Premium (group P);LFAR;Cassino;1;No;Inattiva;No;2022-04-05; 1.428,71 € ; 1.743,03 € ; -   € ;mar-25
+GL219GR;Vivarent;RENT;Peugeot;2008;Large (group D);SDMR;Roma Ciampino;3;No;Inattiva;No;2022-11-07; 494,98 € ; 603,88 € ; -   € ;mar-25
+GM061CM;Vivarent;RENT;Volkswagen;Tiguan;Suv Automatic (group J1);FFAR;Roma Fiumicino;4;No;Inattiva;No;2022-07-06; 776,90 € ; 947,82 € ; -   € ;mar-25
+GM062CM;Vivarent;RENT;Volkswagen;Tiguan;Suv Automatic (group J1);FFAR;Roma Termini;2;No;Inattiva;No;2022-08-30; 776,90 € ; 947,82 € ; -   € ;mar-25
+GM063CM;Vivarent;RENT;Volkswagen;Tiguan;Suv Automatic (group J1);FFAR;Roma Fiumicino;4;No;Inattiva;No;2022-08-30; 776,90 € ; 947,82 € ; -   € ;mar-25
+GP214RB;Vivarent;RENT;Fiat;500c;Cabriolet (group X);NBMR;Napoli Capodichino;7;No;Inattiva;No;2023-09-14; 367,09 € ; 447,85 € ; 120,00 € ;mar-25
+GT129SG;Vivarent;RENT;Fiat;Ducato L3H2;Furgone L3H2 (group K3);FKMR;Cassino;1;No;Inattiva;No;2025-01-01; 850,00 € ; 1.037,00 € ; -   € ;mar-25
+GT131SG;Vivarent;RENT;Fiat;Ducato L3H2;Furgone L3H2 (group K3);FKMR;Cassino;1;No;Inattiva;No;2025-01-01; 850,00 € ; 1.037,00 € ; -   € ;mar-25
+GT153SG;Vivarent;RENT;Fiat;Ducato L3H2;Furgone L3H2 (group K3);FKMR;Cassino;1;No;Inattiva;No;2025-01-01; 850,00 € ; 1.037,00 € ; -   € ;mar-25
+GP987RB;Vivarent;PROPRIETÀ;Alfa Romeo;Tonale;Premium (group P);PFAR;Cassino;1;No;Inattiva;No;2023-10-15; 1,00 € ; -   € ; 128,00 € ;mar-25
+GJ257YF;Vivarent;RENT;Peugeot;3008;Suv Automatic (group J1);FFAR;Cassino;1;No;Inattiva;No;2022-06-10; 379,00 € ; 462,38 € ; -   € ;apr-25
+GT296SG;Vivarent;RENT;Fiat;Ducato L3H2;Furgone L3H2 (group K3);FKMR;Cassino;1;No;Inattiva;No;2025-01-01; 850,00 € ; 1.037,00 € ; -   € ;apr-25
+GT195SG;Vivarent;RENT;Fiat;Ducato L3H2;Furgone L3H2 (group K3);FKMR;Cassino;1;No;Inattiva;No;2025-01-01; 0 ; 0 ; 0 ;apr-25
+GX000CH;Vivarent;RENT;Peugeot;Boxer L2H2;Furgone L2H2 (group K2);IKMR;Cassino;1;No;Inattiva;No;2024-11-01; 0 ; 0 ; 0 ;apr-25
+GX111CH;Vivarent;RENT;Peugeot;Boxer L2H2;Furgone L2H2 (group K2);IKMR;Cassino;1;No;Inattiva;No;2024-11-01; 0 ; 0 ; 0 ;apr-25
+GJ346ZB;Vivarent;RENT;Peugeot;3008;Suv Automatic (group J1);FFAR;Cassino;1;No;Inattiva;No;2022-06-09; 379,00 € ; 462,38 € ; -   € ;apr-25
+GW952YG;Vivarent;RENT;Mercedes Benz;Sprinter Hydraulic Tailgate;Furgone Cassonato Sponda Idraulica (group K4);XKMR;Cassino;1;No;Inattiva;No;2024-11-01; 1.450,00 € ; 1.769,00 € ; -   € ;apr-25
+GT137SG;Vivarent;RENT;Fiat;Ducato L3H2;Furgone L3H2 (group K3);FKMR;Cassino;1;No;Inattiva;No;2025-01-01; 850,00 € ; 1.037,00 € ; -   € ;apr-25
+GT160SG;Vivarent;RENT;Fiat;Ducato L3H2;Furgone L3H2 (group K3);FKMR;Cassino;1;No;Inattiva;No;2025-01-01; 850,00 € ; 1.037,00 € ; -   € ;apr-25
+GT161SG;Vivarent;RENT;Fiat;Ducato L3H2;Furgone L3H2 (group K3);FKMR;Cassino;1;No;Inattiva;No;2025-01-01; 850,00 € ; 1.037,00 € ; -   € ;apr-25
+GT165SG;Vivarent;RENT;Fiat;Ducato L3H2;Furgone L3H2 (group K3);FKMR;Cassino;1;No;Inattiva;No;2025-01-01; 850,00 € ; 1.037,00 € ; -   € ;apr-25
+GT176SG;Vivarent;RENT;Fiat;Ducato L3H2;Furgone L3H2 (group K3);FKMR;Cassino;1;No;Inattiva;No;2025-01-01; 850,00 € ; 1.037,00 € ; -   € ;apr-25
+GT180SG;Vivarent;RENT;Fiat;Ducato L3H2;Furgone L3H2 (group K3);FKMR;Cassino;1;No;Inattiva;No;2025-01-01; 850,00 € ; 1.037,00 € ; -   € ;apr-25
+GT184SG;Vivarent;RENT;Fiat;Ducato L3H2;Furgone L3H2 (group K3);FKMR;Cassino;1;No;Inattiva;No;2025-01-01; 850,00 € ; 1.037,00 € ; -   € ;apr-25
+GT191SG;Vivarent;RENT;Fiat;Ducato L3H2;Furgone L3H2 (group K3);FKMR;Cassino;1;No;Inattiva;No;2025-01-01; 850,00 € ; 1.037,00 € ; -   € ;apr-25
+GT285SG;Vivarent;RENT;Fiat;Ducato L3H2;Furgone L3H2 (group K3);FKMR;Cassino;1;No;Inattiva;No;2025-01-01; 850,00 € ; 1.037,00 € ; -   € ;apr-25
+GT287SG;Vivarent;RENT;Fiat;Ducato L3H2;Furgone L3H2 (group K3);FKMR;Cassino;1;No;Inattiva;No;2025-01-01; 850,00 € ; 1.037,00 € ; -   € ;apr-25
+GW905XY;Vivarent;RENT;Mercedes Benz;Sprinter Hydraulic Tailgate;Furgone Cassonato Sponda Idraulica (group K4);XKMR;Cassino NLT;15;Yes;Inattiva;No;2024-11-01; 1.450,00 € ; 1.769,00 € ; -   € ;apr-25
+GX266CH;Vivarent;RENT;Peugeot;Boxer L2H2;Furgone L2H2 (group K2);IKMR;Cassino;1;No;Inattiva;No;2024-11-01; 850,00 € ; 1.037,00 € ; -   € ;apr-25
+GP420RB;Vivarent;RENT;Jeep;Avenger;Large (group D);IGMR;Cassino;1;No;Inattiva;No;2023-10-15; 1,00 € ; -   € ; 120,00 € ;apr-25
+GP421RB;Vivarent;RENT;Jeep;Avenger;Large (group D);IGMR;Cassino;1;No;Inattiva;No;2023-10-15; 1,00 € ; -   € ; 120,00 € ;apr-25
+GP423RB;Vivarent;RENT;Jeep;Avenger;Large (group D);IGMR;Napoli Capodichino;7;No;Inattiva;No;2023-10-15; 1,00 € ; -   € ; 120,00 € ;apr-25
+GP609MR;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Roma Fiumicino;4;No;Inattiva;No;2025-03-01; 0 ; 0 ; 0 ;apr-25
+GW697HY;Vivarent;RENT;Peugeot;Boxer L3H2;Furgone L3H2 (group K3);FKMR;Cassino;1;No;Inattiva;No;2023-09-01; 850,00 € ; 1.037,00 € ; -   € ;apr-25
+GW752HY;Vivarent;RENT;Peugeot;Boxer L3H2;Furgone L3H2 (group K3);FKMR;Cassino;1;No;Inattiva;No;2023-09-01; 0 ; 0 ; 0 ;apr-25
+GW753HZ;Vivarent;RENT;Peugeot;Boxer L3H2;Furgone L3H2 (group K3);FKMR;Cassino;1;No;Inattiva;No;2023-09-01; 850,00 € ; 1.037,00 € ; -   € ;apr-25
+GX204HJ;Vivarent;RENT;Mercedes Benz;Sprinter Hydraulic Tailgate;Furgone Cassonato Sponda Idraulica (group K4);XKMR;Cassino;1;No;Inattiva;No;2024-11-01; 1.450,00 € ; 1.769,00 € ; -   € ;apr-25
+GX280CH;Vivarent;RENT;Peugeot;Boxer L2H2;Furgone L2H2 (group K2);IKMR;Cassino;1;No;Inattiva;No;2024-11-01; 850,00 € ; 1.037,00 € ; -   € ;apr-25
+GW947YG;Vivarent;RENT;Mercedes Benz;Sprinter Hydraulic Tailgate;Furgone Cassonato Sponda Idraulica (group K4);XKMR;Cassino;1;No;Inattiva;No;2024-11-01; 1.450,00 € ; 1.769,00 € ; -   € ;apr-25
+GN247MT;Vivarent;PROPRIETÀ;Fiat;Tipo SW;Station Wagon Automatic (group S1);IWAR;Cassino;1;No;A Noleggio;Yes;2023-08-09; 1,00 € ; -   € ; 62,71 € ;apr-25
+GH040ST;Vivarent;RENT;Fiat;Fiorino;Furgone Mini (gruppo K);MKMR;Cassino;1;No;Inattiva;No;2022-06-07; 426,39 € ; 520,20 € ; -   € ;apr-25
+GH041ST;Vivarent;RENT;Fiat;Fiorino;Furgone Mini (gruppo K);MKMR;Trapani Porto;10;No;Inattiva;No;2022-06-07; 426,59 € ; 520,44 € ; -   € ;apr-25
+GH042ST;Vivarent;RENT;Fiat;Fiorino;Furgone Mini (gruppo K);MKMR;Cassino;1;No;Inattiva;No;2022-06-07; 426,59 € ; 520,44 € ; -   € ;apr-25
+GH156YM;Vivarent;RENT;Mercedes Benz;Sprinter Hydraulic Tailgate;Furgone Cassonato Sponda Idraulica (group K4);XKMR;Cassino;1;No;Inattiva;No;2024-11-01; 1.450,00 € ; 1.769,00 € ; -   € ;apr-25
+GH867YF;Vivarent;PROPRIETÀ;Fiat;500L;Large (group D);CDMR;Cassino;1;No;Inattiva;No;2022-04-01; 1,00 € ; -   € ; 128,00 € ;apr-25
+GJ464MM;Vivarent;RENT;Peugeot;Boxer L2H2;Furgone L2H2 (group K2);IKMR;Cassino;1;No;Inattiva;No;2022-10-01; 750,00 € ; 915,00 € ; -   € ;apr-25
+GJ634FV;Vivarent;PROPRIETÀ;Fiat;500L;Large (group D);CDMR;Cassino;1;No;Inattiva;No;2022-04-01; 1,00 € ; -   € ; 128,00 € ;apr-25
+GJ635FV;Vivarent;PROPRIETÀ;Fiat;500L;Large (group D);CDMR;Cassino;1;No;Inattiva;No;2022-04-01; 1,00 € ; -   € ; 128,00 € ;apr-25
+GJ636FV;Vivarent;PROPRIETÀ;Fiat;500L;Large (group D);CDMR;Cassino;1;No;Inattiva;No;2022-04-01; 1,00 € ; -   € ; 128,00 € ;apr-25
+GJ639FV;Vivarent;PROPRIETÀ;Fiat;500L;Large (group D);CDMR;Cassino;1;No;Inattiva;No;2022-04-01; 1,00 € ; -   € ; 128,00 € ;apr-25
+GD745RW;Vivarent;RENT;Volkswagen;T-Roc;Large (group D);IFMR;Cassino;1;No;Inattiva;No;2025-05-01; 0 ; 0 ; 0 ;mag-25
+GS139DK;Vivarent;RENT;Mercedes Benz;Sprinter Hydraulic Tailgate;Furgone Cassonato Sponda Idraulica (group K4);XKMR;Cassino;1;No;Inattiva;No;2024-11-01; 1.450,00 € ; 1.769,00 € ; -   € ;mag-25
+GW684HY;Vivarent;RENT;Peugeot;Boxer L3H2;Furgone L3H2 (group K3);FKMR;Cassino;1;No;Inattiva;No;2023-09-01; 850,00 € ; 1.037,00 € ; -   € ;mag-25
+GW688HY;Vivarent;RENT;Peugeot;Boxer L3H2;Furgone L3H2 (group K3);FKMR;Cassino;1;No;Inattiva;No;2023-09-01; 850,00 € ; 1.037,00 € ; -   € ;mag-25
+GW689HY;Vivarent;RENT;Peugeot;Boxer L3H2;Furgone L3H2 (group K3);FKMR;Cassino;1;No;Inattiva;No;2023-09-01; 850,00 € ; 1.037,00 € ; -   € ;mag-25
+GW903YG;Vivarent;RENT;Mercedes Benz;Sprinter Hydraulic Tailgate;Furgone Cassonato Sponda Idraulica (group K4);XKMR;Cassino;1;No;Inattiva;No;2024-11-01; 1.450,00 € ; 1.769,00 € ; -   € ;mag-25
+GX262CH;Vivarent;RENT;Peugeot;Boxer L2H2;Furgone L2H2 (group K2);IKMR;Cassino;1;No;Inattiva;No;2024-11-01; 850,00 € ; 1.037,00 € ; -   € ;mag-25
+GX272CH;Vivarent;RENT;Peugeot;Boxer L2H2;Furgone L2H2 (group K2);IKMR;Cassino;1;No;Inattiva;No;2024-11-01; 850,00 € ; 1.037,00 € ; -   € ;mag-25
+GX275CH;Vivarent;RENT;Peugeot;Boxer L2H2;Furgone L2H2 (group K2);IKMR;Cassino;1;No;Inattiva;No;2024-11-01; 850,00 € ; 1.037,00 € ; -   € ;mag-25
+GX283CH;Vivarent;RENT;Peugeot;Boxer L2H2;Furgone L2H2 (group K2);IKMR;Cassino;1;No;Inattiva;No;2024-11-01; 850,00 € ; 1.037,00 € ; -   € ;mag-25
+GN446HE;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Napoli Capodichino;7;No;Inattiva;No;2023-04-26; 265,68 € ; 324,13 € ; -   € ;mag-25
+GW444YG;Vivarent;RENT;Mercedes Benz;Sprinter Hydraulic Tailgate;Furgone Cassonato Sponda Idraulica (group K4);XKMR;Cassino;1;No;Inattiva;No;2024-11-01; 0 ; 0 ; 0 ;mag-25
+GT786ST;Vivarent;RENT;Ford;Puma;Large Automatic (group D1);SDAR;Napoli Capodichino;7;No;Inattiva;No;2024-05-15; 0 ; 0 ; 0 ;giu-25
+GS835ZL;Vivarent;RENT;Ford;Puma;Large Automatic (group D1);SDAR;Roma Fiumicino;4;No;Inattiva;No;2024-07-05; 447,00 € ; 545,34 € ; -   € ;giu-25
+GT716ST;Vivarent;RENT;Ford;Puma;Large Automatic (group D1);SDAR;Cassino;1;No;Inattiva;No;2024-05-15; 447,00 € ; 545,34 € ; -   € ;giu-25
+GV936KP;Vivarent;RENT;Ford;Puma;Large Automatic (group D1);SDAR;Napoli Capodichino;7;No;Inattiva;No;2024-06-21; 447,00 € ; 545,34 € ; -   € ;giu-25
+GV941KP;Vivarent;RENT;Ford;Puma;Large Automatic (group D1);SDAR;Cassino;1;No;Inattiva;No;2024-06-21; 447,00 € ; 545,34 € ; -   € ;giu-25
+GM484BN;Vivarent;RENT;Citroen;C3 Aircross;Large Automatic (group D1);IDAR;Cassino;1;No;Inattiva;No;2023-05-18; 478,00 € ; 583,16 € ; -   € ;giu-25
+GP067HP;Vivarent;PROPRIETÀ;Renault;Clio;Economy (group C);EDMR;Cassino;1;No;Inattiva;No;2023-06-01; 1,00 € ; -   € ; 128,00 € ;giu-25
+GS845ZL;Vivarent;RENT;Ford;Puma;Large Automatic (group D1);SDAR;Napoli Stazione;8;No;Inattiva;No;2024-07-05; 447,00 € ; 545,34 € ; -   € ;giu-25
+GT725ST;Vivarent;RENT;Ford;Puma;Large Automatic (group D1);SDAR;Roma Fiumicino;4;No;Inattiva;No;2024-05-15; 447,00 € ; 545,34 € ; -   € ;giu-25
+GT789ST;Vivarent;RENT;Ford;Puma;Large Automatic (group D1);SDAR;Cassino;1;No;Inattiva;No;2024-05-15; 447,00 € ; 545,34 € ; -   € ;giu-25
+GV939KP;Vivarent;RENT;Ford;Puma;Large Automatic (group D1);SDAR;Napoli Capodichino;7;No;Inattiva;No;2024-07-05; 447,00 € ; 545,34 € ; -   € ;giu-25
+GV940KP;Vivarent;RENT;Ford;Puma;Large Automatic (group D1);SDAR;Cassino;1;No;Inattiva;No;2024-03-13; 447,00 € ; 545,34 € ; -   € ;giu-25
+GV952KP;Vivarent;RENT;Ford;Puma;Large Automatic (group D1);SDAR;Cassino;1;No;Inattiva;No;2024-06-11; 447,00 € ; 545,34 € ; -   € ;giu-25
+GV975KP;Vivarent;RENT;Ford;Puma;Large Automatic (group D1);SDAR;Cassino;1;No;Inattiva;No;2025-02-01; -   € ; -   € ; -   € ;giu-25
+GJ941FP;Vivarent;PROPRIETÀ;Fiat;500;Mini (group A);MCMR;Cassino;1;No;Inattiva;No;2022-05-01; 1,00 € ; -   € ; 128,00 € ;lug-25
+GP752MG;Vivarent;RENT;Toyota;Proace L1H1;Furgone L1H1 (group K1);MKMR;Cassino;1;No;Inattiva;No;2025-01-01; 582,00 € ; 710,04 € ; -   € ;lug-25
+GP765MG;Vivarent;RENT;Toyota;Proace L1H1;Furgone L1H1 (group K1);MKMR;Cassino;1;No;Inattiva;No;2025-01-01; 602,09 € ; 734,55 € ; -   € ;lug-25
+GP771MG;Vivarent;RENT;Toyota;Proace L1H1;Furgone L1H1 (group K1);MKMR;Cassino;1;No;Inattiva;No;2025-01-01; 582,00 € ; 710,04 € ; -   € ;lug-25
+GR115RX;Vivarent;RENT;Opel;Corsa;Economy (group C);EDMR;Cassino;1;No;Inattiva;No;2024-04-15; 475,00 € ; 579,50 € ; -   € ;lug-25
+GR116RX;Vivarent;RENT;Opel;Corsa;Economy (group C);EDMR;Napoli Capodichino;7;No;Inattiva;No;2024-04-15; 475,00 € ; 579,50 € ; -   € ;lug-25
+GR117RX;Vivarent;RENT;Opel;Corsa;Economy (group C);EDMR;Cassino;1;No;Inattiva;No;2024-04-15; 475,00 € ; 579,50 € ; -   € ;lug-25
+GR118RX;Vivarent;RENT;Opel;Corsa;Economy (group C);EDMR;Napoli Capodichino;7;No;Inattiva;No;2024-04-15; 475,00 € ; 579,50 € ; -   € ;lug-25
+GR119RX;Vivarent;RENT;Opel;Corsa;Economy (group C);EDMR;Napoli Capodichino;7;No;Inattiva;No;2024-04-15; 475,00 € ; 579,50 € ; -   € ;lug-25
+GR122RX;Vivarent;RENT;Opel;Corsa;Economy (group C);EDMR;Napoli Capodichino;7;No;Inattiva;No;2024-04-15; 475,00 € ; 579,50 € ; -   € ;lug-25
+GR123RX;Vivarent;RENT;Opel;Corsa;Economy (group C);EDMR;Cassino;1;No;Inattiva;No;2024-04-15; 475,00 € ; 579,50 € ; -   € ;lug-25
+GR333RX;Vivarent;RENT;Opel;Corsa;Economy (group C);EDMR;Roma Ciampino;3;No;Inattiva;No;2024-04-15; 475,00 € ; 579,50 € ; -   € ;lug-25
+GR334RX;Vivarent;RENT;Opel;Corsa;Economy (group C);EDMR;Cassino;1;No;Inattiva;No;2024-04-15; 475,00 € ; 579,50 € ; -   € ;lug-25
+GR335RX;Vivarent;RENT;Opel;Corsa;Economy (group C);EDMR;Cassino;1;No;Inattiva;No;2024-04-15; 475,00 € ; 579,50 € ; -   € ;lug-25
+GR338RX;Vivarent;RENT;Opel;Corsa;Economy (group C);EDMR;Napoli Capodichino;7;No;Inattiva;No;2024-04-15; 475,00 € ; 579,50 € ; -   € ;lug-25
+GR340RX;Vivarent;RENT;Opel;Corsa;Economy (group C);EDMR;Cassino;1;No;Inattiva;No;2024-04-15; 475,00 € ; 579,50 € ; -   € ;lug-25
+GN504GW;Vivarent;RENT;Peugeot;2008;Large (group D);SDMR;Napoli Capodichino;7;No;Inattiva;No;2025-03-14; 0 ; 0 ; 0 ;lug-25
+GJ968FP;Vivarent;PROPRIETÀ;Fiat;500;Mini (group A);MCMR;Cassino;1;No;Inattiva;No;2022-05-01; 1,00 € ; -   € ; 128,00 € ;ago-25
+GK573BC;Vivarent;LEASING;Dacia;Jogger 5+2;Van 5+2 (group N);SVMR;Cassino;1;No;Inattiva;No;2022-07-11; 319,80 € ; 390,16 € ; -   € ;ago-25
+GV977KP;Vivarent;RENT;Ford;Puma;Large Automatic (group D1);SDAR;Cassino;1;No;Inattiva;No;2024-03-13; 447,00 € ; 545,34 € ; -   € ;ago-25
+GX323CH;Vivarent;RENT;Peugeot;Boxer L2H2;Furgone L2H2 (group K2);IKMR;Cassino;1;No;Inattiva;No;2024-11-01; 0 ; 0 ; 0 ;ago-25
+GL296MM;Vivarent;PROPRIETÀ;Fiat;Panda;Small (group B);MDMR;Cassino;1;No;Inattiva;No;2022-04-01; 1,00 € ; -   € ; 120,17 € ;set-25
+GM878VA;Vivarent;RENT;Volkswagen;Volkswagen Polo;Economy (group C);EDMR;Cassino;1;No;Inattiva;No;2025-03-24; 570,00 € ; 695,40 € ; -   € ;set-25
+GN057SL;Vivarent;RENT;Volkswagen;Golf Aut;Large Automatic (group D1);CDAR;Cassino;1;No;Inattiva;No;2024-05-10; 600,00 € ; 732,00 € ; -   € ;set-25
+GN764SM;Vivarent;RENT;Volkswagen;Golf Aut;Large Automatic (group D1);CDAR;Roma Fiumicino;4;No;Inattiva;No;2025-03-24; 600,00 € ; 732,00 € ; -   € ;set-25
+GV942KP;Vivarent;RENT;Ford;Puma;Large Automatic (group D1);SDAR;Napoli Capodichino;7;No;Inattiva;No;2024-06-21; 447,00 € ; 545,34 € ; -   € ;set-25
+GJ633FV;Vivarent;PROPRIETÀ;Fiat;500L;Large (group D);CDMR;Roma Ciampino;3;No;Inattiva;No;2022-04-01; 1,00 € ; -   € ; 113,94 € ;set-25
+GJ943FP;Vivarent;PROPRIETÀ;Fiat;500;Mini (group A);MCMR;Cassino;1;No;Inattiva;No;2022-05-01; 1,00 € ; -   € ; 122,56 € ;set-25
+GL291MM;Vivarent;PROPRIETÀ;Fiat;Panda;Small (group B);MDMR;Cassino;1;No;Inattiva;No;2022-04-01; 1,00 € ; -   € ; 120,17 € ;set-25
+GP748MG;Vivarent;RENT;Toyota;Proace L1H1;Furgone L1H1 (group K1);MKMR;Cassino;1;No;Inattiva;No;2025-01-01; 582,00 € ; 710,04 € ; -   € ;set-25
+GJ947FP;Vivarent;PROPRIETÀ;Fiat;500;Mini (group A);MCMR;Cassino;1;No;Inattiva;No;2022-05-01; 1,00 € ; -   € ; 122,56 € ;set-25
+GL276MM;Vivarent;PROPRIETÀ;Fiat;Panda;Small (group B);MDMR;Cassino;1;No;Inattiva;No;2022-04-01; 1,00 € ; -   € ; 120,17 € ;set-25
+GN838JD;Vivarent;PROPRIETÀ;Renault;Clio;Economy (group C);EDMR;Cassino;1;No;Inattiva;No;2023-06-01; 1,00 € ; -   € ; 114,11 € ;set-25
+GP019HP;Vivarent;PROPRIETÀ;Renault;Clio;Economy (group C);EDMR;Cassino;1;No;Inattiva;No;2023-06-01; 1,00 € ; -   € ; 114,11 € ;set-25
+GL308MM;Vivarent;PROPRIETÀ;Fiat;Panda;Small (group B);MDMR;Cassino;1;No;Inattiva;No;2022-04-01; 1,00 € ; -   € ; 120,17 € ;set-25
+GN837JD;Vivarent;PROPRIETÀ;Renault;Clio;Economy (group C);EDMR;Cassino;1;No;Inattiva;No;2023-06-01; 1,00 € ; -   € ; 114,11 € ;set-25
+GP021HP;Vivarent;PROPRIETÀ;Renault;Clio;Economy (group C);EDMR;Cassino;1;No;Inattiva;No;2023-06-01; 1,00 € ; -   € ; 114,11 € ;set-25
+GP068HP;Vivarent;PROPRIETÀ;Renault;Clio;Economy (group C);EDMR;Sorrento;9;No;Inattiva;No;2023-06-01; 1,00 € ; -   € ; 114,11 € ;set-25
+GJ949FP;Vivarent;PROPRIETÀ;Fiat;500;Mini (group A);MCMR;Cassino;1;No;Inattiva;No;2022-05-01; 1,00 € ; -   € ; 122,56 € ;set-25
+GK440FT;Vivarent;RENT;BMW;X1 or similar;Premium (group P);PFAR;Cassino;1;No;Inattiva;No;2023-02-03; 638,71 € ; 779,23 € ; -   € ;set-25
+GM607BL;Vivarent;RENT;Peugeot;308 SW;Station Wagon Automatic (group S1);IWAR;Cassino;1;No;Inattiva;No;2023-02-27; 583,38 € ; 711,72 € ; -   € ;set-25
+GM609BL;Vivarent;RENT;Peugeot;308 SW;Station Wagon Automatic (group S1);IWAR;Cassino;1;No;Inattiva;No;2023-06-08; 583,24 € ; 711,55 € ; -   € ;set-25
+GM688BL;Vivarent;RENT;Peugeot;308 SW;Station Wagon Automatic (group S1);IWAR;Cassino;1;No;Inattiva;No;2023-02-20; 583,24 € ; 711,55 € ; -   € ;set-25
+GP585MR;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Roma Fiumicino;4;No;Inattiva;No;2025-03-01; 517,50 € ; 631,35 € ; -   € ;set-25
+GS491NT;Vivarent;RENT;Seat;Ibiza;Economy (group C);EDMR;Roma Fiumicino;4;No;Inattiva;No;2025-03-01; 522,00 € ; 636,84 € ; -   € ;set-25
+GS498NT;Vivarent;RENT;Seat;Ibiza;Economy (group C);EDMR;Roma Fiumicino;4;No;Inattiva;No;2025-03-01; 522,00 € ; 636,84 € ; -   € ;set-25
+GN834JD;Vivarent;PROPRIETÀ;Renault;Clio;Economy (group C);EDMR;Cassino;1;No;Inattiva;No;2023-06-01; 1,00 € ; -   € ; 114,11 € ;set-25
+GP066FX;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Cassino;1;No;Inattiva;No;2025-03-01; 517,50 € ; 631,35 € ; -   € ;set-25
+GP610MR;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Cassino;1;No;Inattiva;No;2025-03-01; 517,50 € ; 631,35 € ; -   € ;set-25
+GS600MA;Vivarent;RENT;Renault;Capture;Large (group D);SDMR;Cassino;1;No;Inattiva;No;2025-03-01; 576,00 € ; 702,72 € ; -   € ;set-25
+GS734LY;Vivarent;RENT;Seat;Ibiza;Economy (group C);EDMR;Cassino;1;No;Inattiva;No;2025-03-01; 522,00 € ; 636,84 € ; -   € ;set-25
+GJ926FP;Vivarent;PROPRIETÀ;Fiat;500X;Large (group D);CDMR;Cassino;1;No;Inattiva;No;2022-04-01; 1,00 € ; -   € ; 124,94 € ;set-25
+GR121RX;Vivarent;RENT;Opel;Corsa;Economy (group C);EDMR;Napoli Capodichino;7;No;Inattiva;No;2024-04-15; 475,00 € ; 579,50 € ; -   € ;set-25
+GR124RX;Vivarent;RENT;Opel;Corsa;Economy (group C);EDMR;Cassino;1;No;Inattiva;No;2024-04-15; 475,00 € ; 579,50 € ; -   € ;set-25
+GK574BC;Vivarent;PROPRIETÀ;Dacia;Jogger 5+2;Van 5+2 (group N);SVMR;Cassino;1;No;Inattiva;No;2022-07-11; 319,80 € ; 390,16 € ; -   € ;set-25
+GM640NK;Vivarent;RENT;Citroen;C3 Aircross;Large Automatic (group D1);IDAR;Cassino;1;No;Inattiva;No;2023-04-05; 478,00 € ; 583,16 € ; -   € ;set-25
+GM709DA;Vivarent;RENT;Citroen;C3 Aircross;Large Automatic (group D1);IDAR;Cassino;1;No;Inattiva;No;2023-04-05; 478,00 € ; 583,16 € ; -   € ;set-25
+GP026FX;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Cassino;1;No;Inattiva;No;2025-03-01; 517,50 € ; 631,35 € ; -   € ;set-25
+GP604FD;Vivarent;RENT;Peugeot;2008 Aut;Large Automatic (group D1);SDAR;Cassino;1;No;Inattiva;No;2023-07-20; 666,10 € ; 812,64 € ; -   € ;set-25
+GP712FD;Vivarent;RENT;Peugeot;2008 Aut;Large Automatic (group D1);SDAR;Cassino;1;No;Inattiva;No;2023-07-20; 666,10 € ; 812,64 € ; -   € ;set-25
+GJ942FP;Vivarent;PROPRIETÀ;Fiat;500;Mini (group A);MCMR;Cassino;1;No;Inattiva;No;2022-05-01; 1,00 € ; -   € ; 122,56 € ;set-25
+GL064ZN;Vivarent;RENT;Toyota;Yaris;Economy Automatic (group C1);EDAR;Cassino;1;No;Inattiva;No;2022-12-13; 448,00 € ; 546,56 € ; -   € ;set-25
+GL065ZN;Vivarent;RENT;Toyota;Yaris;Economy Automatic (group C1);EDAR;Cassino;1;No;Inattiva;No;2022-12-13; 448,00 € ; 546,56 € ; -   € ;set-25
+GP595MR;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Cassino;1;No;Inattiva;No;2025-03-01; 517,50 € ; 631,35 € ; -   € ;set-25
+GP069HP;Vivarent;PROPRIETÀ;Renault;Clio;Economy (group C);EDMR;Valle di Comino;6;No;Inattiva;No;2023-06-01; 1,00 € ; -   € ; 114,11 € ;set-25
+GT097PA;Vivarent;RENT;Ford;Puma;Large Automatic (group D1);SDAR;Napoli Capodichino;7;No;Inattiva;No;2024-05-15; 447,00 € ; 545,34 € ; -   € ;set-25
+GL297MM;Vivarent;PROPRIETÀ;Fiat;Panda;Small (group B);MDMR;Cassino;1;No;Inattiva;No;2022-04-01; 1,00 € ; -   € ; 120,17 € ;set-25
+GL309MM;Vivarent;PROPRIETÀ;Fiat;Panda;Small (group B);MDMR;Cassino;1;No;Inattiva;No;2022-04-01; 1,00 € ; -   € ; 120,17 € ;set-25
+GP314TC;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Cassino;1;No;Inattiva;No;2025-03-01; 522,73 € ; 637,73 € ; -   € ;set-25
+GP649SY;Vivarent;RENT;Opel;Crossland;Large Automatic (group D1);SDAR;Cassino;1;No;Inattiva;No;2025-03-01; 576,00 € ; 702,72 € ; -   € ;set-25
+GS508NT;Vivarent;RENT;Seat;Ibiza;Economy (group C);EDMR;Brindisi;11;No;Inattiva;No;2025-03-01; 522,00 € ; 636,84 € ; -   € ;set-25
+GS513NT;Vivarent;RENT;Seat;Ibiza;Economy (group C);EDMR;Brindisi;11;No;Inattiva;No;2025-03-01; 522,00 € ; 636,84 € ; -   € ;set-25
+GS521NT;Vivarent;RENT;Seat;Ibiza;Economy (group C);EDMR;Brindisi;11;No;Inattiva;No;2025-03-01; 522,00 € ; 636,84 € ; -   € ;set-25
+GP594MR;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Trapani Aeroporto;13;No;Inattiva;No;2025-03-01; 517,50 € ; 631,35 € ; -   € ;set-25
+GP648SY;Vivarent;RENT;Opel;Crossland;Large Automatic (group D1);SDAR;Brindisi;11;No;Inattiva;No;2025-03-01; 576,00 € ; 702,72 € ; -   € ;set-25
+GS603MA;Vivarent;RENT;Renault;Capture;Large (group D);SDMR;Brindisi;11;No;Inattiva;No;2025-03-01; 576,00 € ; 702,72 € ; -   € ;set-25
+GP451ZV;Vivarent;RENT;Opel;Crossland;Large Automatic (group D1);SDAR;Roma Fiumicino;4;No;Inattiva;No;2025-03-01; 576,00 € ; 702,72 € ; -   € ;set-25
+GP584MR;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Roma Fiumicino;4;No;Inattiva;No;2025-03-01; 517,50 € ; 631,35 € ; -   € ;set-25
+GP075FX;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Cassino;1;No;Inattiva;No;2025-03-01; 517,50 € ; 631,35 € ; -   € ;set-25
+GM608BL;Vivarent;RENT;Peugeot;308 SW;Station Wagon Automatic (group S1);IWAR;Cassino;1;No;Inattiva;No;2023-02-27; 583,38 € ; 711,72 € ; -   € ;set-25
+GM732FL;Vivarent;RENT;Volkswagen;Multivan;Van 7 Seats Automatic (group M3);PVAR;Cassino;1;No;Inattiva;No;2023-02-28; 990,51 € ; 1.208,42 € ; -   € ;set-25
+GP419RB;Vivarent;PROPRIETÀ;Jeep;Avenger;Large (group D);IGMR;Cassino;1;No;Inattiva;No;2023-10-15; 1,00 € ; -   € ; 162,81 € ;set-25
+GP461FV;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Roma Fiumicino;4;No;Inattiva;No;2025-03-01; 517,50 € ; 631,35 € ; -   € ;set-25
+GP533RC;Vivarent;PROPRIETÀ;Fiat;Panda;Small (group B);MDMR;Cassino;1;No;Inattiva;No;2023-11-04; 1,00 € ; -   € ; 114,67 € ;set-25
+GP535RC;Vivarent;PROPRIETÀ;Fiat;Panda;Small (group B);MDMR;Cassino;1;No;Inattiva;No;2023-11-04; 1,00 € ; -   € ; 114,67 € ;set-25
+GP583MR;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Roma Fiumicino;4;No;Inattiva;No;2025-03-01; 517,50 € ; 631,35 € ; -   € ;set-25
+GM853VA;Vivarent;RENT;Volkswagen;Volkswagen Polo;Economy (group C);EDMR;Cassino;1;No;Inattiva;No;2025-03-25; 570,00 € ; 695,40 € ; -   € ;ott-25
+GN095SE;Vivarent;RENT;Volkswagen;Golf Aut;Large Automatic (group D1);CDAR;Roma Fiumicino;4;No;Inattiva;No;2025-04-05; 600,00 € ; 732,00 € ; -   € ;ott-25
+GN098SE;Vivarent;RENT;Volkswagen;Golf Aut;Large Automatic (group D1);CDAR;Cassino;1;No;Inattiva;No;2025-04-01; 600,00 € ; 732,00 € ; -   € ;ott-25
+GN500SH;Vivarent;RENT;Volkswagen;Golf Aut;Large Automatic (group D1);CDAR;Roma Fiumicino;4;No;Inattiva;No;2025-04-01; 600,00 € ; 732,00 € ; -   € ;ott-25
+GN505SH;Vivarent;RENT;Volkswagen;Golf Aut;Large Automatic (group D1);CDAR;Cassino;1;No;Inattiva;No;2025-04-01; 600,00 € ; 732,00 € ; -   € ;ott-25
+GN771SM;Vivarent;RENT;Volkswagen;Golf Aut;Large Automatic (group D1);CDAR;Roma Fiumicino;4;No;Inattiva;No;2025-04-01; 600,00 € ; 732,00 € ; -   € ;ott-25
+GN775SM;Vivarent;RENT;Volkswagen;Golf Aut;Large Automatic (group D1);CDAR;Cassino;1;No;Inattiva;No;2025-04-02; 600,00 € ; 732,00 € ; -   € ;ott-25
+GP210RB;Vivarent;PROPRIETÀ;Fiat;500c;Cabriolet (group X);NBMR;Cassino;1;No;Inattiva;No;2023-09-14; 1,00 € ; -   € ; 120,80 € ;ott-25
+GK026MG;Davide Papa - Eco Liri;INVESTOR;Volkswagen;Caravelle;Van 9 Seats Automatic (group M1);OVAR;Cassino;1;No;Inattiva;No;2025-06-26; 1,00 € ; -   € ; -   € ;ott-25
+GP055FX;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Brindisi;11;No;Inattiva;No;2025-03-01; 517,50 € ; 631,35 € ; -   € ;ott-25
+GP456FV;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Brindisi;11;No;Inattiva;No;2025-03-01; 517,50 € ; 631,35 € ; -   € ;ott-25
+GP588MR;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Brindisi;11;No;Inattiva;No;2025-03-01; 517,50 € ; 631,35 € ; -   € ;ott-25
+GS025MB;Vivarent;RENT;Renault;Capture;Large (group D);SDMR;Brindisi;11;No;Inattiva;No;2025-03-01; 576,00 € ; 702,72 € ; -   € ;ott-25
+GR339RX;Vivarent;RENT;Opel;Corsa;Economy (group C);EDMR;Cassino;1;No;Inattiva;No;2024-04-15; 475,00 € ; 579,50 € ; -   € ;ott-25
+GK961YW;Vivarent;RENT;Jeep;Renegade;Large Automatic (group D1);IDAR;Cassino;1;No;Inattiva;No;2025-04-09; 650,00 € ; 793,00 € ; -   € ;ott-25
+GM189FM;Vivarent;RENT;Volkswagen;Volkswagen Polo;Economy (group C);EDMR;Roma Fiumicino;4;No;Inattiva;No;2025-04-05; 570,00 € ; 695,40 € ; -   € ;ott-25
+GM855VA;Vivarent;RENT;Volkswagen;Volkswagen Polo;Economy (group C);EDMR;Cassino;1;No;Inattiva;No;2025-03-24; 570,00 € ; 695,40 € ; -   € ;ott-25
+GN609GX;Vivarent;RENT;Peugeot;2008;Large (group D);SDMR;Roma Fiumicino;4;No;Inattiva;No;2025-04-01; 570,00 € ; 695,40 € ; -   € ;ott-25
+GN772SM;Vivarent;RENT;Volkswagen;Golf Aut;Large Automatic (group D1);CDAR;Cassino;1;No;Inattiva;No;2025-04-01; 600,00 € ; 732,00 € ; -   € ;ott-25
+GP913AZ;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Roma Fiumicino;4;No;Inattiva;No;2023-07-18; 265,68 € ; 324,13 € ; -   € ;ott-25
+GN248MT;Vivarent;PROPRIETÀ;Fiat;Tipo SW;Station Wagon Automatic (group S1);IWAR;Cassino;1;No;Inattiva;No;2023-09-06; 1,00 € ; -   € ; 136,74 € ;ott-25
+GN799SR;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Cassino;1;No;Inattiva;No;2023-10-12; 343,68 € ; 419,29 € ; -   € ;ott-25
+GN252MT;Vivarent;PROPRIETÀ;Fiat;Tipo SW;Station Wagon Automatic (group S1);IWAR;Cassino;1;No;Inattiva;No;2023-09-06; 1,00 € ; -   € ; 136,74 € ;ott-25
+GP417RB;Vivarent;PROPRIETÀ;Fiat;Panda;Small (group B);MDMR;Cassino;1;No;Inattiva;No;2023-11-04; 1,00 € ; -   € ; 114,67 € ;ott-25
+GP418RB;Vivarent;PROPRIETÀ;Fiat;Panda;Small (group B);MDMR;Cassino;1;No;Inattiva;No;2023-11-04; 1,00 € ; -   € ; 114,67 € ;ott-25
+GP422RB;Vivarent;PROPRIETÀ;Fiat;Panda;Small (group B);MDMR;Cassino;1;No;Inattiva;No;2023-11-04; 1,00 € ; -   € ; 114,67 € ;ott-25
+GP534RC;Vivarent;PROPRIETÀ;Fiat;Panda;Small (group B);MDMR;Cassino;1;No;Inattiva;No;2023-11-04; 1,00 € ; -   € ; 114,67 € ;ott-25
+GL895VN;Vivarent;RENT;Jeep;Compass or similar;Suv Automatic (group J1);FFAH;Roma Fiumicino;4;No;Inattiva;No;2024-05-20; 800,00 € ; 976,00 € ; -   € ;ott-25
+GL920VN;Vivarent;RENT;Jeep;Compass or similar;Suv Automatic (group J1);FFAH;Roma Fiumicino;4;No;Inattiva;No;2024-05-20; 800,00 € ; 976,00 € ; -   € ;ott-25
+GM854VA;Vivarent;RENT;Volkswagen;Volkswagen Polo;Economy (group C);EDMR;Cassino;1;No;Inattiva;No;2025-04-01; 570,00 € ; 695,40 € ; -   € ;ott-25
+GN090SE;Vivarent;RENT;Volkswagen;Golf Aut;Large Automatic (group D1);CDAR;Roma Ciampino;3;No;Inattiva;No;2025-04-01; 600,00 € ; 732,00 € ; -   € ;ott-25
+GN767SM;Vivarent;RENT;Volkswagen;Golf Aut;Large Automatic (group D1);CDAR;Roma Fiumicino;4;No;Inattiva;No;2025-04-01; 600,00 € ; 732,00 € ; -   € ;ott-25
+GN802NX;Vivarent;RENT;Volkswagen;Volkswagen Polo;Economy (group C);EDMR;Roma Fiumicino;4;No;Inattiva;No;2025-04-01; 570,00 € ; 695,40 € ; -   € ;ott-25
+GV091FN;Vivarent;RENT;Hyundai;Staria;Van 9 Seats Automatic (group M1);OVAR;Cassino;1;No;Inattiva;No;2024-05-13; 919,89 € ; 1.122,27 € ; -   € ;ott-25
+GL754VN;Vivarent;RENT;Jeep;Compass or similar;Suv Automatic (group J1);FFAH;Roma Termini;2;No;Inattiva;No;2024-05-20; 800,00 € ; 976,00 € ; -   € ;ott-25
+GM868VA;Vivarent;RENT;Volkswagen;Volkswagen Polo;Economy (group C);EDMR;Cassino;1;No;Inattiva;No;2025-04-09; 570,00 € ; 695,40 € ; -   € ;ott-25
+GN096SE;Vivarent;RENT;Volkswagen;Golf Aut;Large Automatic (group D1);CDAR;Cassino;1;No;Inattiva;No;2025-04-08; 600,00 € ; 732,00 € ; -   € ;ott-25
+GN605GX;Vivarent;RENT;Peugeot;2008;Large (group D);SDMR;Cassino;1;No;Inattiva;No;2025-04-15; 570,00 € ; 695,40 € ; -   € ;ott-25
+GN777SM;Vivarent;RENT;Volkswagen;Golf Aut;Large Automatic (group D1);CDAR;Cassino;1;No;Inattiva;No;2025-04-01; 600,00 € ; 732,00 € ; -   € ;ott-25
+GN902DG;Vivarent;RENT;Mercedes Benz;Classe C SW;Premium (group P);PWAR;Cassino;1;No;Inattiva;No;2023-10-09; 756,68 € ; 923,15 € ; -   € ;ott-25
+GR429PA;Vivarent;PROPRIETÀ;Alfa Romeo;Tonale;Premium (group P);PFAR;Cassino;1;No;Inattiva;No;2024-01-04; 1,00 € ; -   € ; 175,42 € ;ott-25
+GR430PA;Vivarent;PROPRIETÀ;Alfa Romeo;Tonale;Premium (group P);PFAR;Cassino;1;No;Inattiva;No;2024-01-04; 1,00 € ; -   € ; 175,42 € ;ott-25
+GV083FN;Vivarent;RENT;Hyundai;Staria;Van 9 Seats Automatic (group M1);OVAR;Cassino;1;No;Inattiva;No;2024-05-13; 919,89 € ; 1.122,27 € ; -   € ;ott-25
+GL739VN;Vivarent;RENT;Jeep;Compass or similar;Suv Automatic (group J1);FFAH;Roma Fiumicino;4;No;Inattiva;No;2025-03-14; 800,00 € ; 976,00 € ; -   € ;ott-25
+GM196FM;Vivarent;RENT;Volkswagen;Volkswagen Polo;Economy (group C);EDMR;Cassino;1;No;Inattiva;No;2025-04-01; 570,00 € ; 695,40 € ; -   € ;ott-25
+GM733FL;Vivarent;RENT;Volkswagen;Multivan;Van 7 Seats Automatic (group M3);PVAR;Cassino;1;No;Inattiva;No;2023-02-28; 1.047,36 € ; 1.277,78 € ; -   € ;ott-25
+GM866VA;Vivarent;RENT;Volkswagen;Volkswagen Polo;Economy (group C);EDMR;Roma Fiumicino;4;No;Inattiva;No;2025-04-01; 570,00 € ; 695,40 € ; -   € ;ott-25
+GN175MS;Vivarent;PROPRIETÀ;Opel;Mokka;Large (group D);CDMR;Cassino;1;No;Inattiva;No;2023-09-06; 1,00 € ; -   € ; 139,73 € ;ott-25
+GV086FN;Vivarent;RENT;Hyundai;Staria;Van 9 Seats Automatic (group M1);OVAR;Cassino;1;No;Inattiva;No;2024-05-17; 879,00 € ; 1.072,38 € ; -   € ;ott-25
+GM851VA;Vivarent;RENT;Volkswagen;Volkswagen Polo;Economy (group C);EDMR;Firenze;5;No;Inattiva;No;2025-03-25; 570,00 € ; 695,40 € ; -   € ;ott-25
+GN504SH;Vivarent;RENT;Volkswagen;Golf Aut;Large Automatic (group D1);CDAR;Firenze;5;No;Inattiva;No;2025-04-01; 600,00 € ; 732,00 € ; -   € ;ott-25
+GN585GX;Vivarent;RENT;Peugeot;2008;Large (group D);SDMR;Firenze;5;No;Inattiva;No;2025-03-25; 570,00 € ; 695,40 € ; -   € ;ott-25
+GJ994YY;Vivarent;RENT;Peugeot;3008;Suv Automatic (group J1);FFAR;Cassino NLT;15;No;Inattiva;No;2022-06-30; 379,00 € ; 462,38 € ; -   € ;ott-25
+GK578YX;Vivarent;RENT;Fiat;500c;Cabriolet (group X);NBMR;Napoli Capodichino;7;No;Inattiva;No;2022-08-22; 388,41 € ; 473,86 € ; -   € ;ott-25
+GL549PE;Vivarent;RENT;Jeep;Renegade;Large Automatic (group D1);IDAR;Roma Termini;2;No;Inattiva;No;2025-03-14; 650,00 € ; 793,00 € ; -   € ;ott-25
+GL811VN;Vivarent;RENT;Jeep;Compass or similar;Suv Automatic (group J1);FFAH;Roma Fiumicino;4;No;Inattiva;No;2025-04-09; 800,00 € ; 976,00 € ; -   € ;ott-25
+GM867VA;Vivarent;RENT;Volkswagen;Volkswagen Polo;Economy (group C);EDMR;Cassino;1;No;Inattiva;No;2025-04-09; 570,00 € ; 695,40 € ; -   € ;ott-25
+GN092SE;Vivarent;RENT;Volkswagen;Golf Aut;Large Automatic (group D1);CDAR;Roma Fiumicino;4;No;Inattiva;No;2025-04-01; 600,00 € ; 732,00 € ; -   € ;ott-25
+GN176MS;Vivarent;PROPRIETÀ;Opel;Mokka;Large (group D);CDMR;Cassino;1;No;Inattiva;No;2023-11-04; 1,00 € ; -   € ; 139,73 € ;ott-25
+GN177MS;Vivarent;PROPRIETÀ;Opel;Mokka;Large (group D);CDMR;Cassino;1;No;Inattiva;No;2023-09-07; 1,00 € ; -   € ; 139,73 € ;ott-25
+GN249MT;Vivarent;PROPRIETÀ;Fiat;Tipo SW;Station Wagon Automatic (group S1);IWAR;Cassino;1;No;Inattiva;No;2023-09-06; 1,00 € ; -   € ; 136,74 € ;ott-25
+GN639GX;Vivarent;RENT;Peugeot;2008;Large (group D);SDMR;Cassino;1;No;Inattiva;No;2025-07-09; 570,00 € ; 695,40 € ; -   € ;ott-25
+GP211RB;Vivarent;PROPRIETÀ;Fiat;Tipo SW;Station Wagon Automatic (group S1);IWAR;Cassino;1;No;Inattiva;No;2023-10-15; 1,00 € ; -   € ; 136,74 € ;ott-25
+GP212RB;Vivarent;PROPRIETÀ;Fiat;500c;Cabriolet (group X);NBMR;Cassino;1;No;Inattiva;No;2023-09-14; 1,00 € ; -   € ; 120,80 € ;ott-25
+GP213RB;Vivarent;PROPRIETÀ;Fiat;Tipo SW;Station Wagon Automatic (group S1);IWAR;Cassino;1;No;Inattiva;No;2023-10-15; 1,00 € ; -   € ; 136,74 € ;ott-25
+GP531RC;Vivarent;PROPRIETÀ;Fiat;Panda;Small (group B);MDMR;Cassino;1;No;Inattiva;No;2023-11-04; 1,00 € ; -   € ; 114,67 € ;ott-25
+GP532RC;Vivarent;PROPRIETÀ;Fiat;Panda;Small (group B);MDMR;Cassino;1;No;Inattiva;No;2023-11-04; 1,00 € ; -   € ; 114,67 € ;ott-25
+GP536RC;Vivarent;PROPRIETÀ;Fiat;Panda;Small (group B);MDMR;Cassino;1;No;Inattiva;No;2023-11-04; 1,00 € ; -   € ; 114,67 € ;ott-25
+GP860ST;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Roma Fiumicino;4;Yes;Disponibile;Yes;2023-10-11; 265,68 € ; 324,13 € ; -   € ;ott-25
+GP986RB;Vivarent;PROPRIETÀ;Alfa Romeo;Tonale;Premium (group P);PFAR;Cassino;1;No;Inattiva;No;2023-10-15; 1,00 € ; -   € ; 175,42 € ;ott-25
+GP990RB;Vivarent;PROPRIETÀ;Alfa Romeo;Tonale;Premium (group P);PFAR;Cassino;1;No;Inattiva;No;2023-10-15; 1,00 € ; -   € ; 175,42 € ;ott-25
+GW891YG;Vivarent;RENT;Mercedes Benz;Sprinter Hydraulic Tailgate;Furgone Cassonato Sponda Idraulica (group K4);XKMR;Cassino;1;Yes;Disponibile;Yes;2025-01-01; 1.450,00 € ; 1.769,00 € ; -   € ;ott-25
+GW946YG;Vivarent;RENT;Mercedes Benz;Sprinter Hydraulic Tailgate;Furgone Cassonato Sponda Idraulica (group K4);XKMR;Cassino NLT;15;Yes;Inattiva;No;2024-11-01; 1.450,00 € ; 1.769,00 € ; -   € ;ott-25
+GM816YE;Vivarent;RENT;Toyota;Aygo X;Mini (group A);MCMR;Cassino;1;No;Inattiva;No;2023-05-15; 355,00 € ; 433,10 € ; -   € ;nov-25
+GM823YE;Vivarent;RENT;Toyota;Aygo X;Mini (group A);MCMR;Cassino;1;No;Inattiva;No;2023-04-15; 355,00 € ; 433,10 € ; -   € ;nov-25
+GM824YE;Vivarent;RENT;Toyota;Aygo X;Mini (group A);MCMR;Cassino;1;No;Inattiva;No;2023-05-15; 355,00 € ; 433,10 € ; -   € ;nov-25
+GM826YE;Vivarent;RENT;Toyota;Aygo X;Mini Automatic (group A1);MDAR;Cassino;1;No;Inattiva;No;2023-07-06; 399,48 € ; 487,37 € ; -   € ;nov-25
+GM830YE;Vivarent;RENT;Toyota;Aygo X;Mini Automatic (group A1);MDAR;Cassino;1;No;Inattiva;No;2023-06-13; 399,48 € ; 487,37 € ; -   € ;nov-25
+GM832YE;Vivarent;RENT;Toyota;Aygo X;Mini Automatic (group A1);MDAR;Cassino;1;No;Inattiva;No;2023-07-06; 399,48 € ; 487,37 € ; -   € ;nov-25
+GN612MS;Vivarent;PROPRIETÀ;Fiat;500c;Cabriolet (group X);NBMR;Cassino;1;No;Inattiva;No;2023-09-14; 1,00 € ; -   € ; 120,80 € ;nov-25
+GN613MS;Vivarent;PROPRIETÀ;Fiat;500c;Cabriolet (group X);NBMR;Cassino;1;No;Inattiva;No;2023-07-27; 1,00 € ; -   € ; 120,80 € ;nov-25
+GN245MT;Vivarent;PROPRIETÀ;Fiat;Tipo SW;Station Wagon Automatic (group S1);IWAR;Cassino;1;No;Inattiva;No;2023-09-06; 1,00 € ; -   € ; 136,74 € ;nov-25
+GP389RC;Vivarent;PROPRIETÀ;Jeep;Avenger;Large (group D);IGMR;Cassino;1;No;Inattiva;No;2024-01-04; 1,00 € ; -   € ; 162,81 € ;nov-25
+GK151CC;Vivarent;PROPRIETÀ;DR;5.0 Aut;Large Automatic (group D1);SDAR;Cassino;1;No;Inattiva;No;2022-08-12; 1,00 € ; -   € ; 134,39 € ;nov-25
+GM193FM;Vivarent;RENT;Volkswagen;Volkswagen Polo;Economy (group C);EDMR;Cassino;1;No;Inattiva;No;2025-04-01; 570,00 € ; 695,40 € ; -   € ;nov-25
+GM874VA;Vivarent;RENT;Volkswagen;Volkswagen Polo;Economy (group C);EDMR;Cassino;1;No;Inattiva;No;2025-04-01; 570,00 € ; 695,40 € ; -   € ;nov-25
+GN099SE;Vivarent;RENT;Volkswagen;Golf Aut;Large Automatic (group D1);CDAR;Cassino;1;No;Inattiva;No;2025-04-01; 600,00 € ; 732,00 € ; -   € ;nov-25
+GN640EJ;Vivarent;RENT;Volkswagen;Polo Aut;Economy Automatic (group C1);EDAR;Cassino;1;No;Inattiva;No;2023-04-30; 444,12 € ; 541,83 € ; -   € ;nov-25
+GL664VN;Vivarent;RENT;Jeep;Compass or similar;Suv Automatic (group J1);FFAH;Cassino;1;No;Inattiva;No;2024-05-20; 800,00 € ; 976,00 € ; -   € ;nov-25
+GM871VA;Vivarent;RENT;Volkswagen;Volkswagen Polo;Economy (group C);EDMR;Roma Termini;2;No;Inattiva;No;2025-04-01; 570,00 € ; 695,40 € ; -   € ;nov-25
+GL663VN;Vivarent;RENT;Jeep;Compass or similar;Suv Automatic (group J1);FFAH;Cassino;1;No;Inattiva;No;2024-05-20; 800,00 € ; 976,00 € ; -   € ;nov-25
+GL712VN;Vivarent;RENT;Jeep;Compass or similar;Suv Automatic (group J1);FFAH;Cassino;1;No;Inattiva;No;2024-05-20; 800,00 € ; 976,00 € ; -   € ;nov-25
+GM856VA;Vivarent;RENT;Volkswagen;Volkswagen Polo;Economy (group C);EDMR;Cassino;1;No;Inattiva;No;2025-04-01; 570,00 € ; 695,40 € ; -   € ;nov-25
+GM859VA;Vivarent;RENT;Volkswagen;Volkswagen Polo;Economy (group C);EDMR;Roma Fiumicino;4;No;Inattiva;No;2025-04-05; 570,00 € ; 695,40 € ; -   € ;nov-25
+GK579YX;Vivarent;RENT;Fiat;500c;Cabriolet (group X);NBMR;Cassino;1;No;Inattiva;No;2022-08-22; 388,84 € ; 474,38 € ; -   € ;nov-25
+GK580YX;Vivarent;RENT;Fiat;500c;Cabriolet (group X);NBMR;Cassino;1;No;Inattiva;No;2022-08-22; 388,84 € ; 474,38 € ; -   € ;nov-25
+GM831YE;Vivarent;RENT;Toyota;Aygo X;Mini Automatic (group A1);MDAR;Cassino;1;No;Inattiva;No;2023-06-13; 399,48 € ; 487,37 € ; -   € ;nov-25
+GZ449LW;Vivarent;RENT;Hyundai;Staria;Van 9 Seats Automatic (group M1);OVAR;Roma Fiumicino;4;No;Inattiva;No;2024-05-17; 919,89 € ; 1.122,27 € ; -   € ;nov-25
+GM004YF;Vivarent;RENT;Toyota;Aygo X;Mini (group A);MCMR;Cassino;1;No;Inattiva;No;2023-05-15; 355,00 € ; 433,10 € ; -   € ;nov-25
+GM817YE;Vivarent;RENT;Toyota;Aygo X;Mini (group A);MCMR;Cassino;1;No;Inattiva;No;2023-04-15; 355,00 € ; 433,10 € ; -   € ;nov-25
+GM818YE;Vivarent;RENT;Toyota;Aygo X;Mini (group A);MCMR;Cassino;1;No;Inattiva;No;2023-04-15; 355,00 € ; 433,10 € ; -   € ;nov-25
+GM821YE;Vivarent;RENT;Toyota;Aygo X;Mini Automatic (group A1);MDAR;Cassino;1;No;Inattiva;No;2023-07-06; 399,48 € ; 487,37 € ; -   € ;nov-25
+GM819YE;Vivarent;RENT;Toyota;Aygo X;Mini (group A);MCMR;Cassino;1;No;Inattiva;No;2023-05-15; 355,00 € ; 433,10 € ; -   € ;nov-25
+GM820YE;Vivarent;RENT;Toyota;Aygo X;Mini (group A);MCMR;Cassino;1;No;Inattiva;No;2023-04-15; 355,00 € ; 433,10 € ; -   € ;nov-25
+GM706DA;Vivarent;RENT;Citroen;C3 Aircross;Large Automatic (group D1);IDAR;Trapani Porto;10;No;Inattiva;No;2023-11-22; 478,00 € ; 583,16 € ; -   € ;nov-25
+GM822YE;Vivarent;RENT;Toyota;Aygo X;Mini Automatic (group A1);MDAR;Cassino;1;No;Inattiva;No;2023-06-13; 399,48 € ; 487,37 € ; -   € ;nov-25
+FV903WK;Vivarent;LEASING;Citroen;Spacetourer;Van 9 Seats (group M);OVMR;Cassino;1;No;Inattiva;No;2023-07-05; 427,87 € ; 522,00 € ; 128,00 € ;nov-25
+GK050CG;Vivarent;PROPRIETÀ;DR;5.0 Aut;Large Automatic (group D1);SDAR;Napoli Capodichino;7;No;Inattiva;No;2022-08-12; 1,00 € ; -   € ; 134,39 € ;nov-25
+GP651HR;Vivarent;PROPRIETÀ;Renault;Twingo;Mini (group A);MCMR;Napoli Capodichino;7;No;Inattiva;No;2023-07-01; 1,00 € ; -   € ; 113,36 € ;nov-25
+GP652HR;Vivarent;PROPRIETÀ;Renault;Twingo;Mini (group A);MCMR;Napoli Capodichino;7;No;Inattiva;No;2023-07-01; 1,00 € ; -   € ; 113,36 € ;nov-25
+GN732ZZ;Vivarent;RENT;Volkswagen;Golf Aut;Large Automatic (group D1);CDAR;Cassino;1;No;Inattiva;No;2023-05-30; 485,64 € ; 592,48 € ; -   € ;nov-25
+GK200HF;Vivarent;RENT;Fiat;Fiorino;Furgone Mini (gruppo K);MKMR;Cassino;1;No;Inattiva;No;2022-06-07; 438,09 € ; 534,47 € ; -   € ;dic-25
+GK913HF;Vivarent;RENT;Fiat;Fiorino;Furgone Mini (gruppo K);MKMR;Cassino NLT;15;No;Inattiva;No;2022-06-07; 438,12 € ; 534,51 € ; -   € ;dic-25
+GK935HF;Vivarent;RENT;Fiat;Fiorino;Furgone Mini (gruppo K);MKMR;Cassino;1;No;Inattiva;No;2022-06-07; 438,09 € ; 534,47 € ; -   € ;dic-25
+GL422WT;Vivarent;RENT;Peugeot;Boxer L1H1;Furgone L1H1 (group K1);MKMR;Cassino;1;Yes;In Service;Yes;2022-10-01; 696,42 € ; 849,63 € ; -   € ;dic-25
+GL423WT;Vivarent;RENT;Peugeot;Boxer L1H1;Furgone L1H1 (group K1);MKMR;Valle di Comino;6;Yes;In Service;Yes;2022-10-01; 696,42 € ; 849,63 € ; -   € ;dic-25
+GL424WT;Vivarent;RENT;Peugeot;Boxer L1H1;Furgone L1H1 (group K1);MKMR;Cassino;1;No;Inattiva;No;2022-10-01; 696,42 € ; 849,63 € ; -   € ;dic-25
+GL425WT;Vivarent;RENT;Peugeot;Boxer L1H1;Furgone L1H1 (group K1);MKMR;Cassino;1;Yes;Inattiva;No;2022-10-01; 696,42 € ; 849,63 € ; -   € ;dic-25
+GL426WT;Vivarent;RENT;Peugeot;Boxer L1H1;Furgone L1H1 (group K1);MKMR;Cassino;1;Yes;Inattiva;No;2022-10-01; 696,42 € ; 849,63 € ; -   € ;dic-25
+GL427WT;Vivarent;RENT;Peugeot;Boxer L1H1;Furgone L1H1 (group K1);MKMR;Cassino;1;Yes;Inattiva;No;2022-10-01; 696,42 € ; 849,63 € ; -   € ;dic-25
+GL428WT;Vivarent;RENT;Peugeot;Boxer L1H1;Furgone L1H1 (group K1);MKMR;Cassino;1;Yes;Inattiva;No;2022-10-01; 696,42 € ; 849,63 € ; -   € ;dic-25
+GL429WT;Vivarent;RENT;Peugeot;Boxer L1H1;Furgone L1H1 (group K1);MKMR;Trapani Porto;10;Yes;Disponibile;Yes;2022-10-01; 696,42 € ; 849,63 € ; -   € ;dic-25
+GN710GT;Vivarent;RENT;Fiat;Doblo;Furgone Mini (gruppo K);MKMR;Cassino;1;No;Inattiva;No;2023-05-26; 587,21 € ; 716,40 € ; -   € ;dic-25
+GN715GT;Vivarent;RENT;Fiat;Doblo;Furgone Mini (gruppo K);MKMR;Cassino;1;No;Inattiva;No;2023-05-26; 587,21 € ; 716,40 € ; -   € ;dic-25
+GM191FM;Vivarent;RENT;Volkswagen;Volkswagen Polo;Economy (group C);EDMR;Cassino;1;No;Inattiva;No;2025-04-01; 570,00 € ; 695,40 € ; -   € ;dic-25
+GY134NL;Vivarent;RENT;Volkswagen;Volkswagen Polo;Economy (group C);EDMR;Cassino;1;No;Inattiva;No;2025-04-01; 570,00 € ; 695,40 € ; -   € ;dic-25
+GM825YE;Vivarent;RENT;Toyota;Aygo X;Mini Automatic (group A1);MDAR;Cassino;1;No;Inattiva;No;2023-07-18; 399,48 € ; 487,37 € ; -   € ;dic-25
+GM827YE;Vivarent;RENT;Toyota;Aygo X;Mini Automatic (group A1);MDAR;Cassino;1;No;Inattiva;No;2023-07-18; 399,48 € ; 487,37 € ; -   € ;dic-25
+GK053CG;Vivarent;PROPRIETÀ;DR;5.0 Aut;Large Automatic (group D1);SDAR;Cassino;1;No;Inattiva;No;2022-08-12; 1,00 € ; -   € ; 134,39 € ;dic-25
+GL218GR;Vivarent;RENT;Peugeot;2008;Large (group D);SDMR;Napoli Capodichino;7;No;Inattiva;No;2022-11-07; 520,23 € ; 634,68 € ; -   € ;dic-25
+GL221GR;Vivarent;RENT;Peugeot;2008;Large (group D);SDMR;Cassino;1;No;Inattiva;No;2022-11-07; 776,25 € ; 947,03 € ; -   € ;dic-25
+GM691JH;Vivarent;PROPRIETÀ;Evo;3 or similar;Economy (group C);EDMR;Valle di Comino;6;No;Inattiva;No;2023-03-01; 1,00 € ; -   € ; 113,19 € ;dic-25
+GN398ZZ;Vivarent;RENT;Volkswagen;Golf Aut;Large Automatic (group D1);CDAR;Cassino;1;No;Inattiva;No;2023-05-30; 485,29 € ; 592,05 € ; -   € ;dic-25
+GN438HE;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Roma Fiumicino;4;No;Inattiva;No;2024-02-07; 265,68 € ; 324,13 € ; -   € ;dic-25
+GN439HE;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Roma Fiumicino;4;No;Inattiva;No;2023-04-19; 343,68 € ; 419,29 € ; -   € ;dic-25
+GN444HE;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Trapani Porto;10;No;Inattiva;No;2023-04-26; 343,68 € ; 419,29 € ; -   € ;dic-25
+GN450HE;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Roma Fiumicino;4;No;Inattiva;No;2023-04-26; 343,68 € ; 419,29 € ; -   € ;dic-25
+GN926SE;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Trapani Porto;10;No;Inattiva;No;2023-04-19; 343,68 € ; 419,29 € ; -   € ;dic-25
+GP909AZ;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Trapani Porto;10;No;Inattiva;No;2023-07-18; 343,68 € ; 419,29 € ; -   € ;dic-25
+GN437HE;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Napoli Capodichino;7;No;Inattiva;No;2023-04-19; 343,68 € ; 419,29 € ; -   € ;dic-25
+GN890HF;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Napoli Capodichino;7;No;Inattiva;No;2023-04-19; 343,68 € ; 419,29 € ; -   € ;dic-25
+GP768BH;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Napoli Capodichino;7;No;Inattiva;No;2023-07-18; 343,68 € ; 419,29 € ; -   € ;dic-25
+GN027SE;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Cassino;1;No;Inattiva;No;2024-02-05; 265,68 € ; 324,13 € ; -   € ;dic-25
+GN404LW;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Cassino;1;No;Inattiva;No;2024-02-16; 265,68 € ; 324,13 € ; -   € ;dic-25
+GN918SE;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Cassino;1;No;Inattiva;No;2023-05-15; 343,68 € ; 419,29 € ; -   € ;dic-25
+GN920SE;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Cassino;1;No;Inattiva;No;2023-04-19; 343,68 € ; 419,29 € ; -   € ;dic-25
+GN925SE;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Cassino;1;No;Inattiva;No;2023-06-20; 343,68 € ; 419,29 € ; -   € ;dic-25
+GN887LG;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Brindisi;11;No;Inattiva;No;2023-04-19; 343,68 € ; 419,29 € ; -   € ;dic-25
+GN891HF;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Brindisi;11;No;Inattiva;No;2023-04-19; 343,68 € ; 419,29 € ; -   € ;dic-25
+GP098AY;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Brindisi;11;No;Inattiva;No;2023-07-17; 343,68 € ; 419,29 € ; -   € ;dic-25
+GK198CC;Vivarent;PROPRIETÀ;DR;5.0 Aut;Large Automatic (group D1);SDAR;Cassino;1;No;Inattiva;No;2022-08-12; 1,00 € ; -   € ; 134,39 € ;dic-25
+GK199CC;Vivarent;PROPRIETÀ;DR;5.0 Aut;Large Automatic (group D1);SDAR;Cassino;1;No;Inattiva;No;2022-08-12; 1,00 € ; -   € ; 134,39 € ;dic-25
+GP648HR;Vivarent;PROPRIETÀ;Renault;Twingo;Mini (group A);MCMR;Cassino;1;No;Inattiva;No;2023-07-01; 1,00 € ; -   € ; 113,36 € ;dic-25
+GP654HR;Vivarent;PROPRIETÀ;Renault;Twingo;Mini (group A);MCMR;Napoli Capodichino;7;No;Inattiva;No;2023-07-01; 1,00 € ; -   € ; 113,36 € ;dic-25
+FK085NB;Vivarent;PROPRIETÀ;Fiat;FIAT QUBO;Large (group D);DDCD;Cassino;1;No;Inattiva;No;2025-03-31; 1,00 € ; -   € ; 128,00 € ;dic-25
+GK195CC;Vivarent;PROPRIETÀ;DR;5.0 Aut;Large Automatic (group D1);SDAR;Cassino;1;No;Inattiva;No;2022-08-12; 1,00 € ; -   € ; 134,39 € ;dic-25
+GM687JH;Vivarent;PROPRIETÀ;Evo;3 or similar;Economy (group C);EDMR;Cassino;1;No;Inattiva;No;2023-03-01; 1,00 € ; -   € ; 113,19 € ;dic-25
+GM688JH;Vivarent;PROPRIETÀ;Evo;3 or similar;Economy (group C);EDMR;Cassino;1;No;Inattiva;No;2023-03-01; 1,00 € ; -   € ; 113,19 € ;dic-25
+GN251MT;Vivarent;PROPRIETÀ;Fiat;Tipo SW;Station Wagon Automatic (group S1);IWAR;Cassino;1;No;Inattiva;No;2023-08-09; 1,00 € ; -   € ; 136,74 € ;dic-25
+GN442HE;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Cassino;1;No;Inattiva;No;2024-02-15; 265,68 € ; 324,13 € ; -   € ;dic-25
+GN447HE;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Cassino;1;No;Inattiva;No;2023-04-26; 343,68 € ; 419,29 € ; -   € ;dic-25
+GP095AY;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Cassino;1;No;Inattiva;No;2023-07-17; 343,68 € ; 419,29 € ; -   € ;dic-25
+GP416RB;Vivarent;PROPRIETÀ;Fiat;Panda;Small (group B);MDMR;Cassino;1;No;Inattiva;No;2023-11-04; 1,00 € ; -   € ; 114,67 € ;dic-25
+CV821DD;Networkworldtravel;INVESTOR;Smart;Smart ForTwo Cabrio;Cabriolet (group X2);MTAR;Sorrento;9;No;Inattiva;No;2025-06-28; 1,00 € ; -   € ; -   € ;dic-25
+EJ336TD;Networkworldtravel;INVESTOR;Fiat;500;Mini (group A);MCMR;Roma Fiumicino;4;No;Inattiva;No;2025-08-10; 1,00 € ; -   € ; -   € ;dic-25
+EN533AD;Networkworldtravel;INVESTOR;Mercedes Benz;Classe B;Large (group D);SDMR;Sorrento;9;No;Inattiva;No;2025-05-01; 0 ; 0 ; 0 ;dic-25
+EN722SS;Networkworldtravel;INVESTOR;Smart;Fortwo;Mini (group A);MBAR;Sorrento;9;No;Inattiva;No;2025-06-30; 1,00 € ; -   € ; -   € ;dic-25
+EZ416AX;Networkworldtravel;INVESTOR;Audi;A3 Cabriolet;Cabriolet (group X1);XTAR;Sorrento;9;No;Inattiva;No;2025-10-01; 0 ; 0 ; 0 ;dic-25
+EZ498LT;Networkworldtravel;INVESTOR;Fiat;500L;Large (group D);CDMR;Sorrento;9;No;Inattiva;No;2025-06-26; 1,00 € ; -   € ; -   € ;dic-25
+FC318NX;Networkworldtravel;INVESTOR;Fiat;500;Mini (group A);MCMR;Sorrento;9;No;Inattiva;No;2025-06-19; 1,00 € ; -   € ; -   € ;dic-25
+GK197CC;Vivarent;PROPRIETÀ;DR;5.0 Aut;Large Automatic (group D1);SDAR;Cassino NLT;15;No;Inattiva;No;2022-08-12; 1,00 € ; -   € ; 134,39 € ;gen-26
+GC626SR;Vivarent;RENT;Peugeot;Boxer L2H2;Furgone L2H2 (group K2);IKMR;Cassino;1;Yes;Disponibile;Yes;2024-11-01; 1,00 € ; -   € ; -   € ;dic-25
+GF566YK;Networkworldtravel;INVESTOR;Opel;Corsa;Economy (group C);EDMR;Sorrento;9;No;Inattiva;No;2025-05-01; 1,00 € ; -   € ; -   € ;dic-25
+GG531XG;Networkworldtravel;INVESTOR;Fiat;500;Mini (group A);MCMR;Sorrento;9;No;Inattiva;No;2025-05-01; 1,00 € ; -   € ; -   € ;dic-25
+GM690JH;Vivarent;PROPRIETÀ;Evo;3 or similar;Economy (group C);EDMR;Cassino;1;No;Inattiva;No;2023-03-01; 1,00 € ; -   € ; 113,19 € ;gen-26
+GH610VL;WayCar;INVESTOR;Fiat;Panda;Small (group B);MDMR;Trapani Aeroporto;13;No;Inattiva;No;2025-08-20; 1,00 € ; -   € ; -   € ;dic-25
+GH611VL;WayCar;INVESTOR;Fiat;Panda;Small (group B);MDMR;Trapani Aeroporto;13;No;Inattiva;No;2025-08-01; 1,00 € ; -   € ; -   € ;dic-25
+GN839JD;Vivarent;PROPRIETÀ;Dacia;Sandero;Economy (group C);EDMR;Cassino NLT;15;No;Inattiva;No;2023-04-15; 1,00 € ; -   € ; 112,99 € ;gen-26
+GP769BH;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Cassino NLT;15;No;Inattiva;No;2023-07-18; 343,68 € ; 419,29 € ; -   € ;gen-26
+GM694JH;Vivarent;PROPRIETÀ;Evo;3 or similar;Economy (group C);EDMR;Cassino;1;No;Inattiva;No;2023-03-01; 1,00 € ; -   € ; 113,19 € ;gen-26
+GX302BV;Davide Papa - Eco Liri;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino;1;Yes;Inattiva;No;2025-07-31; 1,00 € ; -   € ; 58,06 € ;gen-26
+GT317VX;Davide Papa - Eco Liri;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino;1;Yes;Inattiva;No;2025-07-04; 1,00 € ; -   € ; 56,77 € ;gen-26
+GT326VX;Davide Papa - Eco Liri;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino;1;Yes;Inattiva;No;2025-07-22; 1,00 € ; -   € ; 58,06 € ;gen-26
+GT329VX;Davide Papa - Eco Liri;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino;1;Yes;Inattiva;No;2025-07-04; 1,00 € ; -   € ; 56,77 € ;gen-26
+GN400EY;Vivarent;RENT;Peugeot;3008;Suv Automatic (group J1);FFAR;Roma Fiumicino;4;Yes;In Service;Yes;2023-07-07; 609,36 € ; 743,42 € ; -   € ;feb-26
+GN033SE;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Cassino;1;Yes;In Service;Yes;2024-02-15; 265,68 € ; 324,13 € ; -   € ;feb-26
+GN071WP;Vivarent;RENT;Fiat;500;Mini (group A);MCMR;Firenze;5;Yes;Inattiva;No;2023-10-11; 382,64 € ; 466,82 € ; -   € ;mar-26
+GN223KZ;Vivarent;RENT;Citroen;Jumper L3H2;Furgone L3H2 (group K3);FKMR;Cassino;1;Yes;Inattiva;No;2023-09-01; 659,44 € ; 804,52 € ; -   € ;mar-26
+GN274WP;Vivarent;RENT;Fiat;500;Mini (group A);MCMR;Cassino;1;Yes;Inattiva;No;2023-10-11; 382,64 € ; 466,82 € ; -   € ;mar-26
+GR580MD;Vivarent;RENT;Toyota;Proace;Van 8 Seats Automatic (group M2);IVAR;Roma Fiumicino;4;Yes;Disponibile;Yes;2023-08-01; 813,62 € ; 992,62 € ; -   € ;mar-26
+GN496WM;Vivarent;RENT;Peugeot;Boxer L2H2;Furgone L2H2 (group K2);IKMR;Trapani Porto;10;Yes;A Noleggio;Yes;2022-10-01; 735,75 € ; 897,62 € ; -   € ;apr-26
+GN497WM;Vivarent;RENT;Peugeot;Boxer L2H2;Furgone L2H2 (group K2);IKMR;Cassino;1;Yes;In Service;Yes;2022-10-01; 735,75 € ; 897,62 € ; -   € ;apr-26
+GN498WM;Vivarent;RENT;Peugeot;Boxer L2H2;Furgone L2H2 (group K2);IKMR;Cassino;1;Yes;A Noleggio;Yes;2022-10-01; 735,75 € ; 897,62 € ; -   € ;apr-26
+GL952MA;WayCar;INVESTOR;DR;DR 4;Large (group D);SDMR;Trapani Porto;10;No;Inattiva;No;2025-07-15; 1,00 € ; -   € ; -   € ;dic-25
+GM389HP;WayCar;INVESTOR;Lancia;Ypsilon;Small (group B);MDMR;Trapani Porto;10;Yes;Inattiva;No;2025-07-21; 1,00 € ; -   € ; -   € ;dic-25
+GM391HP;WayCar;INVESTOR;Lancia;Ypsilon;Small (group B);MDMR;Trapani Aeroporto;13;Yes;Inattiva;No;2025-08-01; 1,00 € ; -   € ; -   € ;dic-25
+GN499WM;Vivarent;RENT;Peugeot;Boxer L2H2;Furgone L2H2 (group K2);IKMR;Cassino;1;Yes;Disponibile;Yes;2022-10-01; 735,75 € ; 897,62 € ; -   € ;apr-26
+GN500WM;Vivarent;RENT;Peugeot;Boxer L2H2;Furgone L2H2 (group K2);IKMR;Cassino;1;Yes;In Service;Yes;2022-10-01; 735,75 € ; 897,62 € ; -   € ;apr-26
+GN501WM;Vivarent;RENT;Peugeot;Boxer L2H2;Furgone L2H2 (group K2);IKMR;Valle di Comino;6;Yes;Disponibile;Yes;2022-10-01; 735,75 € ; 897,62 € ; -   € ;apr-26
+GN165CX;WayCar;INVESTOR;DR;DR 4;Large (group D);SDMR;Trapani Aeroporto;13;No;Inattiva;No;2025-07-18; 1,00 € ; -   € ; -   € ;dic-25
+GN197MS;Davide Papa - Eco Liri;INVESTOR;Volkswagen;Transporter;Van 9 Seats (group M);OVMR;Cassino;1;No;Inattiva;No;2025-06-26; 1,00 € ; -   € ; -   € ;ago-25
+GN222CX;WayCar;INVESTOR;DR;DR 4;Large (group D);SDMR;Trapani Aeroporto;13;Yes;Inattiva;No;2025-08-01; 1,00 € ; -   € ; -   € ;dic-25
+GN889HF;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Cassino NLT;15;Yes;Inattiva;No;2023-04-19; 343,68 € ; 419,29 € ; -   € ;apr-26
+GN796WN;Vivarent;RENT;Peugeot;3008;Suv Automatic (group J1);FFAR;Roma Fiumicino;4;Yes;Disponibile;Yes;2024-07-20; 609,36 € ; 743,42 € ; -   € ;mag-26
+GS058JF;Vivarent;RENT;Peugeot;2008 Aut;Large Automatic (group D1);SDAR;Cassino;1;Yes;A Noleggio;Yes;2024-04-29; 411,33 € ; 501,82 € ; -   € ;mag-26
+GN483CB;Vivarent;RENT;Volkswagen;Multivan;Van 7 Seats Automatic (group M3);PVAR;Cassino;1;No;Inattiva;No;2023-06-30; 1.026,87 € ; 1.252,78 € ; -   € ;dic-25
+GS172JF;Vivarent;RENT;Peugeot;2008 Aut;Large Automatic (group D1);SDAR;Roma Termini;2;Yes;Disponibile;Yes;2024-04-29; 410,71 € ; 501,07 € ; -   € ;mag-26
+GS499DY;Vivarent;RENT;Peugeot;2008 Aut;Large Automatic (group D1);SDAR;Roma Fiumicino;4;Yes;Disponibile;Yes;2024-04-29; 410,71 € ; 501,07 € ; -   € ;mag-26
+GN683CX;WayCar;INVESTOR;DR;DR 3.0;Economy (group C);EDMR;Trapani Aeroporto;13;Yes;Inattiva;No;2025-07-29; 1,00 € ; -   € ; -   € ;dic-25
+GP141FT;Vivarent;RENT;Toyota;Proace;Van 8 Seats Automatic (group M2);IVAR;Roma Termini;2;Yes;Disponibile;Yes;2023-07-01; 813,62 € ; 992,62 € ; -   € ;dic-25
+GN922SE;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Cassino NLT;15;Yes;Inattiva;No;2023-05-15; 343,68 € ; 419,29 € ; -   € ;mag-26
+GN888LG;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Palermo Airport;12;Yes;Inattiva;No;2023-05-10; 343,68 € ; 419,29 € ; -   € ;mag-26
+GS012DZ;Vivarent;RENT;Peugeot;2008 Aut;Large Automatic (group D1);SDAR;Cassino;1;Yes;A Noleggio;Yes;2024-05-10; 411,33 € ; 501,82 € ; -   € ;giu-26
+GS795DY;Vivarent;RENT;Peugeot;2008 Aut;Large Automatic (group D1);SDAR;Cassino;1;Yes;A Noleggio;Yes;2024-05-10; 385,78 € ; 470,65 € ; -   € ;giu-26
+GP148KV;Vivarent;RENT;Peugeot;Boxer L2H2;Furgone L2H2 (group K2);IKMR;Cassino NLT;15;Yes;In Service;Yes;2022-10-01; 735,06 € ; 896,77 € ; -   € ;lug-26
+GP764BH;Vivarent;RENT;Lancia;Ypsilon;Small (group B);MDMR;Cassino;1;Yes;In Service;Yes;2023-07-18; 343,68 € ; 419,29 € ; -   € ;lug-26
+GS673EP;Vivarent;RENT;Volkswagen;Tiguan;Suv Automatic (group J1);FFAR;Roma Fiumicino;4;Yes;A Noleggio;Yes;2024-01-10; 581,14 € ; 708,99 € ; -   € ;lug-26
+GS073JF;Vivarent;RENT;Peugeot;2008 Aut;Large Automatic (group D1);SDAR;Brindisi;11;Yes;Disponibile;Yes;2024-07-23; 407,24 € ; 496,83 € ; -   € ;ago-26
+GN562MM;Vivarent;LEASING;Renault;Traffic;Van 9 Seats (group M);OVMR;Valle di Comino;6;Yes;Disponibile;Yes;2023-09-21; 610,00 € ; 744,20 € ; -   € ;set-26
+GK663ME;Vivarent;PROPRIETÀ;DS;4;Premium (group P);PEAR;Cassino;1;Yes;Inattiva;No;2025-07-15; 1,00 € ; -   € ; 133,05 € ;set-26
+GN567MS;Vivarent;PROPRIETÀ;Jeep;Compass or similar;Suv Automatic (group J1);FFAH;Cassino NLT;15;Yes;A Noleggio;Yes;2023-07-28; 1,00 € ; -   € ; 177,76 € ;set-26
+GV068SS;Vivarent;LEASING;Volkswagen;T-Roc;Large (group D);IFMR;Brindisi;11;Yes;Disponibile;Yes;2025-04-16; 432,73 € ; 527,93 € ; 185,53 € ;ott-26
+GV236AK;Vivarent;LEASING;Volkswagen;Taigo;Large Automatic (group D1);SDAR;Roma Fiumicino;4;Yes;Disponibile;Yes;2025-04-09; 409,25 € ; 499,29 € ; 181,13 € ;ott-26
+GV242AK;Vivarent;LEASING;Volkswagen;Taigo;Large Automatic (group D1);SDAR;Cassino;1;Yes;A Noleggio;Yes;2025-04-09; 409,25 € ; 499,29 € ; 181,13 € ;ott-26
+GV245AK;Vivarent;LEASING;Volkswagen;Taigo;Large Automatic (group D1);SDAR;Cassino;1;Yes;A Noleggio;Yes;2025-04-09; 409,25 € ; 499,29 € ; 181,13 € ;ott-26
+GV246AK;Vivarent;LEASING;Volkswagen;Taigo;Large Automatic (group D1);SDAR;Brindisi;11;Yes;A Noleggio;Yes;2025-04-09; 409,25 € ; 499,29 € ; 181,13 € ;ott-26
+GV247AK;Vivarent;LEASING;Volkswagen;Taigo;Large Automatic (group D1);SDAR;Brindisi;11;Yes;In Service;Yes;2025-04-09; 409,25 € ; 499,29 € ; 181,13 € ;ott-26
+GV249AK;Vivarent;LEASING;Volkswagen;Taigo;Large Automatic (group D1);SDAR;Roma Fiumicino;4;Yes;A Noleggio;Yes;2025-04-12; 409,25 € ; 499,29 € ; 181,13 € ;ott-26
+GV252AK;Vivarent;LEASING;Volkswagen;Taigo;Large Automatic (group D1);SDAR;Napoli Capodichino;7;Yes;A Noleggio;Yes;2025-04-12; 409,25 € ; 499,29 € ; 181,13 € ;ott-26
+GV559TA;Vivarent;LEASING;Volkswagen;Taigo;Large Automatic (group D1);SDAR;Brindisi;11;Yes;Disponibile;Yes;2025-04-09; 409,25 € ; 499,29 € ; 181,13 € ;ott-26
+GX159CH;Vivarent;LEASING;Volkswagen;Taigo;Large Automatic (group D1);SDAR;Napoli Capodichino;7;Yes;A Noleggio;Yes;2025-04-09; 409,25 € ; 499,29 € ; 181,13 € ;ott-26
+GS342EA;Vivarent;LEASING;Opel;Corsa;Economy (group C);EDMR;Cassino;1;Yes;Inattiva;No;2025-04-15; 242,58 € ; 295,95 € ; 157,24 € ;ott-26
+GV134HZ;Vivarent;LEASING;Opel;Astra;Large Automatic (group D1);CDAR;Roma Fiumicino;4;Yes;Disponibile;Yes;2025-04-15; 564,74 € ; 688,98 € ; 128,00 € ;ott-26
+GV229SX;Vivarent;LEASING;Peugeot;2008;Large (group D);SDMR;Roma Termini;2;Yes;Disponibile;Yes;2025-04-15; 291,09 € ; 355,13 € ; 128,00 € ;ott-26
+GV942JF;Vivarent;LEASING;Peugeot;2008;Large (group D);SDMR;Roma Fiumicino;4;Yes;A Noleggio;Yes;2025-04-16; 325,52 € ; 397,13 € ; 128,00 € ;ott-26
+GV034AK;Networkworldtravel;INVESTOR;Renault;Traffic;Van 9 Seats (group M);OVMR;Sorrento;9;No;Inattiva;No;2025-10-21; 0 ; 0 ; 0 ;dic-25
+GW577EY;Vivarent;LEASING;Peugeot;2008 Aut;Large Automatic (group D1);SDAR;Brindisi;11;Yes;Disponibile;Yes;2025-06-18; 410,04 € ; 500,25 € ; 128,00 € ;ott-26
+GW839EX;Vivarent;LEASING;Peugeot;2008;Large (group D);SDMR;Roma Fiumicino;4;Yes;A Noleggio;Yes;2025-05-28; 325,52 € ; 397,13 € ; 128,00 € ;ott-26
+GX150CM;Vivarent;LEASING;Opel;Corsa;Economy (group C);EDMR;Napoli Stazione;8;Yes;A Noleggio;Yes;2025-06-12; 281,71 € ; 343,69 € ; 128,00 € ;ott-26
+GX388CP;Vivarent;LEASING;Peugeot;308;Station Wagon Manual (group S);IWMR;Cassino;1;Yes;A Noleggio;Yes;2025-05-28; 410,04 € ; 500,25 € ; 128,00 € ;ott-26
+GS031FE;Vivarent;LEASING;Volkswagen;T-Roc;Large Automatic (group D1);IDAR;Brindisi;11;Yes;In Service;Yes;2025-06-11; 512,54 € ; 625,30 € ; 128,00 € ;ott-26
+GV065SS;Vivarent;LEASING;Volkswagen;T-Roc;Large (group D);IFMR;Cassino;1;Yes;A Noleggio;Yes;2025-04-16; 432,73 € ; 527,93 € ; 185,53 € ;ott-26
+GV067SS;Vivarent;LEASING;Volkswagen;T-Roc;Large (group D);IFMR;Brindisi;11;Yes;A Noleggio;Yes;2025-04-16; 432,73 € ; 527,93 € ; 185,53 € ;ott-26
+GV069SS;Vivarent;LEASING;Volkswagen;T-Roc;Large (group D);IFMR;Roma Fiumicino;4;Yes;A Noleggio;Yes;2025-04-18; 432,73 € ; 527,93 € ; 185,53 € ;ott-26
+GV237AK;Vivarent;LEASING;Volkswagen;Taigo;Large Automatic (group D1);SDAR;Brindisi;11;Yes;Disponibile;Yes;2025-04-12; 409,25 € ; 499,29 € ; 181,13 € ;ott-26
+GV238AK;Vivarent;LEASING;Volkswagen;Taigo;Large Automatic (group D1);SDAR;Napoli Capodichino;7;Yes;A Noleggio;Yes;2025-04-12; 409,25 € ; 499,29 € ; 181,13 € ;ott-26
+GV239AK;Vivarent;LEASING;Volkswagen;Taigo;Large Automatic (group D1);SDAR;Cassino;1;Yes;In Service;Yes;2025-04-12; 409,25 € ; 499,29 € ; 181,13 € ;ott-26
+GV240AK;Vivarent;LEASING;Volkswagen;Taigo;Large Automatic (group D1);SDAR;Roma Termini;2;Yes;A Noleggio;Yes;2025-04-12; 409,25 € ; 499,29 € ; 181,13 € ;ott-26
+GV241AK;Vivarent;LEASING;Volkswagen;Taigo;Large Automatic (group D1);SDAR;Roma Fiumicino;4;Yes;Disponibile;Yes;2025-04-16; 409,25 € ; 499,29 € ; 181,13 € ;ott-26
+GV248AK;Vivarent;LEASING;Volkswagen;Taigo;Large Automatic (group D1);SDAR;Napoli Capodichino;7;Yes;Disponibile;Yes;2025-04-12; 409,25 € ; 499,29 € ; 181,13 € ;ott-26
+GV250AK;Vivarent;LEASING;Volkswagen;Taigo;Large Automatic (group D1);SDAR;Cassino;1;Yes;A Noleggio;Yes;2025-04-16; 409,25 € ; 499,29 € ; 181,13 € ;ott-26
+GV251AK;Vivarent;LEASING;Volkswagen;Taigo;Large Automatic (group D1);SDAR;Cassino NLT;15;Yes;A Noleggio;Yes;2025-04-12; 409,25 € ; 499,29 € ; 181,13 € ;ott-26
+GV303AK;Vivarent;LEASING;Volkswagen;Taigo;Large Automatic (group D1);SDAR;Roma Termini;2;Yes;A Noleggio;Yes;2025-04-12; 409,25 € ; 499,29 € ; 181,13 € ;ott-26
+GV562TA;Vivarent;LEASING;Volkswagen;Taigo;Large Automatic (group D1);SDAR;Roma Fiumicino;4;Yes;Disponibile;Yes;2025-04-16; 409,25 € ; 499,29 € ; 181,13 € ;ott-26
+GW150WA;Vivarent;RENT;Toyota;Proace;Van 8 Seats Automatic (group M2);IVAR;Firenze;5;Yes;A Noleggio;Yes;2024-10-28; 938,51 € ; 1.144,98 € ; -   € ;ott-26
+GV782TA;Vivarent;LEASING;Volkswagen;T-Cross;Large (group D);IFMR;Brindisi;11;Yes;Disponibile;Yes;2025-06-20; 352,13 € ; 429,60 € ; 128,00 € ;ott-26
+GZ471GT;Networkworldtravel;INVESTOR;Lancia;New Y;Economy Automatic (group C1);EDAR;Sorrento;9;No;Inattiva;No;2025-06-09; 1,00 € ; -   € ; -   € ;dic-25
+H CY849TC;Networkworldtravel;INVESTOR;Renault;Megane Cabriolet;Cabriolet (group X);NBMR;Sorrento;9;No;Inattiva;No;2025-06-01; 0 ; 0 ; 0 ;dic-25
+H FJ490NV;Networkworldtravel;INVESTOR;Peugeot;308 Cabriolet;Cabriolet (group X);NBMR;Sorrento;9;No;Inattiva;No;2025-05-01; 0 ; 0 ; 0 ;dic-25
+GV784TA;Vivarent;LEASING;Volkswagen;T-Cross;Large (group D);IFMR;Cassino NLT;15;Yes;A Noleggio;Yes;2025-06-11; 352,13 € ; 429,60 € ; 128,00 € ;ott-26
+GV787TA;Vivarent;LEASING;Volkswagen;T-Cross;Large (group D);IFMR;Roma Termini;2;Yes;Disponibile;Yes;2025-06-11; 352,13 € ; 429,60 € ; 128,00 € ;ott-26
+GV788TA;Vivarent;LEASING;Volkswagen;T-Cross;Large (group D);IFMR;Roma Fiumicino;4;Yes;A Noleggio;Yes;2025-06-20; 352,13 € ; 429,60 € ; 128,00 € ;ott-26
+GV791TA;Vivarent;LEASING;Volkswagen;T-Cross;Large (group D);IFMR;Napoli Stazione;8;Yes;A Noleggio;Yes;2025-06-11; 352,13 € ; 429,60 € ; 128,00 € ;ott-26
+GX731CH;Vivarent;LEASING;Volkswagen;T-Cross;Large (group D);IFMR;Napoli Capodichino;7;Yes;In Service;Yes;2025-05-29; 352,13 € ; 429,60 € ; 128,00 € ;ott-26
+GR326BE;Vivarent;LEASING;Renault;Traffic;Van 9 Seats (group M);OVMR;Cassino;1;Yes;Disponibile;Yes;2023-11-03; 386,40 € ; 471,41 € ; -   € ;ott-26
+GR979BD;Vivarent;LEASING;Renault;Traffic;Van 9 Seats (group M);OVMR;Cassino;1;Yes;Disponibile;Yes;2023-11-03; 456,57 € ; 557,02 € ; -   € ;ott-26
+GT827PE;Vivarent;RENT;Volkswagen;Tiguan;Suv Automatic (group J1);FFAR;Roma Fiumicino;4;Yes;Disponibile;Yes;2024-04-08; 581,14 € ; 708,99 € ; -   € ;ott-26
+GT833PE;Vivarent;RENT;Volkswagen;Tiguan;Suv Automatic (group J1);FFAR;Roma Termini;2;Yes;A Noleggio;Yes;2024-04-08; 581,14 € ; 708,99 € ; -   € ;ott-26
+GT834PE;Vivarent;RENT;Volkswagen;Tiguan;Suv Automatic (group J1);FFAR;Roma Fiumicino;4;Yes;Disponibile;Yes;2024-04-08; 581,14 € ; 708,99 € ; -   € ;ott-26
+GT836PE;Vivarent;RENT;Volkswagen;Tiguan;Suv Automatic (group J1);FFAR;Valle di Comino;6;Yes;A Noleggio;Yes;2024-04-08; 581,14 € ; 708,99 € ; -   € ;ott-26
+GT841PE;Vivarent;RENT;Volkswagen;Tiguan;Suv Automatic (group J1);FFAR;Firenze;5;Yes;Disponibile;Yes;2024-04-08; 581,14 € ; 708,99 € ; -   € ;ott-26
+GT843PE;Vivarent;RENT;Volkswagen;Tiguan;Suv Automatic (group J1);FFAR;Napoli Capodichino;7;Yes;A Noleggio;Yes;2024-04-08; 581,14 € ; 708,99 € ; -   € ;ott-26
+GT845PE;Vivarent;RENT;Volkswagen;Tiguan;Suv Automatic (group J1);FFAR;Cassino;1;Yes;A Noleggio;Yes;2024-04-08; 581,14 € ; 708,99 € ; -   € ;ott-26
+GW323VW;Vivarent;RENT;Volkswagen;Golf Aut;Large Automatic (group D1);CDAR;Cassino NLT;15;Yes;A Noleggio;Yes;2024-10-15; 476,97 € ; 581,90 € ; -   € ;ott-26
+GX153CM;Vivarent;LEASING;Opel;Grandland;Suv Automatic (group J1);FFAR;Brindisi;11;Yes;A Noleggio;Yes;2025-06-12; 435,07 € ; 530,79 € ; -   € ;nov-26
+GX154CM;Vivarent;LEASING;Opel;Grandland;Suv Automatic (group J1);FFAR;Brindisi;11;Yes;A Noleggio;Yes;2025-05-28; 435,07 € ; 530,79 € ; -   € ;nov-26
+GX156CM;Vivarent;LEASING;Opel;Grandland;Suv Automatic (group J1);FFAR;Napoli Capodichino;7;Yes;Disponibile;Yes;2025-05-28; 435,07 € ; 530,79 € ; -   € ;nov-26
+GX159CM;Vivarent;LEASING;Opel;Grandland;Suv Automatic (group J1);FFAR;Roma Fiumicino;4;Yes;Disponibile;Yes;2025-06-12; 435,07 € ; 530,79 € ; -   € ;nov-26
+GX449FN;Vivarent;RENT;Toyota;Proace;Van 8 Seats Automatic (group M2);IVAR;Roma Termini;2;Yes;Disponibile;Yes;2024-11-15; 938,51 € ; 1.144,98 € ; -   € ;nov-26
+GX452FN;Vivarent;RENT;Toyota;Proace;Van 8 Seats Automatic (group M2);IVAR;Roma Fiumicino;4;Yes;Disponibile;Yes;2024-11-15; 938,51 € ; 1.144,98 € ; -   € ;nov-26
+GV790TA;Vivarent;LEASING;Volkswagen;T-Cross;Large (group D);IFMR;Napoli Capodichino;7;Yes;A Noleggio;Yes;2025-05-29; 352,13 € ; 429,60 € ; 128,00 € ;nov-26
+GR017BF;Vivarent;LEASING;Renault;Traffic;Van 9 Seats (group M);OVMR;Cassino;1;Yes;A Noleggio;Yes;2023-12-01; 386,40 € ; 471,41 € ; -   € ;nov-26
+GY799BF;Vivarent;LEASING;Citroen;Citroen C4;Suv Automatic (group J1);FGAR;Roma Fiumicino;4;Yes;A Noleggio;Yes;2025-06-20; 385,77 € ; 470,64 € ; -   € ;nov-26
+GY841BF;Vivarent;LEASING;Citroen;Citroen C4;Suv Automatic (group J1);FGAR;Roma Fiumicino;4;Yes;Disponibile;Yes;2025-07-01; 385,77 € ; 470,64 € ; -   € ;nov-26
+GA278CV;WayCar;INVESTOR;Fiat;Panda;Small (group B);MDMR;Trapani Aeroporto;13;Yes;In Service;Yes;2025-09-19; -   € ; -   € ; -   € ;dic-26
+GH503VR;WayCar;INVESTOR;Fiat;Panda;Small (group B);MDMR;Trapani Aeroporto;13;Yes;In Service;Yes;2025-08-11; 1,00 € ; -   € ; -   € ;dic-26
+GH614ZR;Davide Papa - Eco Liri;INVESTOR;Jeep;Compass or similar;Suv Automatic (group J1);FFAH;Roma Fiumicino;4;Yes;A Noleggio;Yes;2025-07-04; 1,00 € ; -   € ; 82,09 € ;dic-26
+GH616VL;WayCar;INVESTOR;Fiat;Panda;Small (group B);MDMR;Trapani Aeroporto;13;Yes;A Noleggio;Yes;2025-08-01; 1,00 € ; -   € ; -   € ;dic-26
+GJ182TK;Davide Papa - Eco Liri;INVESTOR;Jeep;Renegade;Large Automatic (group D1);IDAR;Cassino;1;Yes;A Noleggio;Yes;2025-07-08; 1,00 € ; -   € ; 71,50 € ;dic-26
+GJ184TK;Davide Papa - Eco Liri;INVESTOR;Jeep;Renegade;Large Automatic (group D1);IDAR;Cassino;1;Yes;A Noleggio;Yes;2025-07-09; 1,00 € ; -   € ; 74,34 € ;dic-26
+GJ265LD;WayCar;INVESTOR;Fiat;Panda;Small (group B);MDMR;Trapani Aeroporto;13;Yes;In Service;Yes;2025-08-01; 1,00 € ; -   € ; -   € ;dic-26
+GJ267LD;WayCar;INVESTOR;Fiat;Panda;Small (group B);MDMR;Trapani Porto;10;Yes;Disponibile;Yes;2025-08-07; 1,00 € ; -   € ; -   € ;dic-26
+GJ341LD;WayCar;INVESTOR;Fiat;Panda;Small (group B);MDMR;Trapani Aeroporto;13;Yes;In Service;Yes;2025-08-07; 1,00 € ; -   € ; -   € ;dic-26
+GJ344LD;WayCar;INVESTOR;Fiat;Panda;Small (group B);MDMR;Trapani Aeroporto;13;Yes;A Noleggio;Yes;2025-09-01; 1,00 € ; -   € ; -   € ;dic-26
+GJ345LD;WayCar;INVESTOR;Fiat;Panda;Small (group B);MDMR;Trapani Aeroporto;13;Yes;Disponibile;Yes;2025-08-01; 1,00 € ; -   € ; -   € ;dic-26
+GK073MG;Davide Papa - Eco Liri;INVESTOR;Opel;Mokka;Large (group D);CDMR;Roma Fiumicino;4;Yes;Inattiva;No;2025-07-10; 1,00 € ; -   € ; 63,88 € ;dic-26
+GK075MG;Davide Papa - Eco Liri;INVESTOR;Opel;Mokka;Large (group D);CDMR;Cassino NLT;15;Yes;A Noleggio;Yes;2025-07-04; 1,00 € ; -   € ; 63,88 € ;dic-26
+GK281MH;Davide Papa - Eco Liri;INVESTOR;Volkswagen;Volkswagen Polo;Economy (group C);EDMR;Roma Termini;2;Yes;A Noleggio;Yes;2025-07-04; 1,00 € ; -   € ; 66,50 € ;dic-26
+GK326MH;Davide Papa - Eco Liri;INVESTOR;Jeep;Compass or similar;Suv Automatic (group J1);FFAH;Roma Termini;2;Yes;Disponibile;Yes;2025-07-07; 1,00 € ; -   € ; 83,90 € ;dic-26
+GK965MF;Davide Papa - Eco Liri;INVESTOR;Skoda;Kamiq;Large (group D);IDMR;Cassino;1;Yes;Inattiva;No;2025-07-08; 1,00 € ; -   € ; 68,20 € ;dic-26
+GK976MF;Davide Papa - Eco Liri;INVESTOR;Jeep;Renegade;Large Automatic (group D1);IDAR;Cassino;1;Yes;A Noleggio;Yes;2025-07-09; 1,00 € ; -   € ; 74,08 € ;dic-26
+GK977MF;Davide Papa - Eco Liri;INVESTOR;Jeep;Compass or similar;Suv Automatic (group J1);FFAH;Roma Fiumicino;4;Yes;Disponibile;Yes;2025-07-17; 1,00 € ; -   € ; 82,61 € ;dic-26
+GM423XA;WayCar;INVESTOR;Fiat;Panda;Small (group B);MDMR;Trapani Aeroporto;13;Yes;A Noleggio;Yes;2025-08-01; 1,00 € ; -   € ; -   € ;dic-26
+GM820ER;Davide Papa - Eco Liri;INVESTOR;Citroen;C3 Aircross;Large (group D);IDMR;Cassino;1;Yes;A Noleggio;Yes;2025-07-22; 1,00 € ; -   € ; 58,84 € ;dic-26
+GN121WH;Davide Papa - Eco Liri;INVESTOR;Peugeot;308 SW;Station Wagon Automatic (group S1);IWAR;Roma Termini;2;Yes;A Noleggio;Yes;2025-07-04; 1,00 € ; -   € ; 64,00 € ;dic-26
+GN247MT;Davide Papa - Eco Liri;INVESTOR;Fiat;Tipo SW;Station Wagon Automatic (group S1);IWAR;Roma Termini;2;Yes;A Noleggio;Yes;2025-07-15; 1,00 € ; -   € ; 62,71 € ;dic-26
+GN250MT;Davide Papa - Eco Liri;INVESTOR;Fiat;Tipo SW;Station Wagon Automatic (group S1);IWAR;Roma Fiumicino;4;Yes;Inattiva;No;2025-07-07; 1,00 € ; -   € ; 65,17 € ;dic-26
+GN424YL;Davide Papa - Eco Liri;INVESTOR;Volkswagen;T-Cross;Large (group D);IFMR;Cassino;1;Yes;Inattiva;No;2025-07-10; 1,00 € ; -   € ; 62,00 € ;dic-26
+GN568MS;Davide Papa - Eco Liri;INVESTOR;Jeep;Compass or similar;Suv Automatic (group J1);FFAH;Roma Fiumicino;4;Yes;Inattiva;No;2025-07-04; 1,00 € ; -   € ; 82,57 € ;dic-26
+GN573MS;Davide Papa - Eco Liri;INVESTOR;Jeep;Compass or similar;Suv Automatic (group J1);FFAH;Cassino;1;Yes;Inattiva;No;2025-07-07; 1,00 € ; -   € ; 81,12 € ;dic-26
+GP473AL;Davide Papa - Eco Liri;INVESTOR;Opel;Crossland;Large (group D);CDMR;Roma Termini;2;Yes;Inattiva;No;2025-07-16; 1,00 € ; -   € ; 55,61 € ;dic-26
+GP704RB;Davide Papa - Eco Liri;INVESTOR;Volkswagen;Golf;Large (group D);CDMR;Roma Termini;2;Yes;Disponibile;Yes;2025-07-08; 1,00 € ; -   € ; 74,39 € ;dic-26
+GP854RC;Davide Papa - Eco Liri;INVESTOR;DS;4;Premium (group P);PEAR;Cassino NLT;15;Yes;A Noleggio;Yes;2025-07-22; 1,00 € ; -   € ; 76,92 € ;dic-26
+GP989RB;Davide Papa - Eco Liri;INVESTOR;Alfa Romeo;Tonale;Premium (group P);PFAR;Trapani Porto;10;Yes;Disponibile;Yes;2025-07-04; 1,00 € ; -   € ; 77,44 € ;dic-26
+GR386AD;Davide Papa - Eco Liri;INVESTOR;Volkswagen;T-Cross;Large (group D);IFMR;Sorrento;9;Yes;A Noleggio;Yes;2025-07-16; 1,00 € ; -   € ; 69,23 € ;dic-26
+GR483PB;Davide Papa - Eco Liri;INVESTOR;Skoda;Octavia Sw;Station Wagon Automatic (group S1);IWAR;Roma Termini;2;Yes;A Noleggio;Yes;2025-07-10; 1,00 € ; -   € ; 73,12 € ;dic-26
+GR485PB;Davide Papa - Eco Liri;INVESTOR;Volkswagen;Taigo;Large (group D);IDMR;Roma Fiumicino;4;Yes;A Noleggio;Yes;2025-07-10; 1,00 € ; -   € ; 69,11 € ;dic-26
+GR488PB;Davide Papa - Eco Liri;INVESTOR;Volkswagen;Taigo;Large (group D);IDMR;Roma Fiumicino;4;Yes;Disponibile;Yes;2025-07-10; 1,00 € ; -   € ; 67,93 € ;dic-26
+GR490PB;Davide Papa - Eco Liri;INVESTOR;Volkswagen;Golf Aut;Large Automatic (group D1);CDAR;Cassino;1;Yes;A Noleggio;Yes;2025-07-04; 1,00 € ; -   € ; 82,72 € ;dic-26
+GR912AG;Davide Papa - Eco Liri;INVESTOR;Volkswagen;Taigo;Large (group D);IDMR;Roma Fiumicino;4;Yes;Disponibile;Yes;2025-07-04; 1,00 € ; -   € ; 69,11 € ;dic-26
+GS410FA;Davide Papa - Eco Liri;INVESTOR;Skoda;Octavia Sw;Station Wagon Automatic (group S1);IWAR;Roma Fiumicino;4;Yes;Disponibile;Yes;2025-07-04; 1,00 € ; -   € ; 75,24 € ;dic-26
+GT060NY;Davide Papa - Eco Liri;INVESTOR;Citroen;C3;Economy (group C);EDMR;Roma Termini;2;Yes;A Noleggio;Yes;2025-07-15; 1,00 € ; -   € ; 56,77 € ;dic-26
+GT143VW;Davide Papa - Eco Liri;INVESTOR;Skoda;Kamiq;Large (group D);IDMR;Cassino;1;Yes;A Noleggio;Yes;2025-07-16; 1,00 € ; -   € ; 68,80 € ;dic-26
+GT144VW;Davide Papa - Eco Liri;INVESTOR;Skoda;Scala;Economy (group C);EDMR;Cassino;1;Yes;Inattiva;No;2025-07-16; 1,00 € ; -   € ; 65,36 € ;dic-26
+GT315VX;Davide Papa - Eco Liri;INVESTOR;Fiat;Panda;Small (group B);MDMR;Valle di Comino;6;Yes;Inattiva;No;2025-07-04; 1,00 € ; -   € ; 56,77 € ;dic-26
+GT323VX;Davide Papa - Eco Liri;INVESTOR;Fiat;Panda;Small (group B);MDMR;Roma Fiumicino;4;Yes;Inattiva;No;2025-07-08; 1,00 € ; -   € ; 56,77 € ;dic-26
+GT668DA;Davide Papa - Eco Liri;INVESTOR;Opel;Corsa;Economy (group C);EDMR;Sorrento;9;Yes;A Noleggio;Yes;2025-07-22; 1,00 € ; -   € ; 55,61 € ;dic-26
+GT681VW;Davide Papa - Eco Liri;INVESTOR;Volkswagen;Volkswagen Polo;Economy (group C);EDMR;Cassino;1;Yes;A Noleggio;Yes;2025-07-16; 1,00 € ; -   € ; 66,27 € ;dic-26
+GT687VW;Davide Papa - Eco Liri;INVESTOR;DS;4;Premium (group P);PEAR;Cassino;1;Yes;A Noleggio;Yes;2025-07-08; 1,00 € ; -   € ; 79,51 € ;dic-26
+GT691VW;Davide Papa - Eco Liri;INVESTOR;DS;4;Premium (group P);PEAR;Roma Termini;2;Yes;A Noleggio;Yes;2025-07-10; 1,00 € ; -   € ; 79,51 € ;dic-26
+GT693VW;Davide Papa - Eco Liri;INVESTOR;Fiat;Panda;Small (group B);MDMR;Roma Termini;2;Yes;Inattiva;No;2025-07-04; 1,00 € ; -   € ; 56,77 € ;dic-26
+GT929VV;Davide Papa - Eco Liri;INVESTOR;Alfa Romeo;Tonale;Premium (group P);PFAR;Roma Fiumicino;4;Yes;In Service;Yes;2025-07-08; 1,00 € ; -   € ; 79,44 € ;dic-26
+GV120NP;Davide Papa - Eco Liri;INVESTOR;Opel;Corsa;Economy (group C);EDMR;Cassino;1;Yes;Inattiva;No;2025-07-31; 1,00 € ; -   € ; 55,61 € ;dic-26
+GV796GS;Davide Papa - Eco Liri;INVESTOR;Citroen;C3;Economy (group C);EDMR;Roma Termini;2;Yes;Inattiva;No;2025-07-16; 1,00 € ; -   € ; 56,77 € ;dic-26
+GV825GS;Davide Papa - Eco Liri;INVESTOR;Citroen;C3;Economy (group C);EDMR;Cassino;1;Yes;Inattiva;No;2025-07-15; 1,00 € ; -   € ; 56,77 € ;dic-26
+GV868GS;Davide Papa - Eco Liri;INVESTOR;Citroen;C3;Economy (group C);EDMR;Valle di Comino;6;Yes;Inattiva;No;2025-07-15; 1,00 € ; -   € ; 56,77 € ;dic-26
+GW467EY;Davide Papa - Eco Liri;INVESTOR;Volkswagen;Golf Variant Sw;Station Wagon Automatic (group S1);IWAR;Cassino NLT;15;Yes;A Noleggio;Yes;2025-07-15; 1,00 € ; -   € ; 79,56 € ;dic-26
+GW899FB;Davide Papa - Eco Liri;INVESTOR;Skoda;Karoq;Suv Automatic (group J1);FFAR;Napoli Capodichino;7;Yes;A Noleggio;Yes;2025-07-16; 1,00 € ; -   € ; 79,99 € ;dic-26
+GW966FB;Davide Papa - Eco Liri;INVESTOR;Volkswagen;T-Cross;Large (group D);IFMR;Cassino;1;Yes;Disponibile;Yes;2025-07-16; 1,00 € ; -   € ; 69,89 € ;dic-26
+GX398BV;Davide Papa - Eco Liri;INVESTOR;Volkswagen;T-Roc Cabrio;Cabriolet (group X1);XTAR;Roma Fiumicino;4;Yes;In Service;Yes;2025-07-15; 1,00 € ; -   € ; 80,74 € ;dic-26
+GX399BV;Davide Papa - Eco Liri;INVESTOR;Volkswagen;T-Roc;Large Automatic (group D1);IDAR;Cassino;1;Yes;Inattiva;No;2025-07-17; 1,00 € ; -   € ; 82,72 € ;dic-26
+GX404BV;Davide Papa - Eco Liri;INVESTOR;Skoda;Octavia Sw;Station Wagon Manual (group S);IWMR;Cassino NLT;15;Yes;A Noleggio;Yes;2025-07-16; 1,00 € ; -   € ; 73,12 € ;dic-26
+GX647BX;Davide Papa - Eco Liri;INVESTOR;Lancia;New Y;Economy Automatic (group C1);EDAR;Cassino;1;Yes;A Noleggio;Yes;2025-07-08; 1,00 € ; -   € ; 72,71 € ;dic-26
+GX648BX;Davide Papa - Eco Liri;INVESTOR;Lancia;New Y;Economy Automatic (group C1);EDAR;Cassino;1;Yes;A Noleggio;Yes;2025-07-04; 1,00 € ; -   € ; 72,46 € ;dic-26
+GX944BW;Davide Papa - Eco Liri;INVESTOR;Opel;Astra;Large Automatic (group D1);CDAR;Napoli Capodichino;7;Yes;Inattiva;No;2025-07-19; 1,00 € ; -   € ; 81,44 € ;dic-26
+GX945BW;Davide Papa - Eco Liri;INVESTOR;Opel;Astra;Large Automatic (group D1);CDAR;Valle di Comino;6;Yes;Disponibile;Yes;2025-07-19; 1,00 € ; -   € ; 81,44 € ;dic-26
+GX946BW;Davide Papa - Eco Liri;INVESTOR;Opel;Grandland;Suv Automatic (group J1);FFAR;Roma Fiumicino;4;Yes;Disponibile;Yes;2025-07-10; 1,00 € ; -   € ; 82,61 € ;dic-26
+GX947BW;Davide Papa - Eco Liri;INVESTOR;Opel;Grandland;Suv Automatic (group J1);FFAR;Cassino;1;Yes;Disponibile;Yes;2025-07-15; 1,00 € ; -   € ; 84,73 € ;dic-26
+GY021TX;Davide Papa - Eco Liri;INVESTOR;Volkswagen;Caravelle;Van 9 Seats Automatic (group M1);OVAR;Roma Fiumicino;4;Yes;Disponibile;Yes;2025-07-28; 1,00 € ; -   € ; -   € ;dic-26
+GY056TX;Davide Papa - Eco Liri;INVESTOR;Opel;Zafira Life 6;Van 6 Seats Automatic (group M4);UVAR;Cassino;1;Yes;Disponibile;Yes;2025-07-31; 1,00 € ; -   € ; 75,63 € ;dic-26
+GY058TX;Davide Papa - Eco Liri;INVESTOR;Opel;Zafira Life;Van 8 Seats Automatic (group M2);IVAR;Napoli Capodichino;7;Yes;Disponibile;Yes;2025-08-06; 1,00 € ; -   € ; 75,63 € ;dic-26
+GA779CX;WayCar;INVESTOR;Fiat;Panda;Small (group B);MDMR;Trapani Aeroporto;13;Yes;In Service;Yes;2025-09-15; 0 ; 0 ; 0 ;dic-26
+GH625VL;WayCar;INVESTOR;Fiat;Panda;Small (group B);MDMR;Trapani Porto;10;Yes;Inattiva;No;2025-09-24; 0 ; 0 ; 0 ;dic-26
+GM734XC;WayCar;INVESTOR;Lancia;Ypsilon;Small (group B);MDMR;Trapani Aeroporto;13;Yes;In Service;Yes;2026-01-27; 0 ; 0 ; 0 ;dic-26
+GS099NB;WayCar;INVESTOR;Lancia;Ypsilon;Small (group B);MDMR;Trapani Aeroporto;13;Yes;In Service;Yes;2026-01-27; 0 ; 0 ; 0 ;dic-26
+GX893TP;Enilive;INVESTOR;Toyota;Yaris;Economy Automatic (group C1);EDAR;Trapani Porto;10;Yes;Disponibile;Yes;2026-01-09; 0 ; 0 ; 0 ;dic-26
+GX916TP;Enilive;INVESTOR;Toyota;Yaris;Economy Automatic (group C1);EDAR;Trapani Porto;10;Yes;Disponibile;Yes;2026-01-21; 0 ; 0 ; 0 ;dic-26
+GX923TP;Enilive;INVESTOR;Toyota;Yaris;Economy Automatic (group C1);EDAR;Trapani Porto;10;Yes;Disponibile;Yes;2026-01-09; 0 ; 0 ; 0 ;dic-26
+GX928TP;Enilive;INVESTOR;Toyota;Yaris;Economy Automatic (group C1);EDAR;Trapani Porto;10;Yes;Disponibile;Yes;2026-01-09; 0 ; 0 ; 0 ;dic-26
+GY009FM;Enilive;INVESTOR;Toyota;Yaris;Economy Automatic (group C1);EDAR;Roma Termini;2;Yes;A Noleggio;Yes;2025-12-12; 0 ; 0 ; 0 ;dic-26
+GY033FM;Enilive;INVESTOR;Toyota;Yaris;Economy Automatic (group C1);EDAR;Trapani Porto;10;Yes;A Noleggio;Yes;2026-01-09; 0 ; 0 ; 0 ;dic-26
+GY055FM;Enilive;INVESTOR;Toyota;Yaris;Economy Automatic (group C1);EDAR;Brindisi;11;Yes;A Noleggio;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+GY060FM;Enilive;INVESTOR;Toyota;Yaris;Economy Automatic (group C1);EDAR;Brindisi;11;Yes;A Noleggio;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+GY085FM;Enilive;INVESTOR;Toyota;Yaris;Economy Automatic (group C1);EDAR;Cassino;1;Yes;A Noleggio;Yes;2025-12-16; 0 ; 0 ; 0 ;dic-26
+GY088FM;Enilive;INVESTOR;Toyota;Yaris;Economy Automatic (group C1);EDAR;Trapani Porto;10;Yes;A Noleggio;Yes;2026-01-05; 0 ; 0 ; 0 ;dic-26
+GY092FM;Enilive;INVESTOR;Toyota;Yaris;Economy Automatic (group C1);EDAR;Roma Fiumicino;4;Yes;A Noleggio;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+GY164TX;Davide Papa - Eco Liri;INVESTOR;Volkswagen;Caravelle 7 seats;Van 7 Seats Automatic (group M3);PVAR;Roma Fiumicino;4;Yes;Disponibile;Yes;2025-08-26; 0 ; 0 ; 0 ;dic-26
+GY794FJ;Enilive;INVESTOR;Toyota;Yaris;Economy Automatic (group C1);EDAR;Trapani Porto;10;Yes;Disponibile;Yes;2026-01-21; 0 ; 0 ; 0 ;dic-26
+GY887FJ;Enilive;INVESTOR;Toyota;Yaris;Economy Automatic (group C1);EDAR;Trapani Porto;10;Yes;A Noleggio;Yes;2026-01-09; 0 ; 0 ; 0 ;dic-26
+GY998FJ;Enilive;INVESTOR;Toyota;Yaris;Economy Automatic (group C1);EDAR;Trapani Porto;10;Yes;Disponibile;Yes;2026-01-21; 0 ; 0 ; 0 ;dic-26
+GY999FJ;Enilive;INVESTOR;Toyota;Yaris;Economy Automatic (group C1);EDAR;Trapani Porto;10;Yes;A Noleggio;Yes;2026-01-09; 0 ; 0 ; 0 ;dic-26
+GZ029MH;Enilive;INVESTOR;Fiat;Doblo;Furgone Mini (gruppo K);MKMR;Cassino;1;Yes;A Noleggio;Yes;2025-12-04; 0 ; 0 ; 0 ;dic-26
+GZ372WH;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Roma Termini;2;Yes;A Noleggio;Yes;2025-12-03; 0 ; 0 ; 0 ;dic-26
+GZ998MG;Enilive;INVESTOR;Fiat;Doblo;Furgone Mini (gruppo K);MKMR;Cassino;1;Yes;Disponibile;Yes;2025-12-09; 0 ; 0 ; 0 ;dic-26
+HA142JJ;Enilive;INVESTOR;Renault;Clio;Economy Automatic (group C1);EDAH;Roma Fiumicino;4;Yes;A Noleggio;Yes;2025-12-05; 0 ; 0 ; 0 ;dic-26
+HA241JJ;Enilive;INVESTOR;Renault;Clio;Economy Automatic (group C1);EDAH;Cassino;1;Yes;A Noleggio;Yes;2025-12-02; 0 ; 0 ; 0 ;dic-26
+HA248JJ;Enilive;INVESTOR;Renault;Clio;Economy Automatic (group C1);EDAH;Cassino;1;Yes;A Noleggio;Yes;2025-12-02; 0 ; 0 ; 0 ;dic-26
+HA269JJ;Enilive;INVESTOR;Renault;Clio;Economy Automatic (group C1);EDAH;Napoli Stazione;8;Yes;A Noleggio;Yes;2025-12-05; 0 ; 0 ; 0 ;dic-26
+HA302JJ;Enilive;INVESTOR;Renault;Clio;Economy Automatic (group C1);EDAH;Cassino;1;Yes;A Noleggio;Yes;2025-12-02; 0 ; 0 ; 0 ;dic-26
+HA376JJ;Enilive;INVESTOR;Renault;Clio;Economy Automatic (group C1);EDAH;Cassino;1;Yes;In Service;Yes;2025-12-05; 0 ; 0 ; 0 ;dic-26
+HA434FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino;1;Yes;Disponibile;Yes;2026-01-13; 0 ; 0 ; 0 ;dic-26
+HA435FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Roma Fiumicino;4;Yes;Disponibile;Yes;2025-12-24; 0 ; 0 ; 0 ;dic-26
+HA437FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino NLT;15;Yes;A Noleggio;Yes;2025-12-22; 0 ; 0 ; 0 ;dic-26
+HA438FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Roma Fiumicino;4;Yes;A Noleggio;Yes;2025-12-25; 0 ; 0 ; 0 ;dic-26
+HA445FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Roma Fiumicino;4;Yes;A Noleggio;Yes;2025-12-22; 0 ; 0 ; 0 ;dic-26
+HA446FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Roma Fiumicino;4;Yes;Disponibile;Yes;2025-12-22; 0 ; 0 ; 0 ;dic-26
+HA448FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino NLT;15;Yes;A Noleggio;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+HA449FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Napoli Capodichino;7;Yes;A Noleggio;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+HA450FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino;1;Yes;Disponibile;Yes;2026-01-13; 0 ; 0 ; 0 ;dic-26
+HA452FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Roma Fiumicino;4;Yes;Disponibile;Yes;2026-01-21; 0 ; 0 ; 0 ;dic-26
+HA455FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino NLT;15;Yes;A Noleggio;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+HA456FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Napoli Capodichino;7;Yes;A Noleggio;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+HA457FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Napoli Capodichino;7;Yes;A Noleggio;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+HA459FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Roma Fiumicino;4;Yes;Disponibile;Yes;2025-12-22; 0 ; 0 ; 0 ;dic-26
+HA463FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Roma Fiumicino;4;Yes;A Noleggio;Yes;2025-12-22; 0 ; 0 ; 0 ;dic-26
+HA465FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Roma Fiumicino;4;Yes;Disponibile;Yes;2025-12-22; 0 ; 0 ; 0 ;dic-26
+HA472FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Roma Fiumicino;4;Yes;Disponibile;Yes;2025-12-26; 0 ; 0 ; 0 ;dic-26
+HA473FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Roma Fiumicino;4;Yes;Disponibile;Yes;2025-12-22; 0 ; 0 ; 0 ;dic-26
+HA476FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Roma Fiumicino;4;Yes;Disponibile;Yes;2025-12-22; 0 ; 0 ; 0 ;dic-26
+HA477FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino;1;Yes;Disponibile;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+HA480FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Roma Fiumicino;4;Yes;Disponibile;Yes;2025-12-22; 0 ; 0 ; 0 ;dic-26
+HA483FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Roma Fiumicino;4;Yes;Disponibile;Yes;2025-12-22; 0 ; 0 ; 0 ;dic-26
+HA485FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Roma Termini;2;Yes;A Noleggio;Yes;2025-12-22; 0 ; 0 ; 0 ;dic-26
+HA486FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Roma Fiumicino;4;Yes;A Noleggio;Yes;2025-12-22; 0 ; 0 ; 0 ;dic-26
+HA487FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino NLT;15;Yes;A Noleggio;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+HA491FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Roma Fiumicino;4;Yes;A Noleggio;Yes;2025-12-22; 0 ; 0 ; 0 ;dic-26
+HA492FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Napoli Capodichino;7;Yes;Disponibile;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+HA493FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Napoli Capodichino;7;Yes;A Noleggio;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+HA495FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Napoli Capodichino;7;Yes;A Noleggio;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+HA496FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino NLT;15;Yes;A Noleggio;Yes;2025-12-22; 0 ; 0 ; 0 ;dic-26
+HA497FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino;1;Yes;A Noleggio;Yes;2026-01-13; 0 ; 0 ; 0 ;dic-26
+HA499FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Roma Fiumicino;4;Yes;Disponibile;Yes;2025-12-22; 0 ; 0 ; 0 ;dic-26
+HA500FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino;1;Yes;A Noleggio;Yes;2025-12-22; 0 ; 0 ; 0 ;dic-26
+HA506FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Napoli Capodichino;7;Yes;Disponibile;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+HA507FS;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Napoli Capodichino;7;Yes;A Noleggio;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+HA508FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Napoli Capodichino;7;Yes;A Noleggio;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+HA512FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino NLT;15;Yes;A Noleggio;Yes;2025-12-22; 0 ; 0 ; 0 ;dic-26
+HA514FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Napoli Stazione;8;Yes;A Noleggio;Yes;2025-12-24; 0 ; 0 ; 0 ;dic-26
+HA517FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino;1;Yes;A Noleggio;Yes;2025-12-24; 0 ; 0 ; 0 ;dic-26
+HA521FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Napoli Capodichino;7;Yes;A Noleggio;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+HA524FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino NLT;15;Yes;A Noleggio;Yes;2026-01-13; 0 ; 0 ; 0 ;dic-26
+HA525FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Roma Fiumicino;4;Yes;Disponibile;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+HA526FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino;1;Yes;Disponibile;Yes;2026-01-13; 0 ; 0 ; 0 ;dic-26
+HA529FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Roma Termini;2;Yes;Disponibile;Yes;2025-12-24; 0 ; 0 ; 0 ;dic-26
+HA530FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino;1;Yes;A Noleggio;Yes;2026-01-13; 0 ; 0 ; 0 ;dic-26
+HA533FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Roma Fiumicino;4;Yes;Disponibile;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+HA539FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Roma Fiumicino;4;Yes;Disponibile;Yes;2026-01-19; 0 ; 0 ; 0 ;dic-26
+HA544FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Roma Termini;2;Yes;Disponibile;Yes;2025-12-24; 0 ; 0 ; 0 ;dic-26
+HA546FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Roma Fiumicino;4;Yes;Disponibile;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+HA548FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Roma Fiumicino;4;Yes;A Noleggio;Yes;2026-01-21; 0 ; 0 ; 0 ;dic-26
+HA550FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino;1;Yes;Disponibile;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+HA551FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino;1;Yes;A Noleggio;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+HA553FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino NLT;15;Yes;A Noleggio;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+HA554FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino NLT;15;Yes;A Noleggio;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+HA555FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Napoli Capodichino;7;Yes;A Noleggio;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+HA556FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Roma Fiumicino;4;Yes;A Noleggio;Yes;2025-12-22; 0 ; 0 ; 0 ;dic-26
+HA558FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino NLT;15;Yes;A Noleggio;Yes;2025-12-24; 0 ; 0 ; 0 ;dic-26
+HA563FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Roma Fiumicino;4;Yes;Disponibile;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+HA564FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino;1;Yes;Disponibile;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+HA565FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Roma Fiumicino;4;Yes;A Noleggio;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+HA566FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Brindisi;11;Yes;A Noleggio;Yes;2026-01-13; 0 ; 0 ; 0 ;dic-26
+HA570FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino NLT;15;Yes;A Noleggio;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+HA577FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino NLT;15;Yes;A Noleggio;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+HA578FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino;1;Yes;A Noleggio;Yes;2026-01-13; 0 ; 0 ; 0 ;dic-26
+HA579FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Roma Fiumicino;4;Yes;Disponibile;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+HA581FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino;1;Yes;A Noleggio;Yes;2025-12-22; 0 ; 0 ; 0 ;dic-26
+HA584FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Valle di Comino;6;Yes;A Noleggio;Yes;2025-12-22; 0 ; 0 ; 0 ;dic-26
+HA586FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino;1;Yes;A Noleggio;Yes;2025-12-24; 0 ; 0 ; 0 ;dic-26
+HA587FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino;1;Yes;A Noleggio;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+HA588FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino NLT;15;Yes;A Noleggio;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+HA589FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino;1;Yes;A Noleggio;Yes;2025-12-22; 0 ; 0 ; 0 ;dic-26
+HA591FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Roma Fiumicino;4;Yes;Disponibile;Yes;2025-12-22; 0 ; 0 ; 0 ;dic-26
+HA597FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino;1;Yes;A Noleggio;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+HA598FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino;1;Yes;A Noleggio;Yes;2026-01-13; 0 ; 0 ; 0 ;dic-26
+HA599FT;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Roma Fiumicino;4;Yes;Disponibile;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+HA694VY;Enilive;INVESTOR;Renault;Clio;Economy Automatic (group C1);EDAH;Roma Fiumicino;4;No;Inattiva;No;2025-12-20; 0 ; 0 ; 0 ;dic-25
+HA695VY;Enilive;INVESTOR;Renault;Clio;Economy Automatic (group C1);EDAH;Roma Termini;2;Yes;A Noleggio;Yes;2025-12-05; 0 ; 0 ; 0 ;dic-26
+HA696VY;Enilive;INVESTOR;Renault;Clio;Economy Automatic (group C1);EDAH;Roma Fiumicino;4;Yes;A Noleggio;Yes;2025-12-05; 0 ; 0 ; 0 ;dic-26
+HA714VY;Enilive;INVESTOR;Renault;Clio;Economy Automatic (group C1);EDAH;Firenze;5;Yes;Disponibile;Yes;2025-12-10; 0 ; 0 ; 0 ;dic-26
+HA718VY;Enilive;INVESTOR;Renault;Clio;Economy Automatic (group C1);EDAH;Cassino;1;No;Inattiva;No;2025-12-30; 0 ; 0 ; 0 ;dic-25
+HA719VY;Enilive;INVESTOR;Renault;Clio;Economy Automatic (group C1);EDAH;Cassino;1;No;Inattiva;No;2025-12-30; 0 ; 0 ; 0 ;dic-25
+HA721VY;Enilive;INVESTOR;Renault;Clio;Economy Automatic (group C1);EDAH;Cassino;1;No;Inattiva;No;2025-12-29; 0 ; 0 ; 0 ;dic-25
+HA723VY;Enilive;INVESTOR;Renault;Clio;Economy Automatic (group C1);EDAH;Cassino NLT;15;Yes;A Noleggio;Yes;2025-12-22; 0 ; 0 ; 0 ;dic-26
+HA726VY;Enilive;INVESTOR;Renault;Clio;Economy Automatic (group C1);EDAH;Cassino;1;Yes;Disponibile;Yes;2025-12-10; 0 ; 0 ; 0 ;dic-26
+HA731VY;Enilive;INVESTOR;Renault;Clio;Economy Automatic (group C1);EDAH;Cassino;1;No;Inattiva;No;2025-12-30; 0 ; 0 ; 0 ;dic-25
+HA732VY;Enilive;INVESTOR;Renault;Clio;Economy Automatic (group C1);EDAH;Brindisi;11;Yes;Inattiva;No;2025-12-05; 0 ; 0 ; 0 ;dic-26
+HA735VY;Enilive;INVESTOR;Renault;Clio;Economy Automatic (group C1);EDAH;Cassino;1;Yes;Disponibile;Yes;2025-12-22; 0 ; 0 ; 0 ;dic-26
+HA738VY;Enilive;INVESTOR;Renault;Clio;Economy Automatic (group C1);EDAH;Cassino;1;No;Inattiva;No;2025-12-30; 0 ; 0 ; 0 ;dic-25
+HA740VY;Enilive;INVESTOR;Renault;Clio;Economy Automatic (group C1);EDAH;Firenze;5;Yes;A Noleggio;Yes;2025-12-10; 0 ; 0 ; 0 ;dic-26
+HA742VY;Enilive;INVESTOR;Renault;Clio;Economy Automatic (group C1);EDAH;Firenze;5;Yes;Disponibile;Yes;2025-12-10; 0 ; 0 ; 0 ;dic-26
+HA743VY;Enilive;INVESTOR;Renault;Clio;Economy Automatic (group C1);EDAH;Firenze;5;Yes;A Noleggio;Yes;2025-12-10; 0 ; 0 ; 0 ;dic-26
+HA745VY;Enilive;INVESTOR;Renault;Clio;Economy Automatic (group C1);EDAH;Firenze;5;Yes;Disponibile;Yes;2025-12-10; 0 ; 0 ; 0 ;dic-26
+HA749VY;Enilive;INVESTOR;Renault;Clio;Economy Automatic (group C1);EDAH;Napoli Capodichino;7;No;Inattiva;No;2025-12-20; 0 ; 0 ; 0 ;dic-25
+HA750VY;Enilive;INVESTOR;Renault;Clio;Economy Automatic (group C1);EDAH;Roma Fiumicino;4;Yes;A Noleggio;Yes;2025-12-22; 0 ; 0 ; 0 ;dic-26
+HA751VY;Enilive;INVESTOR;Renault;Clio;Economy Automatic (group C1);EDAH;Cassino;1;Yes;In Service;Yes;2025-12-22; 0 ; 0 ; 0 ;dic-26
+HA753VY;Enilive;INVESTOR;Renault;Clio;Economy Automatic (group C1);EDAH;Cassino;1;No;Inattiva;No;2025-12-30; 0 ; 0 ; 0 ;dic-25
+HA755VY;Enilive;INVESTOR;Renault;Clio;Economy Automatic (group C1);EDAH;Brindisi;11;Yes;A Noleggio;Yes;2025-12-05; 0 ; 0 ; 0 ;dic-26
+HA759VY;Enilive;INVESTOR;Renault;Clio;Economy Automatic (group C1);EDAH;Cassino;1;Yes;Disponibile;Yes;2025-12-05; 0 ; 0 ; 0 ;dic-26
+HA760VY;Enilive;INVESTOR;Renault;Clio;Economy Automatic (group C1);EDAH;Brindisi;11;Yes;A Noleggio;Yes;2025-12-05; 0 ; 0 ; 0 ;dic-26
+HA764VY;Enilive;INVESTOR;Renault;Clio;Economy Automatic (group C1);EDAH;Cassino;1;Yes;A Noleggio;Yes;2025-12-06; 0 ; 0 ; 0 ;dic-26
+HA766VY;Enilive;INVESTOR;Renault;Clio;Economy Automatic (group C1);EDAH;Cassino;1;No;Inattiva;No;2025-12-30; 0 ; 0 ; 0 ;dic-25
+HA771VY;Enilive;INVESTOR;Renault;Clio;Economy Automatic (group C1);EDAH;Roma Fiumicino;4;Yes;A Noleggio;Yes;2025-12-06; 0 ; 0 ; 0 ;dic-26
+HA775VY;Enilive;INVESTOR;Renault;Clio;Economy Automatic (group C1);EDAH;Roma Fiumicino;4;Yes;A Noleggio;Yes;2025-12-22; 0 ; 0 ; 0 ;dic-26
+HA778VY;Enilive;INVESTOR;Renault;Clio;Economy Automatic (group C1);EDAH;Cassino;1;Yes;Disponibile;Yes;2025-12-22; 0 ; 0 ; 0 ;dic-26
+HA785VY;Enilive;INVESTOR;Renault;Clio;Economy Automatic (group C1);EDAH;Firenze;5;Yes;Disponibile;Yes;2025-12-10; 0 ; 0 ; 0 ;dic-26
+HA788VY;Enilive;INVESTOR;Renault;Clio;Economy Automatic (group C1);EDAH;Napoli Stazione;8;Yes;A Noleggio;Yes;2025-12-20; 0 ; 0 ; 0 ;dic-26
+HA789VY;Enilive;INVESTOR;Renault;Clio;Economy Automatic (group C1);EDAH;Napoli Capodichino;7;Yes;A Noleggio;Yes;2025-12-05; 0 ; 0 ; 0 ;dic-26
+HA790VY;Enilive;INVESTOR;Renault;Clio;Economy Automatic (group C1);EDAH;Cassino;1;No;Inattiva;No;2025-12-30; 0 ; 0 ; 0 ;dic-25
+HA791VY;Enilive;INVESTOR;Renault;Clio;Economy Automatic (group C1);EDAH;Cassino;1;No;Inattiva;No;2025-12-30; 0 ; 0 ; 0 ;dic-25
+HA796VY;Enilive;INVESTOR;Renault;Clio;Economy Automatic (group C1);EDAH;Roma Termini;2;Yes;A Noleggio;Yes;2025-12-05; 0 ; 0 ; 0 ;dic-26
+HA799VY;Enilive;INVESTOR;Renault;Clio;Economy Automatic (group C1);EDAH;Napoli Stazione;8;Yes;A Noleggio;Yes;2025-12-20; 0 ; 0 ; 0 ;dic-26
+HA800VY;Enilive;INVESTOR;Renault;Clio;Economy Automatic (group C1);EDAH;Cassino;1;No;Inattiva;No;2025-12-30; 0 ; 0 ; 0 ;dic-25
+HA904FS;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Roma Fiumicino;4;Yes;Disponibile;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+HA905FS;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Napoli Stazione;8;Yes;A Noleggio;Yes;2025-12-22; 0 ; 0 ; 0 ;dic-26
+HA906FS;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino;1;Yes;A Noleggio;Yes;2026-01-13; 0 ; 0 ; 0 ;dic-26
+HA908FS;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino;1;Yes;A Noleggio;Yes;2025-12-24; 0 ; 0 ; 0 ;dic-26
+HA910FS;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Roma Fiumicino;4;Yes;Disponibile;Yes;2025-12-22; 0 ; 0 ; 0 ;dic-26
+HA911FS;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Roma Fiumicino;4;Yes;Disponibile;Yes;2025-12-22; 0 ; 0 ; 0 ;dic-26
+HA914FS;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino;1;Yes;Disponibile;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+HA915FS;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Roma Fiumicino;4;Yes;Disponibile;Yes;2025-12-22; 0 ; 0 ; 0 ;dic-26
+HA916FS;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Napoli Capodichino;7;Yes;Disponibile;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+HA917FS;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Roma Fiumicino;4;Yes;Disponibile;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+HA918FS;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino;1;Yes;A Noleggio;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+HA924FS;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino;1;Yes;A Noleggio;Yes;2025-12-22; 0 ; 0 ; 0 ;dic-26
+HA926FS;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino;1;Yes;A Noleggio;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+HA927FS;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Roma Termini;2;Yes;A Noleggio;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+HA928FS;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino;1;Yes;A Noleggio;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+HA929FS;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Roma Fiumicino;4;Yes;Disponibile;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+HA931FS;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino;1;Yes;A Noleggio;Yes;2025-12-24; 0 ; 0 ; 0 ;dic-26
+HA932FS;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Roma Fiumicino;4;Yes;A Noleggio;Yes;2025-12-22; 0 ; 0 ; 0 ;dic-26
+HA933FS;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino;1;Yes;Disponibile;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+HA934FS;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Roma Fiumicino;4;Yes;Disponibile;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+HA939FS;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino;1;Yes;Disponibile;Yes;2025-12-24; 0 ; 0 ; 0 ;dic-26
+HA940FS;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino NLT;15;Yes;A Noleggio;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+HA941FS;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Roma Fiumicino;4;Yes;A Noleggio;Yes;2025-12-22; 0 ; 0 ; 0 ;dic-26
+HA944FS;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Roma Fiumicino;4;Yes;Disponibile;Yes;2026-01-21; 0 ; 0 ; 0 ;dic-26
+HA945FS;Enilive;INVESTOR;Fiat;Panda;Small (group B);MDMR;Cassino;1;Yes;Disponibile;Yes;2025-12-23; 0 ; 0 ; 0 ;dic-26
+GR823CT;Vivarent;LEASING;Peugeot;Boxer L3H2;Furgone L3H2 (group K3);FKMR;Cassino;1;Yes;A Noleggio;Yes;2023-09-01; 601,02 € ; 733,24 € ; -   € ;gen-27
+GY821HY;Vivarent;RENT;Toyota;Toyota CHR;Large Automatic (group D1);IDAR;Roma Fiumicino;4;Yes;A Noleggio;Yes;2025-03-20; 409,40 € ; 499,47 € ; -   € ;mar-27
+GY834HY;Vivarent;RENT;Toyota;Toyota CHR;Large Automatic (group D1);IDAR;Napoli Capodichino;7;Yes;A Noleggio;Yes;2025-03-20; 409,40 € ; 499,47 € ; -   € ;mar-27
+GT222PS;Vivarent;LEASING;Toyota;Aygo X;Mini (group A);MCMR;Cassino NLT;15;Yes;A Noleggio;Yes;2025-03-29; 178,80 € ; 218,14 € ; 116,09 € ;mar-27
+GT266PS;Vivarent;LEASING;Toyota;Aygo X;Mini (group A);MCMR;Cassino;1;Yes;Inattiva;No;2025-03-29; 178,80 € ; 218,14 € ; 116,09 € ;mar-27
+GT329PS;Vivarent;LEASING;Toyota;Aygo X;Mini (group A);MCMR;Brindisi;11;Yes;In Service;Yes;2025-03-29; 178,80 € ; 218,14 € ; 116,09 € ;mar-27
+GT395PS;Vivarent;LEASING;Toyota;Aygo X;Mini (group A);MCMR;Cassino;1;Yes;Inattiva;No;2025-03-29; 178,80 € ; 218,14 € ; 116,09 € ;mar-27
+GS011CV;Vivarent;LEASING;Renault;Traffic;Van 9 Seats (group M);OVMR;Roma Fiumicino;4;Yes;Disponibile;Yes;2024-04-02; 386,40 € ; 471,41 € ; -   € ;mar-27
+GT022PS;Vivarent;LEASING;Toyota;Yaris;Economy Automatic (group C1);EDAR;Brindisi;11;Yes;Inattiva;No;2025-03-29; 219,69 € ; 268,02 € ; 120,65 € ;apr-27
+GT078PS;Vivarent;LEASING;Toyota;Yaris;Economy Automatic (group C1);EDAR;Cassino;1;Yes;Inattiva;No;2025-04-01; 219,69 € ; 268,02 € ; 120,65 € ;apr-27
+GT169PS;Vivarent;LEASING;Toyota;Aygo X;Mini (group A);MCMR;Napoli Capodichino;7;Yes;In Service;No;2025-04-01; 178,80 € ; 218,14 € ; 116,09 € ;apr-27
+GT191PS;Vivarent;LEASING;Toyota;Yaris;Economy Automatic (group C1);EDAR;Roma Termini;2;Yes;In Service;Yes;2025-04-01; 219,69 € ; 268,02 € ; 120,65 € ;apr-27
+GT194PS;Vivarent;LEASING;Toyota;Yaris;Economy Automatic (group C1);EDAR;Roma Fiumicino;4;Yes;In Service;Yes;2025-03-29; 219,69 € ; 268,02 € ; 120,65 € ;apr-27
+GT216PS;Vivarent;LEASING;Toyota;Aygo X;Mini (group A);MCMR;Napoli Capodichino;7;Yes;In Service;No;2025-04-01; 178,80 € ; 218,14 € ; 116,09 € ;apr-27
+GT226PS;Vivarent;LEASING;Toyota;Yaris;Economy Automatic (group C1);EDAR;Napoli Capodichino;7;Yes;In Service;Yes;2025-04-01; 219,69 € ; 268,02 € ; 120,65 € ;apr-27
+GT243PS;Vivarent;LEASING;Toyota;Aygo X;Mini (group A);MCMR;Brindisi;11;Yes;In Service;No;2025-04-01; 178,80 € ; 218,14 € ; 116,09 € ;apr-27
+GT279PS;Vivarent;LEASING;Toyota;Yaris;Economy Automatic (group C1);EDAR;Roma Fiumicino;4;Yes;In Service;Yes;2025-04-01; 219,69 € ; 268,02 € ; 120,65 € ;apr-27
+GT286PS;Vivarent;LEASING;Toyota;Yaris;Economy Automatic (group C1);EDAR;Napoli Capodichino;7;Yes;In Service;Yes;2025-02-20; 219,69 € ; 268,02 € ; 120,65 € ;apr-27
+GT303PS;Vivarent;LEASING;Toyota;Yaris;Economy Automatic (group C1);EDAR;Roma Fiumicino;4;Yes;In Service;Yes;2025-03-29; 219,69 € ; 268,02 € ; 116,09 € ;apr-27
+GT356PS;Vivarent;LEASING;Toyota;Aygo X;Mini (group A);MCMR;Firenze;5;Yes;Inattiva;No;2025-04-01; 178,80 € ; 218,14 € ; 116,09 € ;apr-27
+GT398PS;Vivarent;LEASING;Toyota;Yaris;Economy Automatic (group C1);EDAR;Roma Fiumicino;4;Yes;In Service;Yes;2025-03-29; 219,69 € ; 268,02 € ; 120,65 € ;apr-27
+GT408PS;Vivarent;LEASING;Toyota;Yaris;Economy Automatic (group C1);EDAR;Roma Termini;2;Yes;Inattiva;No;2025-04-01; 219,69 € ; 268,02 € ; 120,65 € ;apr-27
+GT410PS;Vivarent;LEASING;Toyota;Aygo X;Mini (group A);MCMR;Cassino;1;Yes;Inattiva;No;2025-04-01; 178,80 € ; 218,14 € ; 116,09 € ;apr-27
+GT421PS;Vivarent;LEASING;Toyota;Yaris;Economy Automatic (group C1);EDAR;Roma Fiumicino;4;Yes;In Service;Yes;2025-04-01; 219,69 € ; 268,02 € ; 120,65 € ;apr-27
+GT465PS;Vivarent;LEASING;Toyota;Yaris;Economy Automatic (group C1);EDAR;Firenze;5;Yes;Inattiva;No;2025-04-01; 219,69 € ; 268,02 € ; 120,65 € ;apr-27
+GT485PS;Vivarent;LEASING;Toyota;Yaris;Economy Automatic (group C1);EDAR;Roma Fiumicino;4;Yes;In Service;Yes;2025-04-01; 219,69 € ; 268,02 € ; 120,65 € ;apr-27
+GT672PZ;Vivarent;LEASING;Toyota;Yaris;Economy Automatic (group C1);EDAR;Cassino;1;Yes;In Service;Yes;2025-04-01; 219,69 € ; 268,02 € ; 120,65 € ;apr-27
+GT679PZ;Vivarent;LEASING;Toyota;Yaris;Economy Automatic (group C1);EDAR;Napoli Capodichino;7;Yes;In Service;Yes;2025-03-01; 219,69 € ; 268,02 € ; 120,65 € ;apr-27
+GT681PZ;Vivarent;LEASING;Toyota;Aygo X;Mini (group A);MCMR;Brindisi;11;Yes;In Service;Yes;2025-04-01; 178,80 € ; 218,14 € ; 116,09 € ;apr-27
+HA235PW;Vivarent;RENT;Volkswagen;Tiguan;Suv Automatic (group J1);FFAR;Cassino;1;Yes;Disponibile;Yes;2025-10-28; 0 ; 0 ; 0 ;ott-27
+HA891SZ;Vivarent;RENT;Volkswagen;Tiguan;Suv Automatic (group J1);FFAR;Cassino;1;Yes;A Noleggio;Yes;2025-10-28; 542,00 € ; 661,24 € ; -   € ;ott-27
+GR698CT;Vivarent;LEASING;Peugeot;Boxer L3H2;Furgone L3H2 (group K3);FKMR;Cassino;1;Yes;In Service;Yes;2023-09-01; 601,02 € ; 733,24 € ; -   € ;ott-27
+GR656CT;Vivarent;LEASING;Peugeot;Boxer L3H2;Furgone L3H2 (group K3);FKMR;Valle di Comino;6;Yes;Disponibile;Yes;2023-09-01; 601,02 € ; 733,24 € ; -   € ;nov-27
+GR665CT;Vivarent;LEASING;Peugeot;Boxer L3H2;Furgone L3H2 (group K3);FKMR;Cassino;1;Yes;Disponibile;Yes;2023-09-01; 601,02 € ; 733,24 € ; -   € ;nov-27
+GR773DX;Vivarent;LEASING;Peugeot;Expert L1H1;Furgone L1H1 (group K1);MKMR;Cassino NLT;15;Yes;A Noleggio;Yes;2025-01-01; 508,75 € ; 620,68 € ; -   € ;nov-27
+GR875CT;Vivarent;LEASING;Peugeot;Expert L1H1;Furgone L1H1 (group K1);MKMR;Cassino NLT;15;Yes;A Noleggio;Yes;2025-01-01; 508,75 € ; 620,68 € ; -   € ;nov-27
+GR939CT;Vivarent;LEASING;Peugeot;Expert L1H1;Furgone L1H1 (group K1);MKMR;Roma Fiumicino;4;Yes;Disponibile;Yes;2025-01-01; 508,75 € ; 620,68 € ; -   € ;nov-27
+GR829DX;Vivarent;LEASING;Peugeot;Expert L1H1;Furgone L1H1 (group K1);MKMR;Cassino NLT;15;Yes;A Noleggio;Yes;2025-01-01; 508,75 € ; 620,68 € ; -   € ;nov-27
+HB842PP;Vivarent;RENT;Volkswagen;Tiguan;Suv Automatic (group J1);FFAR;Roma Termini;2;Yes;A Noleggio;Yes;2025-12-01; 0 ; 0 ; 0 ;dic-27
+HA218LR;Vivarent;RENT;Maxus;Deliver 9 Bus;Van 9 Seats (group M);OVMR;Cassino;1;Yes;Disponibile;Yes;2025-07-22; 1.710,00 € ; 2.086,20 € ; -   € ;ago-28
+HA892JN;Vivarent;RENT;Maxus;Deliver9 L3H2;Furgone L3H2 (group K3);FKMR;Cassino;1;Yes;A Noleggio;Yes;2025-09-30; 1.200,00 € ; 1.464,00 € ; -   € ;ago-28
+HA893JN;Vivarent;RENT;Maxus;Deliver9 L3H2;Furgone L3H2 (group K3);FKMR;Cassino NLT;15;Yes;A Noleggio;Yes;2025-09-23; 1.200,00 € ; 1.464,00 € ; -   € ;ago-28
+HA894JN;Vivarent;RENT;Maxus;Deliver9 L3H2;Furgone L3H2 (group K3);FKMR;Cassino;1;Yes;A Noleggio;Yes;2025-09-23; 1.200,00 € ; 1.464,00 € ; -   € ;ago-28
+HA895JN;Vivarent;RENT;Maxus;Deliver9 L3H2;Furgone L3H2 (group K3);FKMR;Cassino NLT;15;Yes;A Noleggio;Yes;2025-09-01; 1.200,00 € ; 1.464,00 € ; -   € ;ago-28
+HA896JN;Vivarent;RENT;Maxus;Deliver9 L3H2;Furgone L3H2 (group K3);FKMR;Cassino;1;Yes;In Service;Yes;2025-09-30; 1.200,00 € ; 1.464,00 € ; -   € ;ago-28
+HA897JN;Vivarent;RENT;Maxus;Deliver9 L3H2;Furgone L3H2 (group K3);FKMR;Cassino;1;Yes;Disponibile;Yes;2025-09-01; 1.200,00 € ; 1.464,00 € ; -   € ;ago-28
+HA898JN;Vivarent;RENT;Maxus;Deliver9 L3H2;Furgone L3H2 (group K3);FKMR;Cassino;1;Yes;In Service;Yes;2025-09-30; 1.220,00 € ; 1.488,40 € ; -   € ;ago-28
+HA899JN;Vivarent;RENT;Maxus;Deliver9 L3H2;Furgone L3H2 (group K3);FKMR;Cassino;1;Yes;Disponibile;Yes;2025-09-01; 1.330,00 € ; 1.622,60 € ; -   € ;ago-28
+HA900JN;Vivarent;RENT;Maxus;Deliver9 L3H2;Furgone L3H2 (group K3);FKMR;Cassino;1;Yes;Disponibile;Yes;2025-09-01; 1.330,00 € ; 1.622,60 € ; -   € ;ago-28
+HA910JN;Vivarent;RENT;Maxus;Deliver9 L3H2;Furgone L3H2 (group K3);FKMR;Cassino;1;Yes;Disponibile;Yes;2025-10-10; 1.220,00 € ; 1.488,40 € ; -   € ;ago-28
+HA911JN;Vivarent;RENT;Maxus;Deliver9 L3H2;Furgone L3H2 (group K3);FKMR;Cassino NLT;15;Yes;A Noleggio;Yes;2025-09-23; 1.200,00 € ; 1.464,00 € ; -   € ;ago-28
+GR982BD;Vivarent;LEASING;Renault;Traffic;Van 9 Seats (group M);OVMR;Firenze;5;Yes;Disponibile;Yes;2023-09-26; 1,00 € ; -   € ; 128,00 € ;gen-30
+GF759SZ;Vivarent;PROPRIETÀ;Maxus;Delivery E3 L1H1;Furgone L1H1 (group K1);XKAE;Cassino;1;Yes;Disponibile;Yes;2025-01-01; 1,00 € ; -   € ; 128,00 € ;dic-30
+GF969TB;Vivarent;PROPRIETÀ;Maxus;Delivery E9 L2H2;Furgone L2H2 (group K2);XKAE;Cassino;1;Yes;In Service;Yes;2025-01-01; 1,00 € ; -   € ; 128,00 € ;dic-30
+GH150EW;Vivarent;PROPRIETÀ;Maxus;Delivery E9 L2H2;Furgone L2H2 (group K2);XKAE;Cassino NLT;15;Yes;A Noleggio;Yes;2025-01-01; 1,00 € ; -   € ; 128,00 € ;dic-30
+GJ684TH;Vivarent;PROPRIETÀ;Maxus;Delivery E3 L1H1;Furgone L1H1 (group K1);XKAE;Cassino NLT;15;Yes;A Noleggio;Yes;2025-01-01; 1,00 € ; -   € ; 151,86 € ;dic-30
+GK051CG;Vivarent;PROPRIETÀ;DR;5.0 Aut;Large Automatic (group D1);SDAR;Cassino NLT;15;Yes;In Service;Yes;2022-08-12; 1,00 € ; -   € ; 134,39 € ;dic-30
+GK052CG;Vivarent;PROPRIETÀ;DR;5.0 Aut;Large Automatic (group D1);SDAR;Cassino NLT;15;Yes;A Noleggio;Yes;2022-08-12; 1,00 € ; -   € ; 134,39 € ;dic-30
