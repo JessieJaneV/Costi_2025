@@ -45,7 +45,7 @@ flex-wrap:wrap;
 
 .kpi{
 flex:1;
-min-width:180px;
+min-width:200px;
 }
 
 .kpi-title{
@@ -128,9 +128,7 @@ background:#777;
 </select>
 
 <button onclick="applyFilters()">Aggiorna</button>
-
 <button class="reset" onclick="resetFilters()">Reset filtri</button>
-
 <button onclick="exportCSV()">Export CSV</button>
 
 </div>
@@ -157,11 +155,6 @@ background:#777;
 <div class="kpi-value" id="kpiTotale">€0</div>
 </div>
 
-<div class="card kpi">
-<div class="kpi-title">Costo Medio Veicolo</div>
-<div class="kpi-value" id="kpiAverage">€0</div>
-</div>
-
 </div>
 
 <div class="charts">
@@ -180,34 +173,13 @@ background:#777;
 <canvas id="trendChart"></canvas>
 </div>
 
-<div class="card">
-
-<h3>Costi per Veicolo</h3>
-
-<table>
-
-<thead>
-<tr>
-<th>Targa</th>
-<th>Categoria</th>
-<th>Canone</th>
-<th>Assicurazione</th>
-<th>Totale</th>
-</tr>
-</thead>
-
-<tbody id="vehicleTable"></tbody>
-
-</table>
-
-</div>
-
 </div>
 
 <script>
 
 let rawData=[]
 let filteredData=[]
+
 let costCategoryChart
 let vehiclesCategoryChart
 let trendChart
@@ -256,13 +228,13 @@ function parseMoney(v){
 
 if(!v) return 0
 
-let value = String(v)
+let value=String(v)
 .replace("€","")
 .replace(",",".")
 .replace(/\s/g,"")
 .trim()
 
-let num = parseFloat(value)
+let num=parseFloat(value)
 
 if(isNaN(num)) return 0
 
@@ -306,27 +278,20 @@ return true
 
 })
 
-calculateDashboard(filteredData,month)
+calculateDashboard(filteredData,month,category)
 
 }
 
-function calculateDashboard(data,month){
+function calculateDashboard(data,month,category){
 
 let totalCanone=0
 let totalAssicurazione=0
 
 let categoryCosts={}
 let categoryVehicles={}
-
 let monthlyCosts=Array(12).fill(0)
 
-let vehicleMonthlyCount=Array(12).fill(0)
-
-let tableHTML=""
-
 data.forEach(row=>{
-
-let plate=row["license_plate"]
 
 let canone=parseMoney(row[" Canone imponibile "])
 let assicurazione=parseMoney(row[" Canone assicurazione "])
@@ -358,8 +323,8 @@ total=canone+assicurazione
 
 }
 
-totalCanone += (canone || 0)
-totalAssicurazione += (assicurazione || 0)
+totalCanone += canone || 0
+totalAssicurazione += assicurazione || 0
 
 let cat=row.category || "Altro"
 
@@ -370,23 +335,9 @@ if(!categoryVehicles[cat]) categoryVehicles[cat]=0
 categoryVehicles[cat]++
 
 let monthIndex=new Date(row["Date In"]).getMonth()
-
 monthlyCosts[monthIndex]+=total
-vehicleMonthlyCount[monthIndex]++
-
-tableHTML+=`
-<tr>
-<td>${plate}</td>
-<td>${cat}</td>
-<td>${canone.toFixed(0)}</td>
-<td>${assicurazione.toFixed(0)}</td>
-<td>${total.toFixed(0)}</td>
-</tr>
-`
 
 })
-
-let total=totalCanone+totalAssicurazione
 
 let vehicles
 
@@ -394,7 +345,7 @@ if(month==="all"){
 
 let monthlyFleet=[]
 
-for(let m=1; m<=12; m++){
+for(let m=1;m<=12;m++){
 
 let start=new Date(2025,m-1,1)
 let end=new Date(2025,m,0)
@@ -403,6 +354,8 @@ let set=new Set()
 
 rawData.forEach(row=>{
 
+if(category!=="all" && row.category!==category) return
+
 let plate=row["license_plate"]
 if(!plate) return
 
@@ -410,7 +363,6 @@ let dateIn=row["Date In"] ? new Date(row["Date In"]) : null
 let dateOut=row["Date Out"] ? new Date(row["Date Out"]) : null
 
 if(!dateIn) return
-
 if(dateIn>end) return
 if(dateOut && dateOut<start) return
 
@@ -431,24 +383,20 @@ vehicles=Math.round(sum/12)
 let set=new Set()
 
 data.forEach(row=>{
-
 let plate=row["license_plate"]
 if(plate) set.add(plate)
-
 })
 
 vehicles=set.size
 
 }
-let average = vehicles > 0 ? total / vehicles : 0
+
+let total=totalCanone+totalAssicurazione
 
 document.getElementById("kpiVehicles").innerText=vehicles
 document.getElementById("kpiCanone").innerText="€ "+totalCanone.toLocaleString()
 document.getElementById("kpiAssicurazione").innerText="€ "+totalAssicurazione.toLocaleString()
 document.getElementById("kpiTotale").innerText="€ "+total.toLocaleString()
-document.getElementById("kpiAverage").innerText="€ "+average.toFixed(0)
-
-document.getElementById("vehicleTable").innerHTML=tableHTML
 
 updateCharts(categoryCosts,categoryVehicles,monthlyCosts)
 
@@ -513,19 +461,18 @@ alert("Nessun dato da esportare")
 return
 }
 
-let csv="Mese;Targa;Categoria;Canone;Assicurazione;Totale\n"
-
 let month=document.getElementById("monthFilter").value
 let monthLabel=month==="all"?"Tutti":month
 
+let csv="Mese;Targa;Categoria;Canone;Assicurazione;Totale\n"
+
 filteredData.forEach(row=>{
 
-let plate=row["license_plate"]
-let cat=row["category"]
+let plate=row["license_plate"] || ""
+let cat=row["category"] || ""
 
 let canone=parseMoney(row[" Canone imponibile "])
 let assicurazione=parseMoney(row[" Canone assicurazione "])
-
 let total=canone+assicurazione
 
 csv+=`"${monthLabel}";"${plate}";"${cat}";${canone};${assicurazione};${total}\n`
@@ -535,7 +482,6 @@ csv+=`"${monthLabel}";"${plate}";"${cat}";${canone};${assicurazione};${total}\n`
 let blob=new Blob(["\ufeff"+csv],{type:"text/csv;charset=utf-8;"})
 
 let link=document.createElement("a")
-
 link.href=URL.createObjectURL(blob)
 link.download="flotta_export.csv"
 link.click()
