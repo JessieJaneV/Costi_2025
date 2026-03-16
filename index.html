@@ -386,11 +386,38 @@ data:values
 
 function exportCSV(){
 
-let csv="Targa;Categoria;Canone;Assicurazione;Totale\n"
+let months=[
+"Gennaio","Febbraio","Marzo","Aprile","Maggio","Giugno",
+"Luglio","Agosto","Settembre","Ottobre","Novembre","Dicembre"
+]
 
-filtered.forEach(v=>{
+let csv="Mese;Targa;Categoria;Canone;Assicurazione;Totale\n"
 
-csv+=`${v.plate};${v.category};${v.canone};${v.assicurazione};${v.totale}\n`
+fleet.forEach(r=>{
+
+let plate=String(r["license_plate"]||"").trim().toUpperCase()
+
+if(!plate) return
+
+let dateIn=r["Date In"]?new Date(r["Date In"]):null
+let dateOut=r["Date Out"]?new Date(r["Date Out"]):null
+
+if(!dateIn) return
+
+let canone=parseFloat(String(r[" Canone imponibile "]||"").replace(",","."))||0
+let assicurazione=parseFloat(String(r[" Canone assicurazione "]||"").replace(",","."))||0
+
+for(let m=1;m<=12;m++){
+
+let start=new Date(2025,m-1,1)
+let end=new Date(2025,m,0)
+
+if(dateIn>end) continue
+if(dateOut && dateOut<start) continue
+
+csv+=`${months[m-1]};${plate};${r.category||""};${canone};${assicurazione};${canone+assicurazione}\n`
+
+}
 
 })
 
@@ -401,7 +428,7 @@ let url=URL.createObjectURL(blob)
 let a=document.createElement("a")
 
 a.href=url
-a.download="export_flotta.csv"
+a.download="export_flotta_mensile.csv"
 
 a.click()
 
