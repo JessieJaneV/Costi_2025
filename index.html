@@ -97,10 +97,6 @@ padding:8px;
 <option value="all">Categoria</option>
 </select>
 
-<select id="locationFilter">
-<option value="all">Sede</option>
-</select>
-
 <button onclick="applyFilters()">Aggiorna</button>
 
 <button onclick="exportCSV()">Esporta CSV</button>
@@ -143,7 +139,6 @@ Veicoli
 <tr>
 <th>Targa</th>
 <th>Categoria</th>
-<th>Sede</th>
 <th>Canone</th>
 <th>Assicurazione</th>
 <th>Totale</th>
@@ -161,32 +156,10 @@ Veicoli
 <script>
 
 let fleet=[]
-let locationMap={}
 let filtered=[]
 let chart
 
-/* CARICA JSON SEDI */
-
-fetch("prenotazioni.json")
-.then(r=>r.json())
-.then(data=>{
-
-locationMap=data
-
-loadFleet()
-
-})
-.catch(err=>{
-
-console.error("Errore caricamento JSON",err)
-
-loadFleet()
-
-})
-
 /* CARICA CSV */
-
-function loadFleet(){
 
 Papa.parse("FLOTTA_3.csv",{
 
@@ -206,40 +179,23 @@ applyFilters()
 
 })
 
-}
-
 /* FILTRI */
 
 function populateFilters(){
 
 let catSelect=document.getElementById("categoryFilter")
-let locSelect=document.getElementById("locationFilter")
 
 catSelect.innerHTML='<option value="all">Categoria</option>'
-locSelect.innerHTML='<option value="all">Sede</option>'
 
 let categories=new Set()
-let locations=new Set()
 
 fleet.forEach(r=>{
-
-let plate=String(r["license_plate"]||"").trim().toUpperCase()
-
-if(!plate) return
 
 if(r.category){
 categories.add(r.category)
 }
 
-let loc=locationMap[plate]
-
-if(loc){
-locations.add(loc)
-}
-
 })
-
-/* categorie */
 
 categories.forEach(c=>{
 
@@ -248,18 +204,6 @@ opt.value=c
 opt.text=c
 
 catSelect.appendChild(opt)
-
-})
-
-/* sedi */
-
-locations.forEach(l=>{
-
-let opt=document.createElement("option")
-opt.value=l
-opt.text=l
-
-locSelect.appendChild(opt)
 
 })
 
@@ -272,8 +216,6 @@ function applyFilters(){
 let month=parseInt(document.getElementById("monthFilter").value)
 
 let category=document.getElementById("categoryFilter").value
-
-let locationFilter=document.getElementById("locationFilter").value
 
 let start=new Date(2025,month-1,1)
 let end=new Date(2025,month,0)
@@ -296,10 +238,6 @@ if(dateOut && dateOut<start) return
 
 if(category!=="all" && r.category!==category) return
 
-let loc=locationMap[plate] || "Sconosciuta"
-
-if(locationFilter!=="all" && loc!==locationFilter) return
-
 let canone=parseFloat(String(r[" Canone imponibile "]||"").replace(",","."))||0
 
 let assicurazione=parseFloat(String(r[" Canone assicurazione "]||"").replace(",","."))||0
@@ -308,7 +246,6 @@ filtered.push({
 
 plate:plate,
 category:r.category,
-location:loc,
 canone:canone,
 assicurazione:assicurazione,
 totale:canone+assicurazione
@@ -366,7 +303,6 @@ tbody.innerHTML+=`
 <tr>
 <td>${v.plate}</td>
 <td>${v.category||""}</td>
-<td>${v.location}</td>
 <td>${v.canone}</td>
 <td>${v.assicurazione}</td>
 <td>${v.totale}</td>
@@ -386,9 +322,9 @@ let map={}
 
 filtered.forEach(v=>{
 
-if(!map[v.location]) map[v.location]=0
+if(!map[v.category]) map[v.category]=0
 
-map[v.location]+=v.totale
+map[v.category]+=v.totale
 
 })
 
@@ -405,7 +341,7 @@ type:"bar",
 data:{
 labels:labels,
 datasets:[{
-label:"Costo per sede",
+label:"Costo per categoria",
 data:values
 }]
 }
@@ -418,11 +354,11 @@ data:values
 
 function exportCSV(){
 
-let csv="Targa,Categoria,Sede,Canone,Assicurazione,Totale\n"
+let csv="Targa,Categoria,Canone,Assicurazione,Totale\n"
 
 filtered.forEach(v=>{
 
-csv+=`${v.plate},${v.category},${v.location},${v.canone},${v.assicurazione},${v.totale}\n`
+csv+=`${v.plate},${v.category},${v.canone},${v.assicurazione},${v.totale}\n`
 
 })
 
