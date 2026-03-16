@@ -387,15 +387,54 @@ let vehicles
 
 if(month==="all"){
 
-let sum=vehicleMonthlyCount.reduce((a,b)=>a+b,0)
+let monthlyFleet=[]
+
+for(let m=1; m<=12; m++){
+
+let start=new Date(2025,m-1,1)
+let end=new Date(2025,m,0)
+
+let set=new Set()
+
+rawData.forEach(row=>{
+
+let plate=row["license_plate"]
+if(!plate) return
+
+let dateIn=row["Date In"] ? new Date(row["Date In"]) : null
+let dateOut=row["Date Out"] ? new Date(row["Date Out"]) : null
+
+if(!dateIn) return
+
+if(dateIn>end) return
+if(dateOut && dateOut<start) return
+
+set.add(plate)
+
+})
+
+monthlyFleet.push(set.size)
+
+}
+
+let sum=monthlyFleet.reduce((a,b)=>a+b,0)
+
 vehicles=Math.round(sum/12)
 
 }else{
 
-vehicles=data.length
+let set=new Set()
+
+data.forEach(row=>{
+
+let plate=row["license_plate"]
+if(plate) set.add(plate)
+
+})
+
+vehicles=set.size
 
 }
-
 let average=vehicles?total/vehicles:0
 
 document.getElementById("kpiVehicles").innerText=vehicles
