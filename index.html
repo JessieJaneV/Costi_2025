@@ -4,7 +4,7 @@
 <head>
 
 <meta charset="UTF-8">
-<title>Dashboard Costi Flotta 2025</title>
+<title>Dashboard Flotta 2025</title>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
@@ -18,7 +18,7 @@ margin:30px;
 }
 
 .container{
-max-width:1200px;
+max-width:1300px;
 margin:auto;
 }
 
@@ -46,19 +46,35 @@ flex:1;
 }
 
 .kpi-title{
-font-size:16px;
+font-size:15px;
 }
 
 .kpi-value{
 font-size:28px;
 font-weight:bold;
-margin-top:8px;
+margin-top:5px;
 }
 
-select{
+select,button{
 padding:8px;
 border-radius:6px;
 border:1px solid #ccc;
+cursor:pointer;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+th,td{
+padding:8px;
+border-bottom:1px solid #ddd;
+text-align:left;
+}
+
+th{
+background:#fafafa;
 }
 
 </style>
@@ -69,14 +85,13 @@ border:1px solid #ccc;
 
 <div class="container">
 
-<h1>Dashboard Costi Flotta 2025</h1>
+<h1>Dashboard Flotta 2025</h1>
 
 <div class="card filters">
 
 <label>Mese</label>
 
 <select id="monthFilter">
-
 <option value="1">Gennaio</option>
 <option value="2">Febbraio</option>
 <option value="3">Marzo</option>
@@ -89,7 +104,6 @@ border:1px solid #ccc;
 <option value="10">Ottobre</option>
 <option value="11">Novembre</option>
 <option value="12">Dicembre</option>
-
 </select>
 
 <label>Categoria</label>
@@ -99,6 +113,7 @@ border:1px solid #ccc;
 </select>
 
 <button onclick="applyFilters()">Aggiorna</button>
+<button onclick="exportCSV()">Esporta CSV</button>
 
 </div>
 
@@ -119,30 +134,81 @@ border:1px solid #ccc;
 <div class="kpi-value" id="kpiTotale">€0</div>
 </div>
 
+<div class="card kpi">
+<div class="kpi-title">Veicoli Attivi</div>
+<div class="kpi-value" id="kpiVeicoli">0</div>
+</div>
+
 </div>
 
 <div class="card">
-<canvas id="costChart"></canvas>
+<canvas id="locationChart"></canvas>
+</div>
+
+<div class="card">
+
+<h3>Veicoli</h3>
+
+<table id="vehicleTable">
+
+<thead>
+<tr>
+<th>Targa</th>
+<th>Categoria</th>
+<th>Sede</th>
+<th>Canone</th>
+<th>Assicurazione</th>
+<th>Costo Totale</th>
+</tr>
+</thead>
+
+<tbody></tbody>
+
+</table>
+
 </div>
 
 </div>
 
 <script>
 
-let rawData = []
+let rawFleet = []
+let locationMap = {}
+let filteredVehicles = []
 let chart
+
+/* CARICA JSON SEDI */
+
+fetch("prenotazioni.json")
+.then(res => res.json())
+.then(data => {
+
+data.forEach(r => {
+
+let plate = String(r["Auto"]).trim().toUpperCase()
+let location = r["Sucursal Entrega"]
+
+if(plate && location){
+locationMap[plate] = location
+}
+
+})
+
+})
+
+/* CARICA CSV FLOTTA */
 
 Papa.parse("FLOTTA_3.csv",{
 
 download:true,
 header:true,
 delimiter:";",
+
 complete:function(results){
 
-rawData = results.data
+rawFleet = results.data
 
 populateCategoryFilter()
-
 applyFilters()
 
 }
@@ -151,7 +217,7 @@ applyFilters()
 
 function populateCategoryFilter(){
 
-let categories = [...new Set(rawData.map(x => x.category))]
+let categories = [...new Set(rawFleet.map(x => x.category))]
 
 let select = document.getElementById("categoryFilter")
 
@@ -174,94 +240,148 @@ select.appendChild(opt)
 function applyFilters(){
 
 let month = parseInt(document.getElementById("monthFilter").value)
-
 let category = document.getElementById("categoryFilter").value
 
 let startDate = new Date(2025, month-1, 1)
-
 let endDate = new Date(2025, month, 0)
 
-let filtered = rawData.filter(row => {
+filteredVehicles = []
+
+rawFleet.forEach(row => {
 
 let dateIn = row["Date In"] ? new Date(row["Date In"]) : null
 let dateOut = row["Date Out"] ? new Date(row["Date Out"]) : null
 
-if(!dateIn) return false
+if(!dateIn) return
 
-if(category !== "all" && row.category !== category)
-return false
+if(category !== "all" && row.category !== category) return
 
-if(dateIn > endDate) return false
+if(dateIn > endDate) return
+if(dateOut && dateOut < startDate) return
 
-if(dateOut && dateOut < startDate) return false
-
-return true
-
-})
-
-calculateCosts(filtered)
-
-}
-
-function calculateCosts(data){
-
-let totalCanone = 0
-let totalAssicurazione = 0
-
-let categoryCosts = {}
-
-data.forEach(row => {
+let plate = row["license_plate"].trim().toUpperCase()
 
 let canone = parseFloat(row[" Canone imponibile "]) || 0
 let assicurazione = parseFloat(row[" Canone assicurazione "]) || 0
 
-totalCanone += canone
-totalAssicurazione += assicurazione
+let location = locationMap[plate] || "Sconosciuta"
 
-let cat = row.category || "Altro"
+filteredVehicles.push({
 
-if(!categoryCosts[cat])
-categoryCosts[cat] = 0
-
-categoryCosts[cat] += canone + assicurazione
+plate:plate,
+category:row.category,
+location:location,
+canone:canone,
+assicurazione:assicurazione,
+totale:canone+assicurazione
 
 })
 
-let totale = totalCanone + totalAssicurazione
+})
 
-document.getElementById("kpiCanone").innerText =
-"€ " + totalCanone.toLocaleString()
-
-document.getElementById("kpiAssicurazione").innerText =
-"€ " + totalAssicurazione.toLocaleString()
-
-document.getElementById("kpiTotale").innerText =
-"€ " + totale.toLocaleString()
-
-updateChart(categoryCosts)
+calculateKPIs()
+renderTable()
+renderChart()
 
 }
 
-function updateChart(data){
+function calculateKPIs(){
 
-let labels = Object.keys(data)
-let values = Object.values(data)
+let canone=0
+let assicurazione=0
+
+filteredVehicles.forEach(v=>{
+
+canone+=v.canone
+assicurazione+=v.assicurazione
+
+})
+
+let totale = canone + assicurazione
+
+document.getElementById("kpiCanone").innerText="€ "+canone.toLocaleString()
+document.getElementById("kpiAssicurazione").innerText="€ "+assicurazione.toLocaleString()
+document.getElementById("kpiTotale").innerText="€ "+totale.toLocaleString()
+document.getElementById("kpiVeicoli").innerText=filteredVehicles.length
+
+}
+
+function renderTable(){
+
+let tbody=document.querySelector("#vehicleTable tbody")
+tbody.innerHTML=""
+
+filteredVehicles.forEach(v=>{
+
+let row=`
+<tr>
+<td>${v.plate}</td>
+<td>${v.category}</td>
+<td>${v.location}</td>
+<td>€ ${v.canone.toLocaleString()}</td>
+<td>€ ${v.assicurazione.toLocaleString()}</td>
+<td>€ ${v.totale.toLocaleString()}</td>
+</tr>
+`
+
+tbody.innerHTML+=row
+
+})
+
+}
+
+function renderChart(){
+
+let locationCosts={}
+
+filteredVehicles.forEach(v=>{
+
+if(!locationCosts[v.location]){
+locationCosts[v.location]=0
+}
+
+locationCosts[v.location]+=v.totale
+
+})
+
+let labels=Object.keys(locationCosts)
+let values=Object.values(locationCosts)
 
 if(chart) chart.destroy()
 
-chart = new Chart(document.getElementById("costChart"),{
+chart=new Chart(document.getElementById("locationChart"),{
 
 type:"bar",
 
 data:{
 labels:labels,
 datasets:[{
-label:"Costo totale per categoria",
+label:"Costo per sede",
 data:values
 }]
 }
 
 })
+
+}
+
+function exportCSV(){
+
+let csv="Targa,Categoria,Sede,Canone,Assicurazione,Totale\n"
+
+filteredVehicles.forEach(v=>{
+
+csv+=`${v.plate},${v.category},${v.location},${v.canone},${v.assicurazione},${v.totale}\n`
+
+})
+
+let blob=new Blob([csv],{type:"text/csv"})
+let url=window.URL.createObjectURL(blob)
+
+let a=document.createElement("a")
+a.href=url
+a.download="flotta_export.csv"
+a.click()
 
 }
 
