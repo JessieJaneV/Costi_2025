@@ -34,15 +34,18 @@ margin-bottom:20px;
 display:flex;
 gap:20px;
 align-items:center;
+flex-wrap:wrap;
 }
 
 .kpi-container{
 display:flex;
 gap:20px;
+flex-wrap:wrap;
 }
 
 .kpi{
 flex:1;
+min-width:180px;
 }
 
 .kpi-title{
@@ -72,10 +75,21 @@ border-bottom:1px solid #ddd;
 text-align:left;
 }
 
-select{
+select,button{
 padding:8px;
 border-radius:6px;
 border:1px solid #ccc;
+cursor:pointer;
+}
+
+button{
+background:#2b7cff;
+color:white;
+border:none;
+}
+
+button.reset{
+background:#888;
 }
 
 </style>
@@ -93,7 +107,7 @@ border:1px solid #ccc;
 <label>Mese</label>
 
 <select id="monthFilter">
-
+<option value="all">Tutti i mesi</option>
 <option value="1">Gennaio</option>
 <option value="2">Febbraio</option>
 <option value="3">Marzo</option>
@@ -106,7 +120,6 @@ border:1px solid #ccc;
 <option value="10">Ottobre</option>
 <option value="11">Novembre</option>
 <option value="12">Dicembre</option>
-
 </select>
 
 <label>Categoria</label>
@@ -116,6 +129,8 @@ border:1px solid #ccc;
 </select>
 
 <button onclick="applyFilters()">Aggiorna</button>
+
+<button class="reset" onclick="resetFilters()">Reset filtri</button>
 
 </div>
 
@@ -248,15 +263,19 @@ String(v)
 
 }
 
+function resetFilters(){
+
+document.getElementById("monthFilter").value="all"
+document.getElementById("categoryFilter").value="all"
+
+applyFilters()
+
+}
+
 function applyFilters(){
 
-let month=parseInt(document.getElementById("monthFilter").value)
-
+let month=document.getElementById("monthFilter").value
 let category=document.getElementById("categoryFilter").value
-
-let startDate=new Date(2025,month-1,1)
-
-let endDate=new Date(2025,month,0)
 
 let filtered=rawData.filter(row=>{
 
@@ -268,19 +287,23 @@ if(!dateIn) return false
 if(category!=="all" && row.category!==category)
 return false
 
-if(dateIn>endDate) return false
+if(month==="all") return true
 
+let startDate=new Date(2025,month-1,1)
+let endDate=new Date(2025,month,0)
+
+if(dateIn>endDate) return false
 if(dateOut && dateOut<startDate) return false
 
 return true
 
 })
 
-calculateDashboard(filtered)
+calculateDashboard(filtered,month)
 
 }
 
-function calculateDashboard(data){
+function calculateDashboard(data,month){
 
 let totalCanone=0
 let totalAssicurazione=0
@@ -303,6 +326,31 @@ let assicurazione=parseMoney(row[" Canone assicurazione "])
 
 let total=canone+assicurazione
 
+let dateIn=row["Date In"] ? new Date(row["Date In"]) : null
+let dateOut=row["Date Out"] ? new Date(row["Date Out"]) : null
+
+if(month!=="all"){
+
+let m=parseInt(month)
+
+let startDate=new Date(2025,m-1,1)
+let endDate=new Date(2025,m,0)
+
+let daysMonth=endDate.getDate()
+
+let start=Math.max(dateIn,startDate)
+let end=dateOut?Math.min(dateOut,endDate):endDate
+
+let daysActive=(end-start)/(1000*60*60*24)+1
+
+let prorata=daysActive/daysMonth
+
+canone*=prorata
+assicurazione*=prorata
+total=canone+assicurazione
+
+}
+
 totalCanone+=canone
 totalAssicurazione+=assicurazione
 
@@ -317,16 +365,15 @@ if(!categoryVehicles[cat]) categoryVehicles[cat]=0
 categoryVehicles[cat]++
 
 let monthIndex=new Date(row["Date In"]).getMonth()
-
 monthlyCosts[monthIndex]+=total
 
 tableHTML+=`
 <tr>
 <td>${plate}</td>
 <td>${cat}</td>
-<td>${canone}</td>
-<td>${assicurazione}</td>
-<td>${total}</td>
+<td>${canone.toFixed(0)}</td>
+<td>${assicurazione.toFixed(0)}</td>
+<td>${total.toFixed(0)}</td>
 </tr>
 `
 
