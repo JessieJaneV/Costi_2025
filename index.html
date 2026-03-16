@@ -26,28 +26,13 @@ margin:auto;
 background:white;
 padding:20px;
 border-radius:10px;
-box-shadow:0 2px 6px rgba(0,0,0,0.1);
 margin-bottom:20px;
+box-shadow:0 2px 6px rgba(0,0,0,0.1);
 }
 
-.filters{
-display:flex;
-gap:15px;
-flex-wrap:wrap;
-}
-
-.kpi-container{
-display:flex;
-gap:20px;
-}
-
-.kpi{
-flex:1;
-}
-
-.kpi-value{
-font-size:28px;
-font-weight:bold;
+.filters select,button{
+padding:6px;
+margin-right:10px;
 }
 
 table{
@@ -60,8 +45,9 @@ padding:8px;
 border-bottom:1px solid #ddd;
 }
 
-select,button{
-padding:8px;
+.kpi{
+font-size:18px;
+margin-right:25px;
 }
 
 </style>
@@ -75,8 +61,6 @@ padding:8px;
 <h2>Dashboard Flotta 2025</h2>
 
 <div class="card filters">
-
-<label>Mese</label>
 
 <select id="monthFilter">
 <option value="1">Gennaio</option>
@@ -103,31 +87,19 @@ padding:8px;
 
 <button onclick="applyFilters()">Aggiorna</button>
 
-<button onclick="exportCSV()">Esporta CSV</button>
+<button onclick="exportCSV()">Export CSV</button>
 
 </div>
 
-<div class="kpi-container">
+<div class="card">
 
-<div class="card kpi">
-Canone
-<div id="kpiCanone" class="kpi-value">€0</div>
-</div>
+<span class="kpi">Canone: <b id="kpiCanone">0</b></span>
 
-<div class="card kpi">
-Assicurazione
-<div id="kpiAssicurazione" class="kpi-value">€0</div>
-</div>
+<span class="kpi">Assicurazione: <b id="kpiAssicurazione">0</b></span>
 
-<div class="card kpi">
-Totale
-<div id="kpiTotale" class="kpi-value">€0</div>
-</div>
+<span class="kpi">Totale: <b id="kpiTotale">0</b></span>
 
-<div class="card kpi">
-Veicoli
-<div id="kpiVeicoli" class="kpi-value">0</div>
-</div>
+<span class="kpi">Veicoli: <b id="kpiCount">0</b></span>
 
 </div>
 
@@ -140,6 +112,7 @@ Veicoli
 <table id="table">
 
 <thead>
+
 <tr>
 <th>Targa</th>
 <th>Categoria</th>
@@ -148,6 +121,7 @@ Veicoli
 <th>Assicurazione</th>
 <th>Totale</th>
 </tr>
+
 </thead>
 
 <tbody></tbody>
@@ -162,29 +136,78 @@ Veicoli
 
 let fleet=[]
 let locationMap={}
+let vehicles=[]
 let filtered=[]
 let chart
 
-/* CARICA JSON SEDI */
+/* PARSE MONEY */
+
+function parseMoney(v){
+
+if(!v) return 0
+
+return parseFloat(
+String(v)
+.replace("€","")
+.replace(",",".")
+.replace(/\s/g,"")
+) || 0
+
+}
+
+/* PARSE DATE ITA */
+
+function parseDate(v){
+
+if(!v) return null
+
+let mesi={
+gen:0,feb:1,mar:2,apr:3,mag:4,giu:5,
+lug:6,ago:7,set:8,ott:9,nov:10,dic:11
+}
+
+if(v.includes("-")){
+
+let p=v.split("-")
+
+let m=mesi[p[0].toLowerCase()]
+
+let y="20"+p[1]
+
+return new Date(y,m,1)
+
+}
+
+return new Date(v)
+
+}
+
+/* LOAD PRENOTAZIONI */
 
 fetch("prenotazioni.json")
 .then(r=>r.json())
 .then(data=>{
 
-locationMap=data
+data.forEach(row=>{
+
+let plate=String(row["Auto"]||"").trim().toUpperCase()
+
+let loc=row["Sucursal Entrega"]
+
+if(plate && loc){
+
+locationMap[plate]=loc
+
+}
+
+})
 
 loadFleet()
 
 })
-.catch(err=>{
+.catch(()=>loadFleet())
 
-console.error("Errore caricamento JSON",err)
-
-loadFleet()
-
-})
-
-/* CARICA CSV */
+/* LOAD CSV FLOTTA */
 
 function loadFleet(){
 
@@ -198,6 +221,8 @@ complete:(res)=>{
 
 fleet=res.data
 
+prepareVehicles()
+
 populateFilters()
 
 applyFilters()
@@ -208,18 +233,11 @@ applyFilters()
 
 }
 
-/* FILTRI */
+/* PREPARA VEICOLI */
 
-function populateFilters(){
+function prepareVehicles(){
 
-let catSelect=document.getElementById("categoryFilter")
-let locSelect=document.getElementById("locationFilter")
-
-catSelect.innerHTML='<option value="all">Categoria</option>'
-locSelect.innerHTML='<option value="all">Sede</option>'
-
-let categories=new Set()
-let locations=new Set()
+vehicles=[]
 
 fleet.forEach(r=>{
 
@@ -227,45 +245,59 @@ let plate=String(r["license_plate"]||"").trim().toUpperCase()
 
 if(!plate) return
 
-if(r.category){
-categories.add(r.category)
-}
+vehicles.push({
 
-let loc=locationMap[plate]
-
-if(loc){
-locations.add(loc)
-}
+plate:plate,
+category:r["category"],
+location:locationMap[plate] || "Sconosciuta",
+dateIn:r["Date In"],
+dateOut:r["Date Out"],
+canone:parseMoney(r[" Canone imponibile "]),
+assicurazione:parseMoney(r[" Canone assicurazione "])
 
 })
 
-/* categorie */
+})
 
-categories.forEach(c=>{
+}
+
+/* POPOLA FILTRI */
+
+function populateFilters(){
+
+let cats=new Set()
+let locs=new Set()
+
+vehicles.forEach(v=>{
+
+if(v.category) cats.add(v.category)
+if(v.location) locs.add(v.location)
+
+})
+
+cats.forEach(c=>{
 
 let opt=document.createElement("option")
 opt.value=c
 opt.text=c
 
-catSelect.appendChild(opt)
+document.getElementById("categoryFilter").appendChild(opt)
 
 })
 
-/* sedi */
-
-locations.forEach(l=>{
+locs.forEach(l=>{
 
 let opt=document.createElement("option")
 opt.value=l
 opt.text=l
 
-locSelect.appendChild(opt)
+document.getElementById("locationFilter").appendChild(opt)
 
 })
 
 }
 
-/* FILTRI PRINCIPALI */
+/* FILTRI */
 
 function applyFilters(){
 
@@ -273,47 +305,32 @@ let month=parseInt(document.getElementById("monthFilter").value)
 
 let category=document.getElementById("categoryFilter").value
 
-let locationFilter=document.getElementById("locationFilter").value
+let location=document.getElementById("locationFilter").value
 
 let start=new Date(2025,month-1,1)
+
 let end=new Date(2025,month,0)
 
 filtered=[]
 
-fleet.forEach(r=>{
+vehicles.forEach(v=>{
 
-let plate=String(r["license_plate"]||"").trim().toUpperCase()
-
-if(!plate) return
-
-let dateIn=r["Date In"]?new Date(r["Date In"]):null
-let dateOut=r["Date Out"]?new Date(r["Date Out"]):null
+let dateIn=parseDate(v.dateIn)
+let dateOut=parseDate(v.dateOut)
 
 if(!dateIn) return
 
 if(dateIn>end) return
+
 if(dateOut && dateOut<start) return
 
-if(category!=="all" && r.category!==category) return
+if(category!=="all" && v.category!==category) return
 
-let loc=locationMap[plate] || "Sconosciuta"
+if(location!=="all" && v.location!==location) return
 
-if(locationFilter!=="all" && loc!==locationFilter) return
+v.total=v.canone+v.assicurazione
 
-let canone=parseFloat(String(r[" Canone imponibile "]||"").replace(",","."))||0
-
-let assicurazione=parseFloat(String(r[" Canone assicurazione "]||"").replace(",","."))||0
-
-filtered.push({
-
-plate:plate,
-category:r.category,
-location:loc,
-canone:canone,
-assicurazione:assicurazione,
-totale:canone+assicurazione
-
-})
+filtered.push(v)
 
 })
 
@@ -339,15 +356,10 @@ a+=v.assicurazione
 
 })
 
-let t=c+a
-
-document.getElementById("kpiCanone").innerText="€ "+c.toLocaleString()
-
-document.getElementById("kpiAssicurazione").innerText="€ "+a.toLocaleString()
-
-document.getElementById("kpiTotale").innerText="€ "+t.toLocaleString()
-
-document.getElementById("kpiVeicoli").innerText=filtered.length
+document.getElementById("kpiCanone").innerText=c
+document.getElementById("kpiAssicurazione").innerText=a
+document.getElementById("kpiTotale").innerText=c+a
+document.getElementById("kpiCount").innerText=filtered.length
 
 }
 
@@ -362,16 +374,14 @@ tbody.innerHTML=""
 filtered.forEach(v=>{
 
 tbody.innerHTML+=`
-
 <tr>
 <td>${v.plate}</td>
 <td>${v.category||""}</td>
 <td>${v.location}</td>
 <td>${v.canone}</td>
 <td>${v.assicurazione}</td>
-<td>${v.totale}</td>
+<td>${v.total}</td>
 </tr>
-
 `
 
 })
@@ -388,7 +398,7 @@ filtered.forEach(v=>{
 
 if(!map[v.location]) map[v.location]=0
 
-map[v.location]+=v.totale
+map[v.location]+=v.total
 
 })
 
@@ -414,7 +424,7 @@ data:values
 
 }
 
-/* EXPORT CSV */
+/* EXPORT */
 
 function exportCSV(){
 
@@ -422,7 +432,7 @@ let csv="Targa,Categoria,Sede,Canone,Assicurazione,Totale\n"
 
 filtered.forEach(v=>{
 
-csv+=`${v.plate},${v.category},${v.location},${v.canone},${v.assicurazione},${v.totale}\n`
+csv+=`${v.plate},${v.category},${v.location},${v.canone},${v.assicurazione},${v.total}\n`
 
 })
 
