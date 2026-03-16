@@ -212,28 +212,53 @@ applyFilters()
 
 function populateFilters(){
 
-let categories=[...new Set(fleet.map(x=>x.category).filter(Boolean))]
-
 let catSelect=document.getElementById("categoryFilter")
+let locSelect=document.getElementById("locationFilter")
+
+catSelect.innerHTML='<option value="all">Categoria</option>'
+locSelect.innerHTML='<option value="all">Sede</option>'
+
+let categories=new Set()
+let locations=new Set()
+
+fleet.forEach(r=>{
+
+let plate=String(r["license_plate"]||"").trim().toUpperCase()
+
+if(!plate) return
+
+if(r.category){
+categories.add(r.category)
+}
+
+let loc=locationMap[plate]
+
+if(loc){
+locations.add(loc)
+}
+
+})
+
+/* categorie */
 
 categories.forEach(c=>{
 
 let opt=document.createElement("option")
 opt.value=c
 opt.text=c
+
 catSelect.appendChild(opt)
 
 })
 
-let locations=[...new Set(Object.values(locationMap))]
-
-let locSelect=document.getElementById("locationFilter")
+/* sedi */
 
 locations.forEach(l=>{
 
 let opt=document.createElement("option")
 opt.value=l
 opt.text=l
+
 locSelect.appendChild(opt)
 
 })
