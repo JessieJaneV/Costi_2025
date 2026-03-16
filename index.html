@@ -2,6 +2,7 @@
 <html lang="it">
 
 <head>
+
 <meta charset="UTF-8">
 <title>Dashboard Flotta 2025</title>
 
@@ -45,7 +46,7 @@ flex:1;
 }
 
 .kpi-value{
-font-size:26px;
+font-size:28px;
 font-weight:bold;
 }
 
@@ -59,6 +60,10 @@ padding:8px;
 border-bottom:1px solid #ddd;
 }
 
+select,button{
+padding:8px;
+}
+
 </style>
 
 </head>
@@ -70,6 +75,8 @@ border-bottom:1px solid #ddd;
 <h2>Dashboard Flotta 2025</h2>
 
 <div class="card filters">
+
+<label>Mese</label>
 
 <select id="monthFilter">
 <option value="1">Gennaio</option>
@@ -158,42 +165,26 @@ let locationMap={}
 let filtered=[]
 let chart
 
-/* LOAD JSON */
+/* CARICA JSON SEDI */
 
 fetch("prenotazioni.json")
 .then(r=>r.json())
 .then(data=>{
 
-console.log("JSON caricato")
-
-if(Array.isArray(data)){
-
-data.forEach(r=>{
-
-let plate=String(r["Auto"]||"").trim().toUpperCase()
-let loc=r["Sucursal Entrega"]
-
-if(plate && loc){
-locationMap[plate]=loc
-}
-
-})
-
-}else{
-
 locationMap=data
 
-}
+loadFleet()
+
+})
+.catch(err=>{
+
+console.error("Errore caricamento JSON",err)
 
 loadFleet()
 
 })
 
-.catch(e=>{
-console.error("Errore JSON",e)
-})
-
-/* LOAD CSV */
+/* CARICA CSV */
 
 function loadFleet(){
 
@@ -207,8 +198,6 @@ complete:(res)=>{
 
 fleet=res.data
 
-console.log("CSV caricato",fleet.length)
-
 populateFilters()
 
 applyFilters()
@@ -219,17 +208,21 @@ applyFilters()
 
 }
 
+/* FILTRI */
+
 function populateFilters(){
 
-let cats=[...new Set(fleet.map(x=>x.category).filter(Boolean))]
+let categories=[...new Set(fleet.map(x=>x.category).filter(Boolean))]
 
 let catSelect=document.getElementById("categoryFilter")
 
-cats.forEach(c=>{
+categories.forEach(c=>{
+
 let opt=document.createElement("option")
 opt.value=c
 opt.text=c
 catSelect.appendChild(opt)
+
 })
 
 let locations=[...new Set(Object.values(locationMap))]
@@ -237,13 +230,17 @@ let locations=[...new Set(Object.values(locationMap))]
 let locSelect=document.getElementById("locationFilter")
 
 locations.forEach(l=>{
+
 let opt=document.createElement("option")
 opt.value=l
 opt.text=l
 locSelect.appendChild(opt)
+
 })
 
 }
+
+/* FILTRI PRINCIPALI */
 
 function applyFilters(){
 
@@ -254,7 +251,6 @@ let category=document.getElementById("categoryFilter").value
 let locationFilter=document.getElementById("locationFilter").value
 
 let start=new Date(2025,month-1,1)
-
 let end=new Date(2025,month,0)
 
 filtered=[]
@@ -265,8 +261,8 @@ let plate=String(r["license_plate"]||"").trim().toUpperCase()
 
 if(!plate) return
 
-let dateIn=r["Date In"] ? new Date(r["Date In"]) : null
-let dateOut=r["Date Out"] ? new Date(r["Date Out"]) : null
+let dateIn=r["Date In"]?new Date(r["Date In"]):null
+let dateOut=r["Date Out"]?new Date(r["Date Out"]):null
 
 if(!dateIn) return
 
@@ -297,10 +293,14 @@ totale:canone+assicurazione
 })
 
 updateKPIs()
+
 renderTable()
+
 renderChart()
 
 }
+
+/* KPI */
 
 function updateKPIs(){
 
@@ -308,18 +308,25 @@ let c=0
 let a=0
 
 filtered.forEach(v=>{
+
 c+=v.canone
 a+=v.assicurazione
+
 })
 
 let t=c+a
 
 document.getElementById("kpiCanone").innerText="€ "+c.toLocaleString()
+
 document.getElementById("kpiAssicurazione").innerText="€ "+a.toLocaleString()
+
 document.getElementById("kpiTotale").innerText="€ "+t.toLocaleString()
+
 document.getElementById("kpiVeicoli").innerText=filtered.length
 
 }
+
+/* TABELLA */
 
 function renderTable(){
 
@@ -346,6 +353,8 @@ tbody.innerHTML+=`
 
 }
 
+/* GRAFICO */
+
 function renderChart(){
 
 let map={}
@@ -359,6 +368,7 @@ map[v.location]+=v.totale
 })
 
 let labels=Object.keys(map)
+
 let values=Object.values(map)
 
 if(chart) chart.destroy()
@@ -378,6 +388,8 @@ data:values
 })
 
 }
+
+/* EXPORT CSV */
 
 function exportCSV(){
 
