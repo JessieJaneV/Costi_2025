@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
 
 <meta charset="UTF-8">
-<title>Dashboard Flotta 2025</title>
+<title>Dashboard Flotta</title>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
@@ -17,7 +18,7 @@ margin:30px;
 }
 
 .container{
-max-width:1300px;
+max-width:1200px;
 margin:auto;
 }
 
@@ -25,26 +26,17 @@ margin:auto;
 background:white;
 padding:20px;
 border-radius:10px;
-box-shadow:0 2px 6px rgba(0,0,0,0.1);
 margin-bottom:20px;
-}
-
-.filters{
-display:flex;
-gap:15px;
-flex-wrap:wrap;
-align-items:center;
+box-shadow:0 2px 6px rgba(0,0,0,0.1);
 }
 
 .kpi-container{
 display:flex;
 gap:20px;
-flex-wrap:wrap;
 }
 
 .kpi{
 flex:1;
-min-width:200px;
 }
 
 .kpi-title{
@@ -54,24 +46,7 @@ font-size:14px;
 .kpi-value{
 font-size:28px;
 font-weight:bold;
-margin-top:8px;
-}
-
-select,button{
-padding:8px;
-border-radius:6px;
-border:1px solid #ccc;
-cursor:pointer;
-}
-
-button{
-background:#2b7cff;
-color:white;
-border:none;
-}
-
-button.reset{
-background:#777;
+margin-top:10px;
 }
 
 </style>
@@ -82,9 +57,9 @@ background:#777;
 
 <div class="container">
 
-<h2>Dashboard Costi Flotta 2025</h2>
+<h2>Dashboard Flotta 2025</h2>
 
-<div class="card filters">
+<div class="card">
 
 <label>Mese</label>
 
@@ -104,15 +79,7 @@ background:#777;
 <option value="12">Dicembre</option>
 </select>
 
-<label>Categoria</label>
-
-<select id="categoryFilter">
-<option value="all">Tutte</option>
-</select>
-
 <button onclick="applyFilters()">Aggiorna</button>
-<button class="reset" onclick="resetFilters()">Reset</button>
-<button onclick="exportCSV()">Export CSV</button>
 
 </div>
 
@@ -149,22 +116,29 @@ background:#777;
 <script>
 
 let rawData=[]
-let filteredData=[]
+let columnMap={}
+
 let trendChart
 
-/* NORMALIZZA CHIAVI CSV */
+/* NORMALIZZA STRINGHE */
 
-function normalizeKey(key){
-return key.toLowerCase().trim()
+function normalize(text){
+
+return text
+.toLowerCase()
+.trim()
+.replace(/_/g," ")
+.replace(/\s+/g," ")
+
 }
 
-/* PARSE EURO SICURO */
+/* PARSE EURO */
 
 function parseMoney(v){
 
 if(!v) return 0
 
-let value = String(v)
+let value=String(v)
 .replace("€","")
 .replace(",",".")
 .replace(/\s/g,"")
@@ -175,6 +149,33 @@ let num=parseFloat(value)
 if(isNaN(num)) return 0
 
 return num
+
+}
+
+/* IDENTIFICA COLONNE */
+
+function detectColumns(headers){
+
+headers.forEach(h=>{
+
+let name=normalize(h)
+
+if(name.includes("canone imponibile"))
+columnMap.canone=h
+
+if(name.includes("assicurazione"))
+columnMap.assicurazione=h
+
+if(name.includes("date in"))
+columnMap.datein=h
+
+if(name.includes("date out"))
+columnMap.dateout=h
+
+if(name.includes("plate") || name.includes("targa"))
+columnMap.plate=h
+
+})
 
 }
 
@@ -189,118 +190,52 @@ skipEmptyLines:true,
 
 complete:function(results){
 
-rawData = results.data.map(row=>{
+let headers=Object.keys(results.data[0])
 
-let clean={}
+detectColumns(headers)
 
-Object.keys(row).forEach(key=>{
-clean[normalizeKey(key)] = row[key]
-})
-
-return clean
-
-})
-
-populateCategoryFilter()
-applyFilters()
-
-}
-
-})
-
-/* FILTRO CATEGORIE */
-
-function populateCategoryFilter(){
-
-let categories=[...new Set(rawData.map(x=>x.category))]
-
-let select=document.getElementById("categoryFilter")
-
-categories.forEach(cat=>{
-
-if(!cat) return
-
-let opt=document.createElement("option")
-opt.value=cat
-opt.text=cat
-
-select.appendChild(opt)
-
-})
-
-}
-
-/* RESET */
-
-function resetFilters(){
-
-document.getElementById("monthFilter").value="all"
-document.getElementById("categoryFilter").value="all"
+rawData=results.data
 
 applyFilters()
 
 }
+
+})
 
 /* FILTRI */
 
 function applyFilters(){
 
 let month=document.getElementById("monthFilter").value
-let category=document.getElementById("categoryFilter").value
-
-filteredData = rawData.filter(row=>{
-
-let dateIn=row["date in"] ? new Date(row["date in"]) : null
-let dateOut=row["date out"] ? new Date(row["date out"]) : null
-
-if(!dateIn) return false
-
-if(category!=="all" && row.category!==category)
-return false
-
-if(month==="all") return true
-
-let start=new Date(2025,month-1,1)
-let end=new Date(2025,month,0)
-
-if(dateIn>end) return false
-if(dateOut && dateOut<start) return false
-
-return true
-
-})
-
-calculateDashboard(filteredData,month,category)
-
-}
-
-/* CALCOLO KPI */
-
-function calculateDashboard(data,month,category){
 
 let totalCanone=0
 let totalAssicurazione=0
 
 let monthlyCosts=Array(12).fill(0)
 
-/* COSTI */
+let vehiclesSet=new Set()
 
-data.forEach(row=>{
+rawData.forEach(row=>{
 
-let canoneBase=parseMoney(row["canone imponibile"])
-let assicurazioneBase=parseMoney(row["canone assicurazione"])
+let canone=parseMoney(row[columnMap.canone])
+let assicurazione=parseMoney(row[columnMap.assicurazione])
 
-let dateIn=row["date in"] ? new Date(row["date in"]) : null
-let dateOut=row["date out"] ? new Date(row["date out"]) : null
+let dateIn=row[columnMap.datein]?new Date(row[columnMap.datein]):null
+let dateOut=row[columnMap.dateout]?new Date(row[columnMap.dateout]):null
+
+let plate=row[columnMap.plate]
 
 if(!dateIn) return
 
-if(month!=="all"){
+if(month!="all"){
 
 let m=parseInt(month)
 
 let start=new Date(2025,m-1,1)
 let end=new Date(2025,m,0)
+
+if(dateIn>end) return
+if(dateOut && dateOut<start) return
 
 let daysMonth=end.getDate()
 
@@ -311,8 +246,10 @@ let daysActive=Math.floor((endActive-startActive)/(1000*60*60*24))+1
 
 let prorata=daysActive/daysMonth
 
-totalCanone+=canoneBase*prorata
-totalAssicurazione+=assicurazioneBase*prorata
+totalCanone+=canone*prorata
+totalAssicurazione+=assicurazione*prorata
+
+vehiclesSet.add(plate)
 
 }else{
 
@@ -333,81 +270,25 @@ let daysActive=Math.floor((endActive-startActive)/(1000*60*60*24))+1
 
 let prorata=daysActive/daysMonth
 
-let cost=(canoneBase+assicurazioneBase)*prorata
+totalCanone+=canone*prorata
+totalAssicurazione+=assicurazione*prorata
 
-totalCanone+=canoneBase*prorata
-totalAssicurazione+=assicurazioneBase*prorata
-
-monthlyCosts[m-1]+=cost
+monthlyCosts[m-1]+=(canone+assicurazione)*prorata
 
 }
+
+vehiclesSet.add(plate)
 
 }
 
 })
-
-/* VEICOLI */
-
-let vehicles
-
-if(month==="all"){
-
-let monthlyFleet=[]
-
-for(let m=1;m<=12;m++){
-
-let start=new Date(2025,m-1,1)
-let end=new Date(2025,m,0)
-
-let set=new Set()
-
-rawData.forEach(row=>{
-
-if(category!=="all" && row.category!==category) return
-
-let plate=row["licence plate"]||row["license_plate"]
-if(!plate) return
-
-let dateIn=row["date in"] ? new Date(row["date in"]) : null
-let dateOut=row["date out"] ? new Date(row["date out"]) : null
-
-if(!dateIn) return
-if(dateIn>end) return
-if(dateOut && dateOut<start) return
-
-set.add(plate)
-
-})
-
-monthlyFleet.push(set.size)
-
-}
-
-let sum=monthlyFleet.reduce((a,b)=>a+b,0)
-
-vehicles=Math.round(sum/12)
-
-}else{
-
-let set=new Set()
-
-data.forEach(row=>{
-
-let plate=row["licence plate"]||row["license_plate"]
-if(plate) set.add(plate)
-
-})
-
-vehicles=set.size
-
-}
 
 let total=totalCanone+totalAssicurazione
 
-document.getElementById("kpiVehicles").innerText=vehicles
-document.getElementById("kpiCanone").innerText="€ "+totalCanone.toLocaleString()
-document.getElementById("kpiAssicurazione").innerText="€ "+totalAssicurazione.toLocaleString()
-document.getElementById("kpiTotale").innerText="€ "+total.toLocaleString()
+document.getElementById("kpiVehicles").innerText=vehiclesSet.size
+document.getElementById("kpiCanone").innerText="€ "+totalCanone.toFixed(0)
+document.getElementById("kpiAssicurazione").innerText="€ "+totalAssicurazione.toFixed(0)
+document.getElementById("kpiTotale").innerText="€ "+total.toFixed(0)
 
 updateChart(monthlyCosts)
 
@@ -415,7 +296,7 @@ updateChart(monthlyCosts)
 
 /* GRAFICO */
 
-function updateChart(monthlyCosts){
+function updateChart(data){
 
 if(trendChart) trendChart.destroy()
 
@@ -426,44 +307,12 @@ type:"line",
 data:{
 labels:["Gen","Feb","Mar","Apr","Mag","Giu","Lug","Ago","Set","Ott","Nov","Dic"],
 datasets:[{
-label:"Trend costi",
-data:monthlyCosts
+label:"Costi",
+data:data
 }]
 }
 
 })
-
-}
-
-/* EXPORT CSV */
-
-function exportCSV(){
-
-if(!filteredData.length){
-alert("Nessun dato")
-return
-}
-
-let csv="Targa;Categoria;Canone;Assicurazione\n"
-
-filteredData.forEach(row=>{
-
-let plate=row["licence plate"]||row["license_plate"]||""
-let cat=row.category||""
-
-let canone=parseMoney(row["canone imponibile"])
-let assicurazione=parseMoney(row["canone assicurazione"])
-
-csv+=`${plate};${cat};${canone};${assicurazione}\n`
-
-})
-
-let blob=new Blob(["\ufeff"+csv],{type:"text/csv;charset=utf-8;"})
-
-let link=document.createElement("a")
-link.href=URL.createObjectURL(blob)
-link.download="export_flotta.csv"
-link.click()
 
 }
 
