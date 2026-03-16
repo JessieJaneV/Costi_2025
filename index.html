@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
 
 <meta charset="UTF-8">
-<title>Dashboard Costi Flotta 2025</title>
+<title>Dashboard Flotta 2025</title>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
@@ -18,7 +17,7 @@ margin:30px;
 }
 
 .container{
-max-width:1400px;
+max-width:1300px;
 margin:auto;
 }
 
@@ -32,7 +31,7 @@ margin-bottom:20px;
 
 .filters{
 display:flex;
-gap:20px;
+gap:15px;
 flex-wrap:wrap;
 align-items:center;
 }
@@ -56,12 +55,6 @@ font-size:14px;
 font-size:28px;
 font-weight:bold;
 margin-top:8px;
-}
-
-.charts{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:20px;
 }
 
 select,button{
@@ -89,14 +82,14 @@ background:#777;
 
 <div class="container">
 
-<h1>Dashboard Costi Flotta 2025</h1>
+<h2>Dashboard Costi Flotta 2025</h2>
 
 <div class="card filters">
 
 <label>Mese</label>
 
 <select id="monthFilter">
-<option value="all">Tutti i mesi</option>
+<option value="all">Tutti</option>
 <option value="1">Gennaio</option>
 <option value="2">Febbraio</option>
 <option value="3">Marzo</option>
@@ -118,7 +111,7 @@ background:#777;
 </select>
 
 <button onclick="applyFilters()">Aggiorna</button>
-<button class="reset" onclick="resetFilters()">Reset filtri</button>
+<button class="reset" onclick="resetFilters()">Reset</button>
 <button onclick="exportCSV()">Export CSV</button>
 
 </div>
@@ -147,18 +140,6 @@ background:#777;
 
 </div>
 
-<div class="charts">
-
-<div class="card">
-<canvas id="costCategoryChart"></canvas>
-</div>
-
-<div class="card">
-<canvas id="vehiclesCategoryChart"></canvas>
-</div>
-
-</div>
-
 <div class="card">
 <canvas id="trendChart"></canvas>
 </div>
@@ -169,49 +150,21 @@ background:#777;
 
 let rawData=[]
 let filteredData=[]
-
-let costCategoryChart
-let vehiclesCategoryChart
 let trendChart
 
-/* ---------- CSV LOADER ---------- */
+/* NORMALIZZA CHIAVI CSV */
 
-Papa.parse("FLOTTA_3.csv",{
-
-download:true,
-header:true,
-delimiter:";",
-skipEmptyLines:true,
-
-complete:function(results){
-
-rawData = results.data.map(row => {
-
-let clean={}
-
-Object.keys(row).forEach(key=>{
-clean[key.trim().toLowerCase()] = row[key]
-})
-
-return clean
-
-})
-
-populateCategoryFilter()
-
-applyFilters()
-
+function normalizeKey(key){
+return key.toLowerCase().trim()
 }
 
-})
-
-/* ---------- MONEY PARSER ---------- */
+/* PARSE EURO SICURO */
 
 function parseMoney(v){
 
 if(!v) return 0
 
-let value=String(v)
+let value = String(v)
 .replace("€","")
 .replace(",",".")
 .replace(/\s/g,"")
@@ -225,7 +178,59 @@ return num
 
 }
 
-/* ---------- FILTRI ---------- */
+/* LOAD CSV */
+
+Papa.parse("FLOTTA_3.csv",{
+
+download:true,
+header:true,
+delimiter:";",
+skipEmptyLines:true,
+
+complete:function(results){
+
+rawData = results.data.map(row=>{
+
+let clean={}
+
+Object.keys(row).forEach(key=>{
+clean[normalizeKey(key)] = row[key]
+})
+
+return clean
+
+})
+
+populateCategoryFilter()
+applyFilters()
+
+}
+
+})
+
+/* FILTRO CATEGORIE */
+
+function populateCategoryFilter(){
+
+let categories=[...new Set(rawData.map(x=>x.category))]
+
+let select=document.getElementById("categoryFilter")
+
+categories.forEach(cat=>{
+
+if(!cat) return
+
+let opt=document.createElement("option")
+opt.value=cat
+opt.text=cat
+
+select.appendChild(opt)
+
+})
+
+}
+
+/* RESET */
 
 function resetFilters(){
 
@@ -236,27 +241,7 @@ applyFilters()
 
 }
 
-function populateCategoryFilter(){
-
-let categories=[...new Set(rawData.map(x=>x.category))]
-
-let select=document.getElementById("categoryFilter")
-
-categories.forEach(cat=>{
-
-if(cat){
-
-let opt=document.createElement("option")
-opt.value=cat
-opt.text=cat
-
-select.appendChild(opt)
-
-}
-
-})
-
-}
+/* FILTRI */
 
 function applyFilters(){
 
@@ -265,8 +250,8 @@ let category=document.getElementById("categoryFilter").value
 
 filteredData = rawData.filter(row=>{
 
-let dateIn = row["date in"] ? new Date(row["date in"]) : null
-let dateOut = row["date out"] ? new Date(row["date out"]) : null
+let dateIn=row["date in"] ? new Date(row["date in"]) : null
+let dateOut=row["date out"] ? new Date(row["date out"]) : null
 
 if(!dateIn) return false
 
@@ -289,15 +274,13 @@ calculateDashboard(filteredData,month,category)
 
 }
 
-/* ---------- CALCOLO KPI ---------- */
+/* CALCOLO KPI */
 
 function calculateDashboard(data,month,category){
 
 let totalCanone=0
 let totalAssicurazione=0
 
-let categoryCosts={}
-let categoryVehicles={}
 let monthlyCosts=Array(12).fill(0)
 
 /* COSTI */
@@ -328,25 +311,10 @@ let daysActive=Math.floor((endActive-startActive)/(1000*60*60*24))+1
 
 let prorata=daysActive/daysMonth
 
-let canone=canoneBase*prorata
-let assicurazione=assicurazioneBase*prorata
+totalCanone+=canoneBase*prorata
+totalAssicurazione+=assicurazioneBase*prorata
 
-let total=canone+assicurazione
-
-totalCanone+=canone
-totalAssicurazione+=assicurazione
-
-let cat=row.category||"Altro"
-
-if(!categoryCosts[cat]) categoryCosts[cat]=0
-categoryCosts[cat]+=total
-
-if(!categoryVehicles[cat]) categoryVehicles[cat]=0
-categoryVehicles[cat]++
-
-}
-
-else{
+}else{
 
 for(let m=1;m<=12;m++){
 
@@ -365,23 +333,12 @@ let daysActive=Math.floor((endActive-startActive)/(1000*60*60*24))+1
 
 let prorata=daysActive/daysMonth
 
-let canone=canoneBase*prorata
-let assicurazione=assicurazioneBase*prorata
+let cost=(canoneBase+assicurazioneBase)*prorata
 
-let total=canone+assicurazione
+totalCanone+=canoneBase*prorata
+totalAssicurazione+=assicurazioneBase*prorata
 
-totalCanone+=canone
-totalAssicurazione+=assicurazione
-
-let cat=row.category||"Altro"
-
-if(!categoryCosts[cat]) categoryCosts[cat]=0
-categoryCosts[cat]+=total
-
-if(!categoryVehicles[cat]) categoryVehicles[cat]=0
-categoryVehicles[cat]++
-
-monthlyCosts[m-1]+=total
+monthlyCosts[m-1]+=cost
 
 }
 
@@ -430,9 +387,7 @@ let sum=monthlyFleet.reduce((a,b)=>a+b,0)
 
 vehicles=Math.round(sum/12)
 
-}
-
-else{
+}else{
 
 let set=new Set()
 
@@ -454,79 +409,52 @@ document.getElementById("kpiCanone").innerText="€ "+totalCanone.toLocaleString
 document.getElementById("kpiAssicurazione").innerText="€ "+totalAssicurazione.toLocaleString()
 document.getElementById("kpiTotale").innerText="€ "+total.toLocaleString()
 
-updateCharts(categoryCosts,categoryVehicles,monthlyCosts)
+updateChart(monthlyCosts)
 
 }
 
-/* ---------- CHARTS ---------- */
+/* GRAFICO */
 
-function updateCharts(categoryCosts,categoryVehicles,monthlyCosts){
-
-if(costCategoryChart) costCategoryChart.destroy()
-
-costCategoryChart=new Chart(document.getElementById("costCategoryChart"),{
-type:"bar",
-data:{
-labels:Object.keys(categoryCosts),
-datasets:[{
-label:"Costo per categoria",
-data:Object.values(categoryCosts)
-}]
-}
-})
-
-if(vehiclesCategoryChart) vehiclesCategoryChart.destroy()
-
-vehiclesCategoryChart=new Chart(document.getElementById("vehiclesCategoryChart"),{
-type:"bar",
-data:{
-labels:Object.keys(categoryVehicles),
-datasets:[{
-label:"Veicoli per categoria",
-data:Object.values(categoryVehicles)
-}]
-}
-})
+function updateChart(monthlyCosts){
 
 if(trendChart) trendChart.destroy()
 
 trendChart=new Chart(document.getElementById("trendChart"),{
+
 type:"line",
+
 data:{
 labels:["Gen","Feb","Mar","Apr","Mag","Giu","Lug","Ago","Set","Ott","Nov","Dic"],
 datasets:[{
-label:"Trend costi 2025",
+label:"Trend costi",
 data:monthlyCosts
 }]
 }
+
 })
 
 }
 
-/* ---------- EXPORT CSV ---------- */
+/* EXPORT CSV */
 
 function exportCSV(){
 
 if(!filteredData.length){
-alert("Nessun dato da esportare")
+alert("Nessun dato")
 return
 }
 
-let month=document.getElementById("monthFilter").value
-let monthLabel=month==="all"?"Tutti":month
-
-let csv="Mese;Targa;Categoria;Canone;Assicurazione;Totale\n"
+let csv="Targa;Categoria;Canone;Assicurazione\n"
 
 filteredData.forEach(row=>{
 
 let plate=row["licence plate"]||row["license_plate"]||""
-let cat=row["category"]||""
+let cat=row.category||""
 
 let canone=parseMoney(row["canone imponibile"])
 let assicurazione=parseMoney(row["canone assicurazione"])
-let total=canone+assicurazione
 
-csv+=`"${monthLabel}";"${plate}";"${cat}";${canone};${assicurazione};${total}\n`
+csv+=`${plate};${cat};${canone};${assicurazione}\n`
 
 })
 
@@ -534,7 +462,7 @@ let blob=new Blob(["\ufeff"+csv],{type:"text/csv;charset=utf-8;"})
 
 let link=document.createElement("a")
 link.href=URL.createObjectURL(blob)
-link.download="flotta_export.csv"
+link.download="export_flotta.csv"
 link.click()
 
 }
