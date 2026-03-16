@@ -167,23 +167,39 @@ let chart
 
 /* CARICA JSON SEDI */
 
+/* CARICA JSON SEDI */
+
 fetch("prenotazioni.json")
-.then(r=>r.json())
-.then(data=>{
+.then(r => r.json())
+.then(data => {
 
-locationMap=data
+data.forEach(row => {
+
+let plate = row["Auto"]
+let location = row["Sucursal Entrega"]
+
+/* ignora prenotazioni senza targa */
+
+if(!plate) return
+
+plate = String(plate).trim().toUpperCase()
+
+if(plate && location){
+locationMap[plate] = location
+}
+
+})
 
 loadFleet()
 
 })
-.catch(err=>{
+.catch(err => {
 
-console.error("Errore caricamento JSON",err)
+console.error("Errore caricamento JSON", err)
 
 loadFleet()
 
 })
-
 /* CARICA CSV */
 
 function loadFleet(){
