@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dashboard Flotta</title>
+
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+
+<style>
+
+body{
+font-family:Arial;
+margin:30px;
+}
+
+.kpi{
+display:flex;
+gap:20px;
+margin-bottom:20px;
+}
+
+.card{
+border:1px solid #ddd;
+padding:15px;
+border-radius:8px;
+width:200px;
+}
+
+table{
+border-collapse:collapse;
+margin-top:20px;
+}
+
+td,th{
+border:1px solid #ddd;
+padding:6px;
+}
+
+</style>
+</head>
+
+<body>
+
+<h2>Dashboard Flotta</h2>
+
+<input type="file" id="fileInput">
+
+<br><br>
+
+Location
+<select id="location"></select>
+
+Category
+<select id="category"></select>
+
+Mese
+<input type="month" id="month">
+
+<br><br>
+
+<div class="kpi">
+
+<div class="card">
+<b>Canone imponibile</b>
+<div id="kpiImponibile">0</div>
+</div>
+
+<div class="card">
+<b>Canone assicurazione</b>
+<div id="kpiAssicurazione">0</div>
+</div>
+
+<div class="card">
+<b>Costo ferro totale</b>
+<div id="kpiTotale">0</div>
+</div>
+
+</div>
+
+<button onclick="downloadCSV()">Scarica CSV</button>
+<button onclick="downloadExcel()">Scarica Excel</button>
+
+<table id="table"></table>
+
+<script>
+
+let data=[]
+let filtered=[]
+
+document.getElementById("fileInput").addEventListener("change",e=>{
+
+Papa.parse(e.target.files[0],{
+
+header:true,
+delimiter:";",
+complete:res=>{
+
+data=res.data
+initFilters()
+
+}
+
+})
+
+})
+
+function initFilters(){
+
+let locations=[...new Set(data.map(r=>r.Location))]
+let categories=[...new Set(data.map(r=>r.category))]
+
+let loc=document.getElementById("location")
+let cat=document.getElementById("category")
+
+loc.innerHTML="<option value=''>All</option>"
+cat.innerHTML="<option value=''>All</option>"
+
+locations.forEach(l=>{
+loc.innerHTML+=`<option>${l}</option>`
+})
+
+categories.forEach(c=>{
+cat.innerHTML+=`<option>${c}</option>`
+})
+
+update()
+
+}
+
+document.querySelectorAll("#location,#category,#month")
+.forEach(e=>e.addEventListener("change",update))
+
+
+function update(){
+
+let loc=document.getElementById("location").value
+let cat=document.getElementById("category").value
+let month=document.getElementById("month").value
+
+let start=new Date(month+"-01")
+let end=new Date(start)
+
+end.setMonth(end.getMonth()+1)
+end.setDate(0)
+
+filtered=data.filter(r=>{
+
+let di=new Date(r["Date In"])
+let doo=new Date(r["Date Out"])
+
+return (!loc || r.Location===loc)
+&& (!cat || r.category===cat)
+&& (di<=end && doo>=start)
+
+})
+
+calculateKPI()
+renderTable()
+
+}
+
+function num(v){
+
+return parseFloat((v||"0").replace(",","."))||0
+
+}
+
+function calculateKPI(){
+
+let imp=0
+let ass=0
+
+filtered.forEach(r=>{
+
+imp+=num(r[" Canone imponibile "])
+ass+=num(r[" Canone assicurazione "])
+
+})
+
+document.getElementById("kpiImponibile").innerText=Math.round(imp)+" €"
+document.getElementById("kpiAssicurazione").innerText=Math.round(ass)+" €"
+document.getElementById("kpiTotale").innerText=Math.round(imp+ass)+" €"
+
+}
+
+function renderTable(){
+
+let t=document.getElementById("table")
+
+t.innerHTML="<tr><th>Location</th><th>Category</th><th>Costo Ferro</th></tr>"
+
+filtered.forEach(r=>{
+
+let costo=num(r[" Canone imponibile "])+num(r[" Canone assicurazione "])
+
+t.innerHTML+=`
+
+<tr>
+<td>${r.Location}</td>
+<td>${r.category}</td>
+<td>${Math.round(costo)} €</td>
+</tr>
+
+`
+
+})
+
+}
+
+function downloadCSV(){
+
+let csv=Papa.unparse(filtered)
+
+let blob=new Blob([csv])
+let a=document.createElement("a")
+
+a.href=URL.createObjectURL(blob)
+a.download="report_flotta.csv"
+a.click()
+
+}
+
+function downloadExcel(){
+
+let ws=XLSX.utils.json_to_sheet(filtered)
+let wb=XLSX.utils.book_new()
+
+XLSX.utils.book_append_sheet(wb,ws,"report")
+
+XLSX.writeFile(wb,"report_flotta.xlsx")
+
+}
+
+</script>
+
+</body>
+</html>
