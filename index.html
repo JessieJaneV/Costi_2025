@@ -162,23 +162,37 @@ Veicoli
 
 let fleet=[]
 let locationMap={}
+let vehicles=[]
 let filtered=[]
 let chart
 
-/* CARICA JSON SEDI */
+/* CARICA JSON */
 
 fetch("prenotazioni.json")
 .then(r=>r.json())
 .then(data=>{
 
-locationMap=data
+data.forEach(row=>{
+
+let plate=String(row["Auto"]||"").trim().toUpperCase()
+
+let location=row["Sucursal Entrega"]
+
+if(plate && location){
+
+locationMap[plate]=location
+
+}
+
+})
 
 loadFleet()
 
 })
+
 .catch(err=>{
 
-console.error("Errore caricamento JSON",err)
+console.error("Errore JSON",err)
 
 loadFleet()
 
@@ -198,6 +212,8 @@ complete:(res)=>{
 
 fleet=res.data
 
+prepareVehicles()
+
 populateFilters()
 
 applyFilters()
@@ -208,18 +224,11 @@ applyFilters()
 
 }
 
-/* FILTRI */
+/* CREA LISTA VEICOLI */
 
-function populateFilters(){
+function prepareVehicles(){
 
-let catSelect=document.getElementById("categoryFilter")
-let locSelect=document.getElementById("locationFilter")
-
-catSelect.innerHTML='<option value="all">Categoria</option>'
-locSelect.innerHTML='<option value="all">Sede</option>'
-
-let categories=new Set()
-let locations=new Set()
+vehicles=[]
 
 fleet.forEach(r=>{
 
@@ -227,36 +236,62 @@ let plate=String(r["license_plate"]||"").trim().toUpperCase()
 
 if(!plate) return
 
-if(r.category){
-categories.add(r.category)
-}
+let location=locationMap[plate] || "Sconosciuta"
 
-let loc=locationMap[plate]
+vehicles.push({
 
-if(loc){
-locations.add(loc)
-}
+plate:plate,
+category:r.category,
+location:location,
+dateIn:r["Date In"],
+dateOut:r["Date Out"],
+canone:parseFloat(String(r[" Canone imponibile "]||"").replace(",","."))||0,
+assicurazione:parseFloat(String(r[" Canone assicurazione "]||"").replace(",","."))||0
 
 })
 
-/* categorie */
+})
 
-categories.forEach(c=>{
+}
+
+/* POPOLA FILTRI */
+
+function populateFilters(){
+
+let catSet=new Set()
+
+let locSet=new Set()
+
+vehicles.forEach(v=>{
+
+if(v.category) catSet.add(v.category)
+
+if(v.location) locSet.add(v.location)
+
+})
+
+let catSelect=document.getElementById("categoryFilter")
+
+catSet.forEach(c=>{
 
 let opt=document.createElement("option")
+
 opt.value=c
+
 opt.text=c
 
 catSelect.appendChild(opt)
 
 })
 
-/* sedi */
+let locSelect=document.getElementById("locationFilter")
 
-locations.forEach(l=>{
+locSet.forEach(l=>{
 
 let opt=document.createElement("option")
+
 opt.value=l
+
 opt.text=l
 
 locSelect.appendChild(opt)
@@ -265,7 +300,7 @@ locSelect.appendChild(opt)
 
 }
 
-/* FILTRI PRINCIPALI */
+/* FILTRI */
 
 function applyFilters(){
 
@@ -276,44 +311,30 @@ let category=document.getElementById("categoryFilter").value
 let locationFilter=document.getElementById("locationFilter").value
 
 let start=new Date(2025,month-1,1)
+
 let end=new Date(2025,month,0)
 
 filtered=[]
 
-fleet.forEach(r=>{
+vehicles.forEach(v=>{
 
-let plate=String(r["license_plate"]||"").trim().toUpperCase()
+let dateIn=v.dateIn ? new Date(v.dateIn) : null
 
-if(!plate) return
-
-let dateIn=r["Date In"]?new Date(r["Date In"]):null
-let dateOut=r["Date Out"]?new Date(r["Date Out"]):null
+let dateOut=v.dateOut ? new Date(v.dateOut) : null
 
 if(!dateIn) return
 
 if(dateIn>end) return
+
 if(dateOut && dateOut<start) return
 
-if(category!=="all" && r.category!==category) return
+if(category!=="all" && v.category!==category) return
 
-let loc=locationMap[plate] || "Sconosciuta"
+if(locationFilter!=="all" && v.location!==locationFilter) return
 
-if(locationFilter!=="all" && loc!==locationFilter) return
+v.totale=v.canone+v.assicurazione
 
-let canone=parseFloat(String(r[" Canone imponibile "]||"").replace(",","."))||0
-
-let assicurazione=parseFloat(String(r[" Canone assicurazione "]||"").replace(",","."))||0
-
-filtered.push({
-
-plate:plate,
-category:r.category,
-location:loc,
-canone:canone,
-assicurazione:assicurazione,
-totale:canone+assicurazione
-
-})
+filtered.push(v)
 
 })
 
@@ -330,11 +351,13 @@ renderChart()
 function updateKPIs(){
 
 let c=0
+
 let a=0
 
 filtered.forEach(v=>{
 
 c+=v.canone
+
 a+=v.assicurazione
 
 })
@@ -414,7 +437,7 @@ data:values
 
 }
 
-/* EXPORT CSV */
+/* EXPORT */
 
 function exportCSV(){
 
