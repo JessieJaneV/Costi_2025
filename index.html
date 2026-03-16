@@ -256,12 +256,17 @@ function parseMoney(v){
 
 if(!v) return 0
 
-return parseFloat(
-String(v)
+let value = String(v)
 .replace("€","")
 .replace(",",".")
 .replace(/\s/g,"")
-) || 0
+.trim()
+
+let num = parseFloat(value)
+
+if(isNaN(num)) return 0
+
+return num
 
 }
 
@@ -353,8 +358,8 @@ total=canone+assicurazione
 
 }
 
-totalCanone+=canone
-totalAssicurazione+=assicurazione
+totalCanone += (canone || 0)
+totalAssicurazione += (assicurazione || 0)
 
 let cat=row.category || "Altro"
 
@@ -435,7 +440,7 @@ if(plate) set.add(plate)
 vehicles=set.size
 
 }
-let average=vehicles?total/vehicles:0
+let average = vehicles > 0 ? total / vehicles : 0
 
 document.getElementById("kpiVehicles").innerText=vehicles
 document.getElementById("kpiCanone").innerText="€ "+totalCanone.toLocaleString()
