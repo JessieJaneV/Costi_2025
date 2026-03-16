@@ -18,7 +18,7 @@ margin:30px;
 }
 
 .container{
-max-width:1200px;
+max-width:1400px;
 margin:auto;
 }
 
@@ -46,13 +46,30 @@ flex:1;
 }
 
 .kpi-title{
-font-size:16px;
+font-size:14px;
 }
 
 .kpi-value{
 font-size:28px;
 font-weight:bold;
 margin-top:8px;
+}
+
+.charts{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+th,td{
+padding:8px;
+border-bottom:1px solid #ddd;
+text-align:left;
 }
 
 select{
@@ -105,6 +122,11 @@ border:1px solid #ccc;
 <div class="kpi-container">
 
 <div class="card kpi">
+<div class="kpi-title">Numero Veicoli</div>
+<div class="kpi-value" id="kpiVehicles">0</div>
+</div>
+
+<div class="card kpi">
 <div class="kpi-title">Canone Imponibile</div>
 <div class="kpi-value" id="kpiCanone">€0</div>
 </div>
@@ -119,27 +141,69 @@ border:1px solid #ccc;
 <div class="kpi-value" id="kpiTotale">€0</div>
 </div>
 
+<div class="card kpi">
+<div class="kpi-title">Costo Medio Veicolo</div>
+<div class="kpi-value" id="kpiAverage">€0</div>
+</div>
+
+</div>
+
+<div class="charts">
+
+<div class="card">
+<canvas id="costCategoryChart"></canvas>
 </div>
 
 <div class="card">
-<canvas id="costChart"></canvas>
+<canvas id="vehiclesCategoryChart"></canvas>
+</div>
+
+</div>
+
+<div class="card">
+<canvas id="trendChart"></canvas>
+</div>
+
+<div class="card">
+
+<h3>Costi per Veicolo</h3>
+
+<table>
+
+<thead>
+<tr>
+<th>Targa</th>
+<th>Categoria</th>
+<th>Canone</th>
+<th>Assicurazione</th>
+<th>Totale</th>
+</tr>
+</thead>
+
+<tbody id="vehicleTable"></tbody>
+
+</table>
+
 </div>
 
 </div>
 
 <script>
 
-let rawData = []
-let chart
+let rawData=[]
+let costCategoryChart
+let vehiclesCategoryChart
+let trendChart
 
 Papa.parse("FLOTTA_3.csv",{
 
 download:true,
 header:true,
 delimiter:";",
+
 complete:function(results){
 
-rawData = results.data
+rawData=results.data
 
 populateCategoryFilter()
 
@@ -151,17 +215,17 @@ applyFilters()
 
 function populateCategoryFilter(){
 
-let categories = [...new Set(rawData.map(x => x.category))]
+let categories=[...new Set(rawData.map(x=>x.category))]
 
-let select = document.getElementById("categoryFilter")
+let select=document.getElementById("categoryFilter")
 
 categories.forEach(cat=>{
 
 if(cat){
 
-let opt = document.createElement("option")
-opt.value = cat
-opt.text = cat
+let opt=document.createElement("option")
+opt.value=cat
+opt.text=cat
 
 select.appendChild(opt)
 
@@ -171,93 +235,164 @@ select.appendChild(opt)
 
 }
 
+function parseMoney(v){
+
+if(!v) return 0
+
+return parseFloat(
+String(v)
+.replace("€","")
+.replace(",",".")
+.replace(/\s/g,"")
+) || 0
+
+}
+
 function applyFilters(){
 
-let month = parseInt(document.getElementById("monthFilter").value)
+let month=parseInt(document.getElementById("monthFilter").value)
 
-let category = document.getElementById("categoryFilter").value
+let category=document.getElementById("categoryFilter").value
 
-let startDate = new Date(2025, month-1, 1)
+let startDate=new Date(2025,month-1,1)
 
-let endDate = new Date(2025, month, 0)
+let endDate=new Date(2025,month,0)
 
-let filtered = rawData.filter(row => {
+let filtered=rawData.filter(row=>{
 
-let dateIn = row["Date In"] ? new Date(row["Date In"]) : null
-let dateOut = row["Date Out"] ? new Date(row["Date Out"]) : null
+let dateIn=row["Date In"] ? new Date(row["Date In"]) : null
+let dateOut=row["Date Out"] ? new Date(row["Date Out"]) : null
 
 if(!dateIn) return false
 
-if(category !== "all" && row.category !== category)
+if(category!=="all" && row.category!==category)
 return false
 
-if(dateIn > endDate) return false
+if(dateIn>endDate) return false
 
-if(dateOut && dateOut < startDate) return false
+if(dateOut && dateOut<startDate) return false
 
 return true
 
 })
 
-calculateCosts(filtered)
+calculateDashboard(filtered)
 
 }
 
-function calculateCosts(data){
+function calculateDashboard(data){
 
-let totalCanone = 0
-let totalAssicurazione = 0
+let totalCanone=0
+let totalAssicurazione=0
 
-let categoryCosts = {}
+let categoryCosts={}
+let categoryVehicles={}
 
-data.forEach(row => {
+let vehicleSet=new Set()
 
-let canone = parseFloat(row[" Canone imponibile "]) || 0
-let assicurazione = parseFloat(row[" Canone assicurazione "]) || 0
+let monthlyCosts=Array(12).fill(0)
 
-totalCanone += canone
-totalAssicurazione += assicurazione
+let tableHTML=""
 
-let cat = row.category || "Altro"
+data.forEach(row=>{
 
-if(!categoryCosts[cat])
-categoryCosts[cat] = 0
+let plate=row["license_plate"]
 
-categoryCosts[cat] += canone + assicurazione
+let canone=parseMoney(row[" Canone imponibile "])
+let assicurazione=parseMoney(row[" Canone assicurazione "])
+
+let total=canone+assicurazione
+
+totalCanone+=canone
+totalAssicurazione+=assicurazione
+
+vehicleSet.add(plate)
+
+let cat=row.category || "Altro"
+
+if(!categoryCosts[cat]) categoryCosts[cat]=0
+categoryCosts[cat]+=total
+
+if(!categoryVehicles[cat]) categoryVehicles[cat]=0
+categoryVehicles[cat]++
+
+let monthIndex=new Date(row["Date In"]).getMonth()
+
+monthlyCosts[monthIndex]+=total
+
+tableHTML+=`
+<tr>
+<td>${plate}</td>
+<td>${cat}</td>
+<td>${canone}</td>
+<td>${assicurazione}</td>
+<td>${total}</td>
+</tr>
+`
 
 })
 
-let totale = totalCanone + totalAssicurazione
+let total=totalCanone+totalAssicurazione
+let vehicles=vehicleSet.size
+let average=vehicles ? total/vehicles : 0
 
-document.getElementById("kpiCanone").innerText =
-"€ " + totalCanone.toLocaleString()
+document.getElementById("kpiVehicles").innerText=vehicles
+document.getElementById("kpiCanone").innerText="€ "+totalCanone.toLocaleString()
+document.getElementById("kpiAssicurazione").innerText="€ "+totalAssicurazione.toLocaleString()
+document.getElementById("kpiTotale").innerText="€ "+total.toLocaleString()
+document.getElementById("kpiAverage").innerText="€ "+average.toFixed(0)
 
-document.getElementById("kpiAssicurazione").innerText =
-"€ " + totalAssicurazione.toLocaleString()
+document.getElementById("vehicleTable").innerHTML=tableHTML
 
-document.getElementById("kpiTotale").innerText =
-"€ " + totale.toLocaleString()
-
-updateChart(categoryCosts)
+updateCharts(categoryCosts,categoryVehicles,monthlyCosts)
 
 }
 
-function updateChart(data){
+function updateCharts(categoryCosts,categoryVehicles,monthlyCosts){
 
-let labels = Object.keys(data)
-let values = Object.values(data)
+if(costCategoryChart) costCategoryChart.destroy()
 
-if(chart) chart.destroy()
-
-chart = new Chart(document.getElementById("costChart"),{
+costCategoryChart=new Chart(document.getElementById("costCategoryChart"),{
 
 type:"bar",
 
 data:{
-labels:labels,
+labels:Object.keys(categoryCosts),
 datasets:[{
 label:"Costo totale per categoria",
-data:values
+data:Object.values(categoryCosts)
+}]
+}
+
+})
+
+if(vehiclesCategoryChart) vehiclesCategoryChart.destroy()
+
+vehiclesCategoryChart=new Chart(document.getElementById("vehiclesCategoryChart"),{
+
+type:"bar",
+
+data:{
+labels:Object.keys(categoryVehicles),
+datasets:[{
+label:"Numero veicoli per categoria",
+data:Object.values(categoryVehicles)
+}]
+}
+
+})
+
+if(trendChart) trendChart.destroy()
+
+trendChart=new Chart(document.getElementById("trendChart"),{
+
+type:"line",
+
+data:{
+labels:["Gen","Feb","Mar","Apr","Mag","Giu","Lug","Ago","Set","Ott","Nov","Dic"],
+datasets:[{
+label:"Trend costi 2025",
+data:monthlyCosts
 }]
 }
 
