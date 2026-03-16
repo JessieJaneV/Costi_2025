@@ -2,7 +2,6 @@
 <html lang="it">
 
 <head>
-
 <meta charset="UTF-8">
 <title>Dashboard Flotta 2025</title>
 
@@ -18,7 +17,7 @@ margin:30px;
 }
 
 .container{
-max-width:1300px;
+max-width:1200px;
 margin:auto;
 }
 
@@ -32,8 +31,8 @@ margin-bottom:20px;
 
 .filters{
 display:flex;
-gap:20px;
-align-items:center;
+gap:15px;
+flex-wrap:wrap;
 }
 
 .kpi-container{
@@ -45,21 +44,9 @@ gap:20px;
 flex:1;
 }
 
-.kpi-title{
-font-size:15px;
-}
-
 .kpi-value{
-font-size:28px;
+font-size:26px;
 font-weight:bold;
-margin-top:5px;
-}
-
-select,button{
-padding:8px;
-border-radius:6px;
-border:1px solid #ccc;
-cursor:pointer;
 }
 
 table{
@@ -70,11 +57,6 @@ border-collapse:collapse;
 th,td{
 padding:8px;
 border-bottom:1px solid #ddd;
-text-align:left;
-}
-
-th{
-background:#fafafa;
 }
 
 </style>
@@ -85,11 +67,9 @@ background:#fafafa;
 
 <div class="container">
 
-<h1>Dashboard Flotta 2025</h1>
+<h2>Dashboard Flotta 2025</h2>
 
 <div class="card filters">
-
-<label>Mese</label>
 
 <select id="monthFilter">
 <option value="1">Gennaio</option>
@@ -106,13 +86,16 @@ background:#fafafa;
 <option value="12">Dicembre</option>
 </select>
 
-<label>Categoria</label>
-
 <select id="categoryFilter">
-<option value="all">Tutte</option>
+<option value="all">Categoria</option>
+</select>
+
+<select id="locationFilter">
+<option value="all">Sede</option>
 </select>
 
 <button onclick="applyFilters()">Aggiorna</button>
+
 <button onclick="exportCSV()">Esporta CSV</button>
 
 </div>
@@ -120,36 +103,34 @@ background:#fafafa;
 <div class="kpi-container">
 
 <div class="card kpi">
-<div class="kpi-title">Canone Imponibile</div>
-<div class="kpi-value" id="kpiCanone">€0</div>
+Canone
+<div id="kpiCanone" class="kpi-value">€0</div>
 </div>
 
 <div class="card kpi">
-<div class="kpi-title">Assicurazione</div>
-<div class="kpi-value" id="kpiAssicurazione">€0</div>
+Assicurazione
+<div id="kpiAssicurazione" class="kpi-value">€0</div>
 </div>
 
 <div class="card kpi">
-<div class="kpi-title">Costo Totale</div>
-<div class="kpi-value" id="kpiTotale">€0</div>
+Totale
+<div id="kpiTotale" class="kpi-value">€0</div>
 </div>
 
 <div class="card kpi">
-<div class="kpi-title">Veicoli Attivi</div>
-<div class="kpi-value" id="kpiVeicoli">0</div>
+Veicoli
+<div id="kpiVeicoli" class="kpi-value">0</div>
 </div>
 
 </div>
 
 <div class="card">
-<canvas id="locationChart"></canvas>
+<canvas id="chart"></canvas>
 </div>
 
 <div class="card">
 
-<h3>Veicoli</h3>
-
-<table id="vehicleTable">
+<table id="table">
 
 <thead>
 <tr>
@@ -158,7 +139,7 @@ background:#fafafa;
 <th>Sede</th>
 <th>Canone</th>
 <th>Assicurazione</th>
-<th>Costo Totale</th>
+<th>Totale</th>
 </tr>
 </thead>
 
@@ -172,31 +153,49 @@ background:#fafafa;
 
 <script>
 
-let rawFleet = []
-let locationMap = {}
-let filteredVehicles = []
+let fleet=[]
+let locationMap={}
+let filtered=[]
 let chart
 
-/* CARICA JSON SEDI */
+/* LOAD JSON */
 
 fetch("prenotazioni.json")
-.then(res => res.json())
-.then(data => {
+.then(r=>r.json())
+.then(data=>{
 
-data.forEach(r => {
+console.log("JSON caricato")
 
-let plate = String(r["Auto"]).trim().toUpperCase()
-let location = r["Sucursal Entrega"]
+if(Array.isArray(data)){
 
-if(plate && location){
-locationMap[plate] = location
+data.forEach(r=>{
+
+let plate=String(r["Auto"]||"").trim().toUpperCase()
+let loc=r["Sucursal Entrega"]
+
+if(plate && loc){
+locationMap[plate]=loc
 }
 
 })
 
+}else{
+
+locationMap=data
+
+}
+
+loadFleet()
+
 })
 
-/* CARICA CSV FLOTTA */
+.catch(e=>{
+console.error("Errore JSON",e)
+})
+
+/* LOAD CSV */
+
+function loadFleet(){
 
 Papa.parse("FLOTTA_3.csv",{
 
@@ -204,73 +203,91 @@ download:true,
 header:true,
 delimiter:";",
 
-complete:function(results){
+complete:(res)=>{
 
-rawFleet = results.data
+fleet=res.data
 
-populateCategoryFilter()
+console.log("CSV caricato",fleet.length)
+
+populateFilters()
+
 applyFilters()
 
 }
 
 })
 
-function populateCategoryFilter(){
-
-let categories = [...new Set(rawFleet.map(x => x.category))]
-
-let select = document.getElementById("categoryFilter")
-
-categories.forEach(cat=>{
-
-if(cat){
-
-let opt = document.createElement("option")
-opt.value = cat
-opt.text = cat
-
-select.appendChild(opt)
-
 }
 
+function populateFilters(){
+
+let cats=[...new Set(fleet.map(x=>x.category).filter(Boolean))]
+
+let catSelect=document.getElementById("categoryFilter")
+
+cats.forEach(c=>{
+let opt=document.createElement("option")
+opt.value=c
+opt.text=c
+catSelect.appendChild(opt)
+})
+
+let locations=[...new Set(Object.values(locationMap))]
+
+let locSelect=document.getElementById("locationFilter")
+
+locations.forEach(l=>{
+let opt=document.createElement("option")
+opt.value=l
+opt.text=l
+locSelect.appendChild(opt)
 })
 
 }
 
 function applyFilters(){
 
-let month = parseInt(document.getElementById("monthFilter").value)
-let category = document.getElementById("categoryFilter").value
+let month=parseInt(document.getElementById("monthFilter").value)
 
-let startDate = new Date(2025, month-1, 1)
-let endDate = new Date(2025, month, 0)
+let category=document.getElementById("categoryFilter").value
 
-filteredVehicles = []
+let locationFilter=document.getElementById("locationFilter").value
 
-rawFleet.forEach(row => {
+let start=new Date(2025,month-1,1)
 
-let dateIn = row["Date In"] ? new Date(row["Date In"]) : null
-let dateOut = row["Date Out"] ? new Date(row["Date Out"]) : null
+let end=new Date(2025,month,0)
+
+filtered=[]
+
+fleet.forEach(r=>{
+
+let plate=String(r["license_plate"]||"").trim().toUpperCase()
+
+if(!plate) return
+
+let dateIn=r["Date In"] ? new Date(r["Date In"]) : null
+let dateOut=r["Date Out"] ? new Date(r["Date Out"]) : null
 
 if(!dateIn) return
 
-if(category !== "all" && row.category !== category) return
+if(dateIn>end) return
+if(dateOut && dateOut<start) return
 
-if(dateIn > endDate) return
-if(dateOut && dateOut < startDate) return
+if(category!=="all" && r.category!==category) return
 
-let plate = row["license_plate"].trim().toUpperCase()
+let loc=locationMap[plate] || "Sconosciuta"
 
-let canone = parseFloat(row[" Canone imponibile "]) || 0
-let assicurazione = parseFloat(row[" Canone assicurazione "]) || 0
+if(locationFilter!=="all" && loc!==locationFilter) return
 
-let location = locationMap[plate] || "Sconosciuta"
+let canone=parseFloat(String(r[" Canone imponibile "]||"").replace(",","."))||0
 
-filteredVehicles.push({
+let assicurazione=parseFloat(String(r[" Canone assicurazione "]||"").replace(",","."))||0
+
+filtered.push({
 
 plate:plate,
-category:row.category,
-location:location,
+category:r.category,
+location:loc,
 canone:canone,
 assicurazione:assicurazione,
 totale:canone+assicurazione
@@ -279,52 +296,51 @@ totale:canone+assicurazione
 
 })
 
-calculateKPIs()
+updateKPIs()
 renderTable()
 renderChart()
 
 }
 
-function calculateKPIs(){
+function updateKPIs(){
 
-let canone=0
-let assicurazione=0
+let c=0
+let a=0
 
-filteredVehicles.forEach(v=>{
-
-canone+=v.canone
-assicurazione+=v.assicurazione
-
+filtered.forEach(v=>{
+c+=v.canone
+a+=v.assicurazione
 })
 
-let totale = canone + assicurazione
+let t=c+a
 
-document.getElementById("kpiCanone").innerText="€ "+canone.toLocaleString()
-document.getElementById("kpiAssicurazione").innerText="€ "+assicurazione.toLocaleString()
-document.getElementById("kpiTotale").innerText="€ "+totale.toLocaleString()
-document.getElementById("kpiVeicoli").innerText=filteredVehicles.length
+document.getElementById("kpiCanone").innerText="€ "+c.toLocaleString()
+document.getElementById("kpiAssicurazione").innerText="€ "+a.toLocaleString()
+document.getElementById("kpiTotale").innerText="€ "+t.toLocaleString()
+document.getElementById("kpiVeicoli").innerText=filtered.length
 
 }
 
 function renderTable(){
 
-let tbody=document.querySelector("#vehicleTable tbody")
+let tbody=document.querySelector("#table tbody")
+
 tbody.innerHTML=""
 
-filteredVehicles.forEach(v=>{
+filtered.forEach(v=>{
 
-let row=`
+tbody.innerHTML+=`
+
 <tr>
 <td>${v.plate}</td>
-<td>${v.category}</td>
+<td>${v.category||""}</td>
 <td>${v.location}</td>
-<td>€ ${v.canone.toLocaleString()}</td>
-<td>€ ${v.assicurazione.toLocaleString()}</td>
-<td>€ ${v.totale.toLocaleString()}</td>
+<td>${v.canone}</td>
+<td>${v.assicurazione}</td>
+<td>${v.totale}</td>
 </tr>
-`
 
-tbody.innerHTML+=row
+`
 
 })
 
@@ -332,24 +348,22 @@ tbody.innerHTML+=row
 
 function renderChart(){
 
-let locationCosts={}
+let map={}
 
-filteredVehicles.forEach(v=>{
+filtered.forEach(v=>{
 
-if(!locationCosts[v.location]){
-locationCosts[v.location]=0
-}
+if(!map[v.location]) map[v.location]=0
 
-locationCosts[v.location]+=v.totale
+map[v.location]+=v.totale
 
 })
 
-let labels=Object.keys(locationCosts)
-let values=Object.values(locationCosts)
+let labels=Object.keys(map)
+let values=Object.values(map)
 
 if(chart) chart.destroy()
 
-chart=new Chart(document.getElementById("locationChart"),{
+chart=new Chart(document.getElementById("chart"),{
 
 type:"bar",
 
@@ -369,18 +383,22 @@ function exportCSV(){
 
 let csv="Targa,Categoria,Sede,Canone,Assicurazione,Totale\n"
 
-filteredVehicles.forEach(v=>{
+filtered.forEach(v=>{
 
 csv+=`${v.plate},${v.category},${v.location},${v.canone},${v.assicurazione},${v.totale}\n`
 
 })
 
-let blob=new Blob([csv],{type:"text/csv"})
-let url=window.URL.createObjectURL(blob)
+let blob=new Blob([csv])
+
+let url=URL.createObjectURL(blob)
 
 let a=document.createElement("a")
+
 a.href=url
-a.download="flotta_export.csv"
+
+a.download="export_flotta.csv"
+
 a.click()
 
 }
