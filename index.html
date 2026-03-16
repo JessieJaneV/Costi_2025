@@ -33,8 +33,8 @@ margin-bottom:20px;
 .filters{
 display:flex;
 gap:20px;
-align-items:center;
 flex-wrap:wrap;
+align-items:center;
 }
 
 .kpi-container{
@@ -72,7 +72,6 @@ border-collapse:collapse;
 th,td{
 padding:8px;
 border-bottom:1px solid #ddd;
-text-align:left;
 }
 
 select,button{
@@ -89,7 +88,7 @@ border:none;
 }
 
 button.reset{
-background:#888;
+background:#777;
 }
 
 </style>
@@ -131,6 +130,8 @@ background:#888;
 <button onclick="applyFilters()">Aggiorna</button>
 
 <button class="reset" onclick="resetFilters()">Reset filtri</button>
+
+<button onclick="exportCSV()">Export CSV</button>
 
 </div>
 
@@ -206,6 +207,7 @@ background:#888;
 <script>
 
 let rawData=[]
+let filteredData=[]
 let costCategoryChart
 let vehiclesCategoryChart
 let trendChart
@@ -277,7 +279,7 @@ function applyFilters(){
 let month=document.getElementById("monthFilter").value
 let category=document.getElementById("categoryFilter").value
 
-let filtered=rawData.filter(row=>{
+filteredData=rawData.filter(row=>{
 
 let dateIn=row["Date In"] ? new Date(row["Date In"]) : null
 let dateOut=row["Date Out"] ? new Date(row["Date Out"]) : null
@@ -299,7 +301,7 @@ return true
 
 })
 
-calculateDashboard(filtered,month)
+calculateDashboard(filteredData,month)
 
 }
 
@@ -311,9 +313,9 @@ let totalAssicurazione=0
 let categoryCosts={}
 let categoryVehicles={}
 
-let vehicleSet=new Set()
-
 let monthlyCosts=Array(12).fill(0)
+
+let vehicleMonthlyCount=Array(12).fill(0)
 
 let tableHTML=""
 
@@ -354,8 +356,6 @@ total=canone+assicurazione
 totalCanone+=canone
 totalAssicurazione+=assicurazione
 
-vehicleSet.add(plate)
-
 let cat=row.category || "Altro"
 
 if(!categoryCosts[cat]) categoryCosts[cat]=0
@@ -365,7 +365,9 @@ if(!categoryVehicles[cat]) categoryVehicles[cat]=0
 categoryVehicles[cat]++
 
 let monthIndex=new Date(row["Date In"]).getMonth()
+
 monthlyCosts[monthIndex]+=total
+vehicleMonthlyCount[monthIndex]++
 
 tableHTML+=`
 <tr>
@@ -380,8 +382,21 @@ tableHTML+=`
 })
 
 let total=totalCanone+totalAssicurazione
-let vehicles=vehicleSet.size
-let average=vehicles ? total/vehicles : 0
+
+let vehicles
+
+if(month==="all"){
+
+let sum=vehicleMonthlyCount.reduce((a,b)=>a+b,0)
+vehicles=Math.round(sum/12)
+
+}else{
+
+vehicles=data.length
+
+}
+
+let average=vehicles?total/vehicles:0
 
 document.getElementById("kpiVehicles").innerText=vehicles
 document.getElementById("kpiCanone").innerText="€ "+totalCanone.toLocaleString()
@@ -444,6 +459,42 @@ data:monthlyCosts
 }
 
 })
+
+}
+
+function exportCSV(){
+
+if(!filteredData.length){
+alert("Nessun dato da esportare")
+return
+}
+
+let csv="Mese;Targa;Categoria;Canone;Assicurazione;Totale\n"
+
+let month=document.getElementById("monthFilter").value
+let monthLabel=month==="all"?"Tutti":month
+
+filteredData.forEach(row=>{
+
+let plate=row["license_plate"]
+let cat=row["category"]
+
+let canone=parseMoney(row[" Canone imponibile "])
+let assicurazione=parseMoney(row[" Canone assicurazione "])
+
+let total=canone+assicurazione
+
+csv+=`"${monthLabel}";"${plate}";"${cat}";${canone};${assicurazione};${total}\n`
+
+})
+
+let blob=new Blob(["\ufeff"+csv],{type:"text/csv;charset=utf-8;"})
+
+let link=document.createElement("a")
+
+link.href=URL.createObjectURL(blob)
+link.download="flotta_export.csv"
+link.click()
 
 }
 
