@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+
+<meta charset="UTF-8">
+<title>Dashboard Costi Flotta 2025</title>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f4f6f9;
+margin:30px;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 2px 6px rgba(0,0,0,0.1);
+margin-bottom:20px;
+}
+
+.filters{
+display:flex;
+gap:20px;
+align-items:center;
+}
+
+.kpi-container{
+display:flex;
+gap:20px;
+}
+
+.kpi{
+flex:1;
+}
+
+.kpi-title{
+font-size:16px;
+}
+
+.kpi-value{
+font-size:28px;
+font-weight:bold;
+margin-top:8px;
+}
+
+select{
+padding:8px;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Dashboard Costi Flotta 2025</h1>
+
+<div class="card filters">
+
+<label>Mese</label>
+
+<select id="monthFilter">
+
+<option value="1">Gennaio</option>
+<option value="2">Febbraio</option>
+<option value="3">Marzo</option>
+<option value="4">Aprile</option>
+<option value="5">Maggio</option>
+<option value="6">Giugno</option>
+<option value="7">Luglio</option>
+<option value="8">Agosto</option>
+<option value="9">Settembre</option>
+<option value="10">Ottobre</option>
+<option value="11">Novembre</option>
+<option value="12">Dicembre</option>
+
+</select>
+
+<label>Categoria</label>
+
+<select id="categoryFilter">
+<option value="all">Tutte</option>
+</select>
+
+<button onclick="applyFilters()">Aggiorna</button>
+
+</div>
+
+<div class="kpi-container">
+
+<div class="card kpi">
+<div class="kpi-title">Canone Imponibile</div>
+<div class="kpi-value" id="kpiCanone">€0</div>
+</div>
+
+<div class="card kpi">
+<div class="kpi-title">Assicurazione</div>
+<div class="kpi-value" id="kpiAssicurazione">€0</div>
+</div>
+
+<div class="card kpi">
+<div class="kpi-title">Costo Totale</div>
+<div class="kpi-value" id="kpiTotale">€0</div>
+</div>
+
+</div>
+
+<div class="card">
+<canvas id="costChart"></canvas>
+</div>
+
+</div>
+
+<script>
+
+let rawData = []
+let chart
+
+Papa.parse("FLOTTA_3.csv",{
+
+download:true,
+header:true,
+delimiter:";",
+complete:function(results){
+
+rawData = results.data
+
+populateCategoryFilter()
+
+applyFilters()
+
+}
+
+})
+
+function populateCategoryFilter(){
+
+let categories = [...new Set(rawData.map(x => x.category))]
+
+let select = document.getElementById("categoryFilter")
+
+categories.forEach(cat=>{
+
+if(cat){
+
+let opt = document.createElement("option")
+opt.value = cat
+opt.text = cat
+
+select.appendChild(opt)
+
+}
+
+})
+
+}
+
+function applyFilters(){
+
+let month = parseInt(document.getElementById("monthFilter").value)
+
+let category = document.getElementById("categoryFilter").value
+
+let startDate = new Date(2025, month-1, 1)
+
+let endDate = new Date(2025, month, 0)
+
+let filtered = rawData.filter(row => {
+
+let dateIn = row["Date In"] ? new Date(row["Date In"]) : null
+let dateOut = row["Date Out"] ? new Date(row["Date Out"]) : null
+
+if(!dateIn) return false
+
+if(category !== "all" && row.category !== category)
+return false
+
+if(dateIn > endDate) return false
+
+if(dateOut && dateOut < startDate) return false
+
+return true
+
+})
+
+calculateCosts(filtered)
+
+}
+
+function calculateCosts(data){
+
+let totalCanone = 0
+let totalAssicurazione = 0
+
+let categoryCosts = {}
+
+data.forEach(row => {
+
+let canone = parseFloat(row[" Canone imponibile "]) || 0
+let assicurazione = parseFloat(row[" Canone assicurazione "]) || 0
+
+totalCanone += canone
+totalAssicurazione += assicurazione
+
+let cat = row.category || "Altro"
+
+if(!categoryCosts[cat])
+categoryCosts[cat] = 0
+
+categoryCosts[cat] += canone + assicurazione
+
+})
+
+let totale = totalCanone + totalAssicurazione
+
+document.getElementById("kpiCanone").innerText =
+"€ " + totalCanone.toLocaleString()
+
+document.getElementById("kpiAssicurazione").innerText =
+"€ " + totalAssicurazione.toLocaleString()
+
+document.getElementById("kpiTotale").innerText =
+"€ " + totale.toLocaleString()
+
+updateChart(categoryCosts)
+
+}
+
+function updateChart(data){
+
+let labels = Object.keys(data)
+let values = Object.values(data)
+
+if(chart) chart.destroy()
+
+chart = new Chart(document.getElementById("costChart"),{
+
+type:"bar",
+
+data:{
+labels:labels,
+datasets:[{
+label:"Costo totale per categoria",
+data:values
+}]
+}
+
+})
+
+}
+
+</script>
+
+</body>
+</html>
